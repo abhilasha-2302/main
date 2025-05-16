@@ -2,10 +2,10 @@ import Image from 'next/image';
 
 export default function EcosystemPartners() {
   const partners = [
-    { name: 'Rambus', logo: '/images/partners/rambus.svg' },
-    { name: 'Ericsson', logo: '/images/partners/ericsson.svg' },
-    { name: 'Logic Fruit Technologies', logo: '/images/partners/logic-fruit.svg' },
-    { name: 'ICICI Lombard', logo: '/images/partners/icici-lombard.svg' },
+    { name: 'Rambus', logo: '/images/partners/rambus.png' },
+    { name: 'Ericsson', logo: '/images/partners/ericsson.png' },
+    { name: 'Logic Fruit Technologies', logo: '/images/partners/logic.png' },
+    { name: 'ICICI Lombard', logo: '/images/partners/icici.png' },
     { name: 'Policybazaar', logo: '/images/partners/policybazaar.svg' },
   ];
 

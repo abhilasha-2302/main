@@ -12,20 +12,20 @@ export default function ServicesSection() {
   const services = [
     {
       id: 'silicon',
-      title: 'Silicon Design Verification',
-      image: '/images/services/silicon-design.jpg',
+      title: 'Silicon Design Verification Solution',
+      image: '/images/sisdcvp.svg',
       link: '/services',
     },
     {
       id: 'aiml',
-      title: 'AI/ML Solutions',
-      image: '/images/services/ai-ml-solutions.jpg',
+      title: 'AI Enterprise Solutions',
+      image: '/images/ai.svg',
       link: '/solutions/ai-ml',
     },
     {
       id: 'verification',
-      title: 'Verification Services',
-      image: '/images/services/verification-services.jpg',
+      title: ' Silicon Design Verification Services',
+      image: '/images/verification.svg',
       link: '/services',
     },
   ];
@@ -45,9 +45,7 @@ export default function ServicesSection() {
           Solutions and Services for Semiconductor and Beyond
         </h2>
         <p className="text-lg text-gray-600 mb-12 max-w-3xl">
-          Veripoint is a valued partner for global silicon to systems design across a wide range of 
-          vertical markets, empowering technology innovators everywhere with the industry's most 
-          comprehensive and trusted solutions.
+          Veripoint is a valued partner for global silicon to systems design across a wide range of vertical markets, empowering technology innovators everywhere with the industry's most comprehensive and trusted solutions.
         </p>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
