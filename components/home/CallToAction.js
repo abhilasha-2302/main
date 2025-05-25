@@ -4,7 +4,7 @@ export default function CallToAction() {
   return (
     <section className="py-16 bg-green-600">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 className="text-3xl font-normal text-white mb-8">
+        <h2 className="text-3xl font-bold text-white mb-8">
           Connect with us
         </h2>
         <Link 
