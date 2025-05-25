@@ -41,10 +41,10 @@ export default function ServicesSection() {
   return (
     <section className="py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+        <h2 className="text-3xl md:text-4xl font-normal text-gray-900 mb-6">
           Solutions and Services for Semiconductor and Beyond
         </h2>
-        <p className="text-lg text-gray-600 mb-12 max-w-3xl">
+        <p className="text-lg text-black mb-12 leading-relaxed">
           Veripoint is a valued partner for global silicon to systems design across a wide range of vertical markets, empowering technology innovators everywhere with the industry's most comprehensive and trusted solutions.
         </p>
         

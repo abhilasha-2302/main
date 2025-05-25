@@ -6,7 +6,7 @@ export default function SupportCareers() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="md:border-r border-gray-300 pr-8">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">
+            <h2 className="text-2xl font-normal text-gray-900 mb-4">
               Support & Services
             </h2>
             <p className="text-gray-600 mb-6">
@@ -22,7 +22,7 @@ export default function SupportCareers() {
           </div>
           
           <div className="md:pl-8">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">
+            <h2 className="text-2xl font-normal text-gray-900 mb-4">
               Careers
             </h2>
             <p className="text-gray-600 mb-6">
