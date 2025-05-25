@@ -1,251 +1,347 @@
-// // import Link from 'next/link';
-
-// // export default function VideoHero() {
-// //   return (
-// //     <div className="relative h-screen w-full overflow-hidden">
-// //       <div className="absolute inset-0 z-0">
-// //         <video
-// //           className="w-full h-full object-cover"
-// //           autoPlay
-// //           muted
-// //           loop
-// //           playsInline
-// //         >
-// //           {/** TODO */}
-// //           <source src="/videos/sdcvp-x.mp4" type="video/mp4" />
-// //           Your browser does not support the video tag.
-// //         </video>
-// //         <div className="absolute inset-0 bg-black bg-opacity-50"></div>
-// //       </div>
-      
-// //       <div className="relative z-10 h-full flex items-center">
-// //         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-// //           <div className="max-w-lg">
-// //             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
-// //               Introducing SDCVP-X
-// //             </h1>
-// //             <p className="text-xl md:text-2xl text-white mb-8">
-// //               AI-based verification
-// //             </p>
-// //             <Link 
-// //               href="/products/sdcvp-x" 
-// //               className="inline-block bg-green-600 hover:bg-green-700 text-white font-medium py-3 px-6 rounded transition-colors duration-200"
-// //             >
-// //               Discover Advanced Verification
-// //             </Link>
-// //           </div>
-// //         </div>
-// //       </div>
-// //     </div>
-// //   );
-// // }
-
-
-// 'use client';
-// import Slider from 'react-slick';
-// import Link from 'next/link';
-// import { useState, useEffect } from 'react';
-// import "slick-carousel/slick/slick.css";
-// import "slick-carousel/slick/slick-theme.css";
-
-// const videos = [
-//   {
-//     src: '/videos/sdcvp-x.mp4',
-//     title: 'Introducing SDCVP-X',
-//     description: 'AI-based verification',
-//     link: '/products/sdcvp-x',
-//   },
-//   {
-//     src: '/videos/video2.mp4',
-//     title: 'Power Aware SoC Verification',
-//     description: 'Low power. High confidence.',
-//     link: '/solutions/low-power-verification',
-//   },
-//   {
-//     src: '/videos/video3.mp4',
-//     title: 'Formal Meets AI',
-//     description: 'Accelerate assertion-based verification',
-//     link: '/solutions/formal-verification',
-//   },
-// ];
-
-// const VideoHeroSlider = () => {
-//   const [isVideoReady, setIsVideoReady] = useState(false);
-//   const [currentSlide, setCurrentSlide] = useState(0);
-
-//   const settings = {
-//     dots: true,
-//     arrows: true,
-//     infinite: true,
-//     speed: 800,
-//     slidesToShow: 1,
-//     slidesToScroll: 1,
-//     autoplay: true,
-//     autoplaySpeed: 8000,
-//     pauseOnHover: false,
-//     fade: true,
-//     beforeChange: (oldIndex, newIndex) => setCurrentSlide(newIndex),
-//     customPaging: (i) => (
-//       <button className={`w-3 h-3 rounded-full transition-all duration-300 ${
-//         i === currentSlide ? 'bg-white scale-125' : 'bg-white/50'
-//       }`} />
-//     ),
-//   };
-
-//   return (
-//     <div className="relative h-screen w-full overflow-hidden">
-//       <Slider {...settings} className="custom-slider">
-//         {videos.map((video, index) => (
-//           <div key={index} className="relative h-screen w-full">
-//             <div className="absolute inset-0">
-//               <video
-//                 className="w-full h-full object-cover"
-//                 src={video.src}
-//                 autoPlay
-//                 muted
-//                 loop
-//                 playsInline
-//                 preload="auto"
-//                 aria-hidden="true"
-//               />
-//             </div>
-//             <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/30" />
-//             <div className="relative z-10 h-full flex items-center">
-//               <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-//                 <div className="max-w-2xl">
-//                   <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 animate-fadeInUp">
-//                     {video.title}
-//                   </h1>
-//                   <p className="text-xl md:text-2xl text-white/90 mb-8 animate-fadeInUp animation-delay-100">
-//                     {video.description}
-//                   </p>
-//                   <Link
-//                     href={video.link}
-//                     className="inline-block bg-green-600 hover:bg-green-700 text-white font-medium py-3 px-8 rounded-lg transition-all duration-200 hover:shadow-lg hover:scale-105 animate-fadeInUp animation-delay-200"
-//                   >
-//                     Learn More
-//                   </Link>
-//                 </div>
-//               </div>
-//             </div>
-//           </div>
-//         ))}
-//       </Slider>
-//     </div>
-//   );
-// };
-
-// export default VideoHeroSlider;
-
-
 'use client';
 
 import { useState, useRef, useEffect } from 'react';
-import Slider from 'react-slick';
 import Link from 'next/link';
 
-const videos = [
+const stories = [
   {
+    id: 'story-1',
     src: '/videos/sdcvp-x.mp4',
-    title: 'Introducing SDCVP-X',
-    description: 'AI-based verification',
+    title: 'AI Chip Development',
+    heading: 'Introducing SDCVP-X',
+    subheading: 'AI-based verification',
+    description: 'Hardware-Assisted Verification is Critical to Silicon Success',
     link: '/products/sdcvp-x',
   },
   {
+    id: 'story-2',
     src: '/videos/ai.mp4',
-    title: 'Unleashing the world of AI',
-    description: 'Accelerate to Smart Engineering',
-    link: '/solutions/formal-verification',
+    title: 'AI based Engineering',
+    heading: 'Unleashing the world of AI',
+    subheading: 'Accelerate to Smart Engineering',
+    description: 'Because Innovation Cant Wait',
+    link: '/solutions/multi-die',
   },
+  {
+    id: 'story-3',
+    src: '/videos/blockchain.mp4',
+    title: 'Blockchain',
+    heading: 'Unleashing the world of Blockchain',
+    subheading: 'Accelerate to Smart Engineering',
+    description: 'Because Innovation Cant Wait',
+    link: '/solutions/multi-die',
+  }
 ];
 
 export default function VideoHero() {
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const videoRefs = useRef([]);
-
-  const sliderRef = useRef(null);
-
-  const settings = {
-    dots: true,
-    arrows: true,
-    infinite: true,
-    speed: 800,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: false,
-    beforeChange: (_, next) => setCurrentSlide(next),
-    afterChange: (index) => {
-      // Force video reload on slide change
-      if (videoRefs.current[index]) {
-        videoRefs.current[index].load();
-        videoRefs.current[index].play();
-      }
-    },
-  };
-
-
-  const handleEnded = () => {
-    const nextIndex = (currentSlide + 1) % videos.length;
-    sliderRef.current.slickGoTo(nextIndex);
-  };
-
+  const [activeStory, setActiveStory] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
   
+  const videoRefs = useRef([]);
+  const progressBarRefs = useRef([]);
+  const storyTimers = useRef([]);
+  const touchStartX = useRef(0);
+  const containerRef = useRef(null);
+  
+  const STORY_DURATION = 10000; // 10 seconds
+
+  // Handle story navigation
+  const goToStory = (index) => {
+    // Reset all animations
+    progressBarRefs.current.forEach(bar => {
+      if (bar) {
+        bar.style.animation = 'none';
+        bar.offsetHeight; // Trigger reflow
+        bar.style.animation = null;
+      }
+    });
+    
+    // Clear all timers
+    storyTimers.current.forEach(timer => clearTimeout(timer));
+    storyTimers.current = [];
+    
+    // Pause all videos
+    videoRefs.current.forEach(video => {
+      if (video) {
+        video.pause();
+        video.currentTime = 0;
+      }
+    });
+    
+    // Set new active story
+    setActiveStory(index);
+    setIsPaused(false);
+  };
+
+  const goToNextStory = () => {
+    if (activeStory < stories.length - 1) {
+      goToStory(activeStory + 1);
+    } else {
+      // Loop back to first story
+      goToStory(0);
+    }
+  };
+
+  const goToPrevStory = () => {
+    if (activeStory > 0) {
+      goToStory(activeStory - 1);
+    } else {
+      // Loop to last story
+      goToStory(stories.length - 1);
+    }
+  };
+
+  // Handle touch events for swiping
+  const handleTouchStart = (e) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = (e) => {
+    const touchEndX = e.changedTouches[0].clientX;
+    const diff = touchStartX.current - touchEndX;
+    
+    // If swipe distance is significant
+    if (Math.abs(diff) > 50) {
+      if (diff > 0) {
+        // Swipe left - next story
+        goToNextStory();
+      } else {
+        // Swipe right - previous story
+        goToPrevStory();
+      }
+    }
+  };
+
+  // Handle story click for navigation
+  const handleStoryClick = (e) => {
+    // Get click position relative to container width
+    const { clientX } = e;
+    const rect = containerRef.current.getBoundingClientRect();
+    const relativeX = (clientX - rect.left) / rect.width;
+    
+    if (relativeX < 0.3) {
+      // Left side click - previous story
+      goToPrevStory();
+    } else if (relativeX > 0.7) {
+      // Right side click - next story
+      goToNextStory();
+    } else {
+      // Center click - toggle pause
+      setIsPaused(!isPaused);
+    }
+  };
+
+  // Set up animation and video playback when active story changes
   useEffect(() => {
-    const handleScroll = () => {
-      const section = document.getElementById('video-hero');
-      if (!section) return;
-
-      const rect = section.getBoundingClientRect();
-      const inView = rect.top <= window.innerHeight && rect.bottom >= 0;
-
-      if (!inView) {
-        const current = videoRefs.current[currentSlide];
-        if (current) current.pause();
+    // Clear previous timers
+    storyTimers.current.forEach(timer => clearTimeout(timer));
+    storyTimers.current = [];
+    
+    const video = videoRefs.current[activeStory];
+    if (!video) return;
+    
+    // Reset and play the active video
+    video.currentTime = 0;
+    
+    if (!isPaused) {
+      video.play().catch(err => console.error('Error playing video:', err));
+      
+      // Animate the progress bar
+      const progressBar = progressBarRefs.current[activeStory];
+      if (progressBar) {
+        progressBar.style.animation = 'none';
+        progressBar.offsetHeight; // Trigger reflow
+        progressBar.style.animation = `progress-animation ${STORY_DURATION/1000}s linear forwards`;
+      }
+      
+      // Set timeout to go to next story
+      const timer = setTimeout(goToNextStory, STORY_DURATION);
+      storyTimers.current.push(timer);
+    }
+    
+    // Keyboard navigation
+    const handleKeydown = (e) => {
+      if (e.key === 'ArrowLeft') {
+        goToPrevStory();
+      } else if (e.key === 'ArrowRight') {
+        goToNextStory();
+      } else if (e.key === ' ') {
+        // Space to toggle pause
+        setIsPaused(!isPaused);
+        e.preventDefault();
       }
     };
+    
+    window.addEventListener('keydown', handleKeydown);
+    return () => window.removeEventListener('keydown', handleKeydown);
+  }, [activeStory, isPaused]);
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [currentSlide]);
+  // Handle pause/play state
+  useEffect(() => {
+    const video = videoRefs.current[activeStory];
+    if (!video) return;
+    
+    if (isPaused) {
+      video.pause();
+      
+      // Pause the progress bar animation
+      const progressBar = progressBarRefs.current[activeStory];
+      if (progressBar) {
+        const computedStyle = window.getComputedStyle(progressBar);
+        const width = computedStyle.getPropertyValue('width');
+        progressBar.style.animation = 'none';
+        progressBar.style.width = width;
+      }
+      
+      // Clear the timer
+      storyTimers.current.forEach(timer => clearTimeout(timer));
+      storyTimers.current = [];
+    } else {
+      video.play().catch(err => console.error('Error playing video:', err));
+      
+      // Resume the progress bar animation
+      const progressBar = progressBarRefs.current[activeStory];
+      if (progressBar) {
+        const computedStyle = window.getComputedStyle(progressBar);
+        const widthValue = computedStyle.getPropertyValue('width');
+        const width = parseFloat(widthValue) / parseFloat(computedStyle.getPropertyValue('width'));
+        const remainingTime = (1 - width) * STORY_DURATION;
+        
+        progressBar.style.animation = `progress-animation ${remainingTime/1000}s linear forwards`;
+        
+        // Set timeout to go to next story
+        const timer = setTimeout(goToNextStory, remainingTime);
+        storyTimers.current.push(timer);
+      }
+    }
+  }, [isPaused]);
 
   return (
-    <div id="video-hero" className="relative h-screen w-full overflow-hidden">
-      <Slider ref={sliderRef} {...settings}>
-        {videos.map((video, index) => (
-          <div key={index} className="relative h-screen w-full">
+    <div 
+      ref={containerRef}
+      className="relative h-screen w-full overflow-hidden bg-black"
+    >
+      {/* Story tabs - similar to the synopsys layout */}
+      <div className="absolute top-20 left-0 right-0 z-30 px-4 md:px-8 lg:px-16">
+        <div className="flex flex-wrap justify-center md:justify-start gap-3 md:gap-8">
+          {stories.map((story, index) => (
+            <div 
+              key={`tab-${story.id}`}
+              className="flex flex-col items-center cursor-pointer"
+              onClick={() => goToStory(index)}
+            >
+              <div className={`text-white text-xs md:text-sm font-medium mb-2 text-center ${
+                index === activeStory ? 'text-white' : 'text-white/70'
+              }`}>
+                {story.title}
+              </div>
+              <div className="w-24 md:w-40 h-0.5 bg-white/30 rounded-full overflow-hidden">
+                <div 
+                  ref={el => progressBarRefs.current[index] = el}
+                  className={`h-full bg-white rounded-full ${index < activeStory ? 'w-full' : index > activeStory ? 'w-0' : ''}`}
+                  style={{
+                    ...(index === activeStory && !isPaused 
+                      ? { animation: `progress-animation ${STORY_DURATION/1000}s linear forwards` } 
+                      : {})
+                  }}
+                />
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+      
+      {/* Story videos */}
+      <div 
+        className="h-full w-full"
+        onTouchStart={handleTouchStart}
+        onTouchEnd={handleTouchEnd}
+        onClick={handleStoryClick}
+      >
+        {stories.map((story, index) => (
+          <div 
+            key={`video-${story.id}`}
+            className={`absolute inset-0 transition-opacity duration-300 ${
+              index === activeStory ? 'opacity-100 z-10' : 'opacity-0 -z-10'
+            }`}
+          >
             <video
-              ref={(el) => (videoRefs.current[index] = el)}
-              className="w-full h-full object-cover absolute inset-0 z-0"
-              src={video.src}
+              ref={el => videoRefs.current[index] = el}
+              className="h-full w-full object-cover"
+              src={story.src}
               muted
               playsInline
+              loop
               preload="auto"
-              onEnded={handleEnded}
-              autoPlay={index === currentSlide}
             />
-            <div className="absolute inset-0 bg-black bg-opacity-50 z-0" />
-
-            <div className="relative z-10 h-full flex items-center">
-              <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="max-w-lg">
+            
+            {/* Dark gradient overlay for better text readability */}
+            <div className="absolute inset-0 bg-gradient-to-r from-black via-black/70 to-transparent" />
+            
+            {/* Story content - Synopsys-like layout */}
+            <div className="absolute inset-0 flex items-center z-20">
+              <div className="container mx-auto px-4 md:px-8 lg:px-16">
+                <div className="max-w-2xl">
                   <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
-                    {video.title}
+                    {story.heading} <br />
+                    <span className="text-3xl md:text-4xl lg:text-5xl font-normal">{story.subheading}</span>
                   </h1>
-                  <p className="text-xl md:text-2xl text-white mb-8">
-                    {video.description}
+                  <p className="text-lg md:text-xl text-white/90 mb-8">
+                    {story.description}
                   </p>
-                  <Link
-                    href={video.link}
-                    className="inline-block bg-green-600 hover:bg-green-700 text-white font-medium py-3 px-6 rounded transition-colors duration-200"
-                  >
-                    Learn More
-                  </Link>
+                  <div className="flex flex-wrap gap-4">
+                    <button className="flex items-center bg-white hover:bg-gray-100 text-gray-900 font-medium py-2 px-4 md:py-3 md:px-6 rounded transition-colors duration-200">
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clipRule="evenodd" />
+                      </svg>
+                      Watch
+                    </button>
+                    <Link
+                      href={story.link}
+                      className="inline-flex items-center bg-transparent hover:bg-white/10 text-white border border-white font-medium py-2 px-4 md:py-3 md:px-6 rounded transition-colors duration-200"
+                    >
+                      Discover Advanced Verification
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
+                        <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
+                      </svg>
+                    </Link>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         ))}
-      </Slider>
+      </div>
+      
+      {/* Navigation helpers (invisible) */}
+      <div 
+        className="absolute top-0 left-0 bottom-0 w-1/4 z-20 cursor-pointer" 
+        onClick={goToPrevStory}
+      />
+      <div 
+        className="absolute top-0 right-0 bottom-0 w-1/4 z-20 cursor-pointer" 
+        onClick={goToNextStory}
+      />
+      
+      {/* Play/Pause indicator */}
+      {isPaused && (
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-30">
+          <div className="bg-black/40 backdrop-blur-sm rounded-full p-3 animate-pulse">
+            <svg className="w-8 h-8 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              <path d="M10 8L16 12L10 16V8Z" fill="currentColor" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </div>
+        </div>
+      )}
+      
+      {/* CSS for progress bar animation */}
+      <style jsx global>{`
+        @keyframes progress-animation {
+          from { width: 0; }
+          to { width: 100%; }
+        }
+      `}</style>
     </div>
   );
 }

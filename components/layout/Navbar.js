@@ -1,22 +1,39 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(true);
+  const [isScrolled, setIsScrolled] = useState(true); // Changed: Always start with solid background
   const [activeDropdown, setActiveDropdown] = useState(null);
+  const navRef = useRef(null);
 
   useEffect(() => {
     const handleScroll = () => {
+      // Fixed: Always keep navbar visible with solid background
       if (window.scrollY > 10) {
         setIsScrolled(true);
       } else {
-        setIsScrolled(false);
+        // Changed: Keep solid background even at top for consistent visibility
+        setIsScrolled(true);
       }
     };
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Fixed: Add click outside detection
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (navRef.current && !navRef.current.contains(event.target)) {
+        setActiveDropdown(null);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
   }, []);
 
   const toggleMenu = () => {
@@ -28,16 +45,24 @@ export default function Navbar() {
     setActiveDropdown(activeDropdown === dropdown ? null : dropdown);
   };
 
+  // Fixed: Close dropdown when clicking on a link
+  const handleLinkClick = () => {
+    setActiveDropdown(null);
+    setIsOpen(false);
+  };
+
   const dropdowns = {
-    solutions: [
-      { name: 'AI-ML Solutions', href: '/solutions/ai-ml' }
-    ],
+    solutions: {
+      technology: [
+        { name: 'AI-ML Solutions', href: '/solutions/ai-ml' },
+        { name: 'Blockchain', href: '/solutions/blockchain' }
+      ]
+    },
     products: [
       { name: 'SDCVP-X', href: '/products/sdcvp-x' }
     ],
     services: [
-      { name: 'Overview', href: '/services' },
-      { name: 'Capabilities', href: '/services/capabilities' }
+      { name: 'Design Verification', href: '/services' },
     ],
     company: {
       overview: [
@@ -51,16 +76,31 @@ export default function Navbar() {
     }
   };
 
-
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      isScrolled ? 'bg-white shadow-md' : 'bg-transparent'
-    }`}>
+    <nav 
+      ref={navRef}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isScrolled ? 'bg-white shadow-md' : 'bg-white shadow-md'
+      }`}
+    >
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex justify-between h-16">
           <div className="flex-shrink-0 flex items-center">
-            <Link href="/" className={`text-2xl font-bold ${isScrolled ? 'text-green-700' : 'text-white'}`}>
-              Veripoint
+            <Link href="/" className="flex items-center">
+              {/* Replace with your actual logo */}
+              <img 
+                src="/logo.jpeg" 
+                alt="Veripoint Technologies" 
+                className="h-8 w-auto"
+                onError={(e) => {
+                  // Fallback to text if logo fails to load
+                  e.target.style.display = 'none';
+                  e.target.nextSibling.style.display = 'block';
+                }}
+              />
+              <span className="text-2xl font-bold text-green-700 hidden">
+                Veripoint
+              </span>
             </Link>
           </div>
 
@@ -69,22 +109,35 @@ export default function Navbar() {
               <div className="relative">
                 <button 
                   onClick={() => toggleDropdown('solutions')}
-                  className={`${activeDropdown === 'solutions' ? (isScrolled ? 'text-green-600' : 'text-green-300') : (isScrolled ? 'text-gray-700' : 'text-white')} hover:underline underline-offset-8 decoration-2 py-2 px-1`}
+                  className={`${
+                    activeDropdown === 'solutions' 
+                      ? 'text-green-600' 
+                      : 'text-gray-700'
+                  } hover:text-green-600 hover:underline underline-offset-8 decoration-2 py-2 px-1 transition-colors`}
                 >
                   Solutions
                 </button>
                 {activeDropdown === 'solutions' && (
-                  <div className="absolute z-10 -ml-4 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
-                    <div className="py-1" role="menu">
-                      {dropdowns.solutions.map((item, index) => (
-                        <Link 
-                          key={index} 
-                          href={item.href}
-                          className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-green-600"
-                        >
-                          {item.name}
-                        </Link>
-                      ))}
+                  <div className="absolute z-10 -ml-4 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
+                    <div className="py-2 px-3">
+                      <div>
+                        <h3 className="text-xs font-semibold text-gray-500 uppercase tracking-wider pb-1 mb-2 border-b border-gray-200">
+                          Technology
+                        </h3>
+                        <ul className="space-y-2">
+                          {dropdowns.solutions.technology.map((item, index) => (
+                            <li key={index}>
+                              <Link 
+                                href={item.href}
+                                className="block text-sm text-gray-700 hover:text-green-600 px-2 py-1 rounded hover:bg-gray-50"
+                                onClick={handleLinkClick}
+                              >
+                                {item.name}
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
                     </div>
                   </div>
                 )}
@@ -93,7 +146,11 @@ export default function Navbar() {
               <div className="relative">
                 <button 
                   onClick={() => toggleDropdown('products')}
-                  className={`${activeDropdown === 'products' ? (isScrolled ? 'text-green-600' : 'text-green-300') : (isScrolled ? 'text-gray-700' : 'text-white')} hover:underline underline-offset-8 decoration-2 py-2 px-1`}
+                  className={`${
+                    activeDropdown === 'products' 
+                      ? 'text-green-600' 
+                      : 'text-gray-700'
+                  } hover:text-green-600 hover:underline underline-offset-8 decoration-2 py-2 px-1 transition-colors`}
                 >
                   Products
                 </button>
@@ -105,6 +162,7 @@ export default function Navbar() {
                           key={index} 
                           href={item.href}
                           className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-green-600"
+                          onClick={handleLinkClick}
                         >
                           {item.name}
                         </Link>
@@ -117,7 +175,11 @@ export default function Navbar() {
               <div className="relative">
                 <button 
                   onClick={() => toggleDropdown('services')}
-                  className={`${activeDropdown === 'services' ? (isScrolled ? 'text-green-600' : 'text-green-300') : (isScrolled ? 'text-gray-700' : 'text-white')} hover:underline underline-offset-8 decoration-2 py-2 px-1`}
+                  className={`${
+                    activeDropdown === 'services' 
+                      ? 'text-green-600' 
+                      : 'text-gray-700'
+                  } hover:text-green-600 hover:underline underline-offset-8 decoration-2 py-2 px-1 transition-colors`}
                 >
                   Services
                 </button>
@@ -129,6 +191,7 @@ export default function Navbar() {
                           key={index} 
                           href={item.href}
                           className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-green-600"
+                          onClick={handleLinkClick}
                         >
                           {item.name}
                         </Link>
@@ -141,7 +204,11 @@ export default function Navbar() {
               <div className="relative">
                 <button 
                   onClick={() => toggleDropdown('company')}
-                  className={`${activeDropdown === 'company' ? (isScrolled ? 'text-green-600' : 'text-green-300') : (isScrolled ? 'text-gray-700' : 'text-white')} hover:underline underline-offset-8 decoration-2 py-2 px-1`}
+                  className={`${
+                    activeDropdown === 'company' 
+                      ? 'text-green-600' 
+                      : 'text-gray-700'
+                  } hover:text-green-600 hover:underline underline-offset-8 decoration-2 py-2 px-1 transition-colors`}
                 >
                   Company
                 </button>
@@ -159,6 +226,7 @@ export default function Navbar() {
                                 <Link 
                                   href={item.href}
                                   className="block text-sm text-gray-700 hover:text-green-600"
+                                  onClick={handleLinkClick}
                                 >
                                   {item.name}
                                 </Link>
@@ -177,6 +245,7 @@ export default function Navbar() {
                                 <Link 
                                   href={item.href}
                                   className="block text-sm text-gray-700 hover:text-green-600"
+                                  onClick={handleLinkClick}
                                 >
                                   {item.name}
                                 </Link>
@@ -193,7 +262,7 @@ export default function Navbar() {
           </div>
 
           <div className="hidden md:flex items-center space-x-4">
-            <button className={`p-1 ${isScrolled ? 'text-gray-700 hover:text-green-600' : 'text-white hover:text-green-300'} focus:outline-none`}>
+            <button className="p-1 text-gray-700 hover:text-green-600 focus:outline-none transition-colors">
               <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
               </svg>
@@ -244,16 +313,21 @@ export default function Navbar() {
           </button>
           {activeDropdown === 'solutions' && (
             <div className="pl-4">
-              {dropdowns.solutions.map((item, index) => (
-                <Link 
-                  key={index} 
-                  href={item.href} 
-                  className="text-gray-700 hover:text-green-600 block px-3 py-2 rounded-md text-sm"
-                  onClick={toggleMenu}
-                >
-                  {item.name}
-                </Link>
-              ))}
+              <div className="border-b border-gray-200 pb-2 mb-2">
+                <div className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1">
+                  Technology
+                </div>
+                {dropdowns.solutions.technology.map((item, index) => (
+                  <Link 
+                    key={index} 
+                    href={item.href} 
+                    className="text-gray-700 hover:text-green-600 block px-3 py-2 rounded-md text-sm"
+                    onClick={handleLinkClick}
+                  >
+                    {item.name}
+                  </Link>
+                ))}
+              </div>
             </div>
           )}
           
@@ -270,7 +344,7 @@ export default function Navbar() {
                   key={index} 
                   href={item.href} 
                   className="text-gray-700 hover:text-green-600 block px-3 py-2 rounded-md text-sm"
-                  onClick={toggleMenu}
+                  onClick={handleLinkClick}
                 >
                   {item.name}
                 </Link>
@@ -291,7 +365,7 @@ export default function Navbar() {
                   key={index} 
                   href={item.href} 
                   className="text-gray-700 hover:text-green-600 block px-3 py-2 rounded-md text-sm"
-                  onClick={toggleMenu}
+                  onClick={handleLinkClick}
                 >
                   {item.name}
                 </Link>
@@ -316,7 +390,7 @@ export default function Navbar() {
                     key={index} 
                     href={item.href} 
                     className="text-gray-700 hover:text-green-600 block px-3 py-2 rounded-md text-sm"
-                    onClick={toggleMenu}
+                    onClick={handleLinkClick}
                   >
                     {item.name}
                   </Link>
@@ -331,7 +405,7 @@ export default function Navbar() {
                     key={index} 
                     href={item.href} 
                     className="text-gray-700 hover:text-green-600 block px-3 py-2 rounded-md text-sm"
-                    onClick={toggleMenu}
+                    onClick={handleLinkClick}
                   >
                     {item.name}
                   </Link>
@@ -350,7 +424,7 @@ export default function Navbar() {
             <Link 
               href="/contact" 
               className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-md text-sm font-medium mx-3"
-              onClick={toggleMenu}
+              onClick={handleLinkClick}
             >
               Contact Sales
             </Link>

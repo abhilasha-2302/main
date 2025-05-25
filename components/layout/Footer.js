@@ -6,8 +6,21 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="flex flex-col md:flex-row justify-between">
           <div className="w-full md:w-1/5 mb-8 md:mb-0">
-            <Link href="/" className="text-green-600 font-bold text-xl">
-              VERIPOINT
+            <Link href="/" className="flex items-center mb-2">
+              {/* Replace with your actual logo */}
+              <img 
+                src="/logo.jpeg" 
+                alt="Veripoint Technologies" 
+                className="h-8 w-auto"
+                onError={(e) => {
+                  // Fallback to text if logo fails to load
+                  e.target.style.display = 'none';
+                  e.target.nextSibling.style.display = 'block';
+                }}
+              />
+              <span className="text-green-600 font-bold text-xl hidden">
+                VERIPOINT
+              </span>
             </Link>
             <p className="mt-2 text-sm text-gray-600">
               Forward-looking semiconductor solutions company
@@ -73,7 +86,12 @@ export default function Footer() {
               <ul className="space-y-2">
                 <li>
                   <Link href="/solutions/ai-ml" className="text-gray-600 hover:text-green-600 text-sm">
-                    Solutions
+                    AI-ML Solutions
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/solutions/blockchain" className="text-gray-600 hover:text-green-600 text-sm">
+                    Blockchain
                   </Link>
                 </li>
                 <li>
