@@ -4,7 +4,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 
 export default function TelecommunicationsSolutionsPage() {
-  const industries = [
+  const services = [
     {
       name: 'Mobile Network Operators',
       slug: 'mobile-network-operators',
@@ -125,7 +125,7 @@ export default function TelecommunicationsSolutionsPage() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      {/* Video Hero Section - Adjusted Height */}
+      {/* Video Hero Section */}
       <section className="relative h-[calc(100vh-120px)] w-full overflow-hidden bg-black">
         <video
           className="h-full w-full object-cover"
@@ -137,10 +137,8 @@ export default function TelecommunicationsSolutionsPage() {
           preload="auto"
         />
         
-        {/* Dark gradient overlay */}
-        <div className="absolute inset-0 bg-black/40" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/60" />
         
-        {/* Content overlay - centered */}
         <div className="absolute inset-0 flex items-center justify-center z-20">
           <div className="text-center">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-light text-white mb-8">
@@ -158,55 +156,55 @@ export default function TelecommunicationsSolutionsPage() {
         </div>
       </section>
 
-      {/* Navigation Section - Only Key Benefits and Industries */}
+      {/* Navigation Section */}
       <section className="bg-white border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between py-4">
             <div className="flex space-x-8">
-              <a href="#industries" className="text-gray-700 hover:text-gray-900 font-medium">Industries</a>
+              <a href="#services" className="text-gray-700 hover:text-gray-900 font-medium">Services</a>
               <a href="#benefits" className="text-gray-700 hover:text-gray-900 font-medium">Key Benefits</a>
             </div>
-            <button className="bg-gray-900 hover:bg-gray-800 text-white font-medium py-2 px-4 rounded transition-colors duration-200">
+            <button className="bg-blue-700 hover:bg-blue-800 text-white font-medium py-2 px-4 rounded transition-colors duration-200">
               Get Started
             </button>
           </div>
         </div>
       </section>
 
-      {/* Industries Grid */}
-      <section id="industries" className="py-20 bg-white">
+      {/* Services Grid */}
+      <section id="services" className="py-20 bg-slate-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-left mb-16">
-            <h2 className="text-3xl text-black mb-4">
+            <h2 className="text-3xl font-normal text-slate-900 mb-4">
               Choose Your Services
             </h2>
-            <p className="text-lg text-black leading-relaxed">
+            <p className="text-lg text-slate-600 leading-relaxed max-w-3xl">
               Select your telecommunications sector to explore AI-powered services designed to enhance network reliability, optimize operations, and elevate customer service experiences.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {industries.map((industry, index) => (
+            {services.map((service, index) => (
               <div
                 key={index}
-                className="group bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 hover:border-green-200"
+                className="group bg-white rounded-lg shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1 border border-slate-200 hover:border-blue-300"
               >
                 <div className="p-6">
                   <div className="flex items-center justify-between mb-4">
                     <div className="text-3xl">
-                      {industry.icon}
+                      {service.icon}
                     </div>
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-3 group-hover:text-green-600 transition-colors duration-300">
-                    {industry.name}
+                  <h3 className="text-xl font-semibold text-slate-900 mb-3 group-hover:text-blue-700 transition-colors duration-300">
+                    {service.name}
                   </h3>
-                  <p className="text-gray-600 text-sm leading-relaxed mb-4">
-                    {industry.description}
+                  <p className="text-slate-600 text-sm leading-relaxed mb-4">
+                    {service.description}
                   </p>
                   <div className="space-y-2">
-                    {industry.features.map((feature, idx) => (
-                      <div key={idx} className="flex items-center text-xs text-gray-500">
-                        <div className="w-1.5 h-1.5 bg-green-400 rounded-full mr-2"></div>
+                    {service.features.map((feature, idx) => (
+                      <div key={idx} className="flex items-center text-xs text-slate-500">
+                        <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-2"></div>
                         {feature}
                       </div>
                     ))}
@@ -219,43 +217,43 @@ export default function TelecommunicationsSolutionsPage() {
       </section>
 
       {/* Key Benefits Section */}
-      <section id="benefits" className="py-16 bg-gradient-to-r from-green-600 to-emerald-600">
+      <section id="benefits" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-normal text-white mb-4">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-normal text-slate-900 mb-4">
               Why Choose AI-Powered Telecommunications?
             </h2>
-            <p className="text-lg text-white">
-              Discover how AI transforms telecommunications operations and customer experience
+            <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+              Discover how AI transforms telecommunications operations and customer experience with cutting-edge technology solutions.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="text-center bg-white rounded-lg p-6 shadow-md">
-              <div className="bg-green-100 rounded-full p-3 w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-                <svg className="h-8 w-8 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+            <div className="text-center bg-blue-50 rounded-lg p-8 shadow-sm border border-blue-100">
+              <div className="bg-white rounded-full p-4 w-20 h-20 mx-auto mb-6 flex items-center justify-center shadow-sm">
+                <svg className="h-10 w-10 text-blue-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                 </svg>
               </div>
-              <h3 className="text-xl font-normal text-gray-900 mb-2">Network Reliability</h3>
-              <p className="text-gray-600">Self-healing networks with predictive maintenance and autonomous fault resolution</p>
+              <h3 className="text-xl font-semibold text-slate-900 mb-3">Network Reliability</h3>
+              <p className="text-slate-600 leading-relaxed">Self-healing networks with predictive maintenance and autonomous fault resolution ensure maximum uptime and service quality.</p>
             </div>
-            <div className="text-center bg-white rounded-lg p-6 shadow-md">
-              <div className="bg-green-100 rounded-full p-3 w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-                <svg className="h-8 w-8 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+            <div className="text-center bg-blue-50 rounded-lg p-8 shadow-sm border border-blue-100">
+              <div className="bg-white rounded-full p-4 w-20 h-20 mx-auto mb-6 flex items-center justify-center shadow-sm">
+                <svg className="h-10 w-10 text-blue-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
               </div>
-              <h3 className="text-xl font-normal text-gray-900 mb-2">Intelligent Automation</h3>
-              <p className="text-gray-600">AI-driven traffic optimization and automated operations for peak performance</p>
+              <h3 className="text-xl font-semibold text-slate-900 mb-3">Intelligent Automation</h3>
+              <p className="text-slate-600 leading-relaxed">AI-driven traffic optimization and automated operations deliver peak performance and operational efficiency.</p>
             </div>
-            <div className="text-center bg-white rounded-lg p-6 shadow-md">
-              <div className="bg-green-100 rounded-full p-3 w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-                <svg className="h-8 w-8 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+            <div className="text-center bg-blue-50 rounded-lg p-8 shadow-sm border border-blue-100">
+              <div className="bg-white rounded-full p-4 w-20 h-20 mx-auto mb-6 flex items-center justify-center shadow-sm">
+                <svg className="h-10 w-10 text-blue-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                 </svg>
               </div>
-              <h3 className="text-xl font-normal text-gray-900 mb-2">Enhanced Customer Experience</h3>
-              <p className="text-gray-600">AI-powered support systems and personalized service delivery</p>
+              <h3 className="text-xl font-semibold text-slate-900 mb-3">Enhanced Customer Experience</h3>
+              <p className="text-slate-600 leading-relaxed">AI-powered support systems and personalized service delivery create superior customer satisfaction and loyalty.</p>
             </div>
           </div>
         </div>

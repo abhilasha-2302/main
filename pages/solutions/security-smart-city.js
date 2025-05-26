@@ -1,296 +1,214 @@
-import { useState, useEffect } from 'react';
+import CallToAction from '@/components/home/CallToAction';
+import Layout from '@/components/layout/Layout';
 import Head from 'next/head';
+import Link from 'next/link';
 
-export default function SmartCitySecurityPage() {
-  const [isVideoLoaded, setIsVideoLoaded] = useState(false);
-  const [activeTab, setActiveTab] = useState('surveillance');
-
-  useEffect(() => {
-    // Simulate video loading
-    const timer = setTimeout(() => setIsVideoLoaded(true), 1000);
-    return () => clearTimeout(timer);
-  }, []);
-
-  const industries = [
-    'Smart Cities & Urban Development',
-    'Public Safety & Law Enforcement',
-    'Transport & Traffic Management',
-    'Government & Urban Planning',
-    'Surveillance & Security',
-    'AI & Machine Learning',
-    'Automated Access Control',
-    'Telecommunications & IoT',
-    'Automotive & Smart Parking Solutions'
-  ];
-
-  const keyOfferings = [
+export default function SmartCitiesSolutionsPage() {
+  const services = [
     {
-      id: 'surveillance',
-      title: 'Intelligent Surveillance Integration',
-      description: 'Seamlessly enhances existing CCTV infrastructure with AI-powered anomaly detection and weapon recognition—enabling real-time threat identification and a proactive approach to urban safety.',
-      icon: '🎯'
+      name: 'Intelligent Surveillance Systems',
+      slug: 'intelligent-surveillance-systems',
+      description: 'Real-time anomaly detection and weapon recognition integrated with existing CCTV networks. Advanced computer vision ensures comprehensive security monitoring.',
+      icon: '📹',
+      features: [
+        'Real-time anomaly detection',
+        'Weapon recognition',
+        'CCTV network integration'
+      ]
     },
     {
-      id: 'crowd',
-      title: 'Crowd Behavior Analysis',
-      description: 'Leverages advanced machine learning to detect abnormal behaviors and crowd movement patterns—ensuring safety and control during public events, emergencies, and high-density gatherings.',
-      icon: '👥'
+      name: 'Crowd Behavior Analytics',
+      slug: 'crowd-behavior-analytics',
+      description: 'Monitors crowd dynamics to predict and prevent safety incidents. AI algorithms analyze movement patterns and identify potential risks before they escalate.',
+      icon: '👥',
+      features: [
+        'Crowd density monitoring',
+        'Movement pattern analysis',
+        'Incident prediction'
+      ]
     },
     {
-      id: 'traffic',
-      title: 'AI-Driven Traffic & Access Monitoring',
-      description: 'Empowers smart mobility with License Plate Recognition (LPR) for secure access control, traffic flow analysis, and efficient smart parking—ensuring smooth, secure, and responsive urban transit systems.',
-      icon: '🚗'
+      name: 'License Plate Recognition (LPR)',
+      slug: 'license-plate-recognition',
+      description: 'Facilitates secure access control and smart parking management. High-accuracy OCR technology for automated vehicle identification and tracking.',
+      icon: '🚗',
+      features: [
+        'Automated vehicle identification',
+        'Access control systems',
+        'Smart parking management'
+      ]
     },
     {
-      id: 'ecosystem',
-      title: 'Unified Infrastructure Ecosystem',
-      description: 'Breaks down operational silos through seamless integration of security systems such as surveillance, access control, and parking—fostering centralized monitoring and enhanced data sharing across departments.',
-      icon: '🔗'
-    }
-  ];
-
-  const technologies = [
-    {
-      title: 'Artificial Intelligence & Deep Learning',
-      description: 'for real-time video analytics, behavior recognition, and threat detection.',
-      gradient: 'from-green-500 to-green-600'
+      name: 'Integrated Urban Security Platform',
+      slug: 'integrated-urban-security-platform',
+      description: 'Connects disparate security systems for unified data sharing and operations. Centralized command and control for comprehensive city-wide security management.',
+      icon: '🏢',
+      features: [
+        'Unified data sharing',
+        'Centralized operations',
+        'Multi-system integration'
+      ]
     },
     {
-      title: 'Computer Vision',
-      description: 'for weapon detection, facial recognition, and license plate recognition (LPR).',
-      gradient: 'from-green-600 to-green-700'
+      name: 'Traffic Flow Optimization',
+      slug: 'traffic-flow-optimization',
+      description: 'AI-powered traffic management system that analyzes real-time data to optimize signal timing and reduce congestion in urban environments.',
+      icon: '🚦',
+      features: [
+        'Real-time traffic analysis',
+        'Signal optimization',
+        'Congestion reduction'
+      ]
     },
     {
-      title: 'Edge AI Processing',
-      description: 'for faster decision-making and low-latency responses at the point of data capture.',
-      gradient: 'from-green-400 to-green-500'
+      name: 'Emergency Response System',
+      slug: 'emergency-response-system',
+      description: 'Automated incident detection and emergency response coordination. AI-driven alerts and resource allocation for faster emergency services deployment.',
+      icon: '🚨',
+      features: [
+        'Automated incident detection',
+        'Resource allocation',
+        'Response coordination'
+      ]
     },
     {
-      title: 'Internet of Things (IoT)',
-      description: 'to create interconnected surveillance, traffic, and access control systems.',
-      gradient: 'from-green-700 to-green-800'
+      name: 'Public Safety Analytics',
+      slug: 'public-safety-analytics',
+      description: 'Comprehensive crime pattern analysis and predictive policing tools. Data-driven insights for proactive law enforcement and community safety.',
+      icon: '🛡️',
+      features: [
+        'Crime pattern analysis',
+        'Predictive policing',
+        'Safety trend monitoring'
+      ]
     },
     {
-      title: 'Big Data & Cloud Infrastructure',
-      description: 'for centralized data storage, advanced analytics, and seamless system scalability.',
-      gradient: 'from-green-300 to-green-400'
+      name: 'Environmental Monitoring',
+      slug: 'environmental-monitoring',
+      description: 'IoT-based air quality, noise, and environmental condition monitoring. Real-time data collection for sustainable urban planning and health protection.',
+      icon: '🌍',
+      features: [
+        'Air quality monitoring',
+        'Noise level tracking',
+        'Environmental alerts'
+      ]
     },
     {
-      title: 'Machine Learning Algorithms',
-      description: 'for predictive modeling, crowd pattern analysis, and system optimization.',
-      gradient: 'from-green-800 to-green-900'
+      name: 'Smart Infrastructure Management',
+      slug: 'smart-infrastructure-management',
+      description: 'Predictive maintenance and monitoring of urban infrastructure including bridges, roads, and utilities. IoT sensors prevent failures before they occur.',
+      icon: '🏗️',
+      features: [
+        'Predictive maintenance',
+        'Infrastructure monitoring',
+        'Failure prevention'
+      ]
+    },
+    {
+      name: 'Citizen Services Platform',
+      slug: 'citizen-services-platform',
+      description: 'AI-powered citizen engagement and service delivery platform. Chatbots and automated systems provide 24/7 municipal services and information.',
+      icon: '🏛️',
+      features: [
+        'Citizen engagement tools',
+        'Automated service delivery',
+        '24/7 information access'
+      ]
     }
   ];
 
   return (
-    <>
+    <Layout>
       <Head>
-        <title>Smart City Security & Infrastructure | Veripoint</title>
-        <meta name="description" content="Transform urban intelligence with advanced surveillance & AI solutions for smart cities, public safety, and traffic management." />
+        <title>Smart Cities & Security AI Solutions | Veripoint Technologies</title>
+        <meta name="description" content="Intelligent urban infrastructure solutions that enhance public safety, optimize traffic management, and enable seamless security integration for smart cities" />
+        <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      {/* Hero Video Section */}
-      <section className="relative h-screen overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-transparent z-10"></div>
+      {/* Video Hero Section */}
+      <section className="relative h-[calc(100vh-120px)] w-full overflow-hidden bg-black">
+        <video
+          className="h-full w-full object-cover"
+          src="/videos/smart-cities.mp4"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+        />
         
-        {/* Video Background */}
-        <div className="absolute inset-0">
-          {!isVideoLoaded ? (
-            <div className="w-full h-full bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 animate-pulse flex items-center justify-center">
-              <div className="text-white text-xl">Loading...</div>
-            </div>
-          ) : (
-            <div className="w-full h-full bg-gradient-to-br from-gray-900 via-green-900 to-gray-800 relative overflow-hidden">
-              {/* Animated tech elements */}
-              <div className="absolute inset-0">
-                <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-green-400 rounded-full animate-ping"></div>
-                <div className="absolute top-1/3 right-1/3 w-1 h-1 bg-green-300 rounded-full animate-pulse"></div>
-                <div className="absolute bottom-1/4 left-1/3 w-3 h-3 bg-green-500 rounded-full animate-bounce"></div>
-                <div className="absolute top-1/2 right-1/4 w-1 h-1 bg-green-400 rounded-full animate-ping"></div>
-              </div>
-              
-              {/* Grid overlay */}
-              <div className="absolute inset-0 opacity-20">
-                <div className="w-full h-full" style={{
-                  backgroundImage: `
-                    linear-gradient(rgba(34, 197, 94, 0.3) 1px, transparent 1px),
-                    linear-gradient(90deg, rgba(34, 197, 94, 0.3) 1px, transparent 1px)
-                  `,
-                  backgroundSize: '50px 50px'
-                }}></div>
-              </div>
-            </div>
-          )}
-        </div>
-
-        {/* Hero Content */}
-        <div className="relative z-20 h-full flex items-center">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="max-w-4xl">
-              <div className="mb-6 animate-fade-in-up">
-                <span className="inline-block px-4 py-2 bg-green-600/20 text-green-400 rounded-full text-sm font-medium backdrop-blur-sm border border-green-500/30">
-                  Smart City Solutions
-                </span>
-              </div>
-              
-              <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 animate-fade-in-up animation-delay-200">
-                Transforming
-                <span className="block bg-gradient-to-r from-green-400 to-green-200 bg-clip-text text-transparent">
-                  Urban Intelligence
-                </span>
-              </h1>
-              
-              <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl animate-fade-in-up animation-delay-400">
-                with Advanced Surveillance & AI
-              </p>
-              
-              <p className="text-lg text-gray-400 mb-10 max-w-3xl leading-relaxed animate-fade-in-up animation-delay-600">
-                Modern urban environments demand agile, intelligent, and integrated security solutions. At the intersection of AI, IoT, and real-time analytics, we deliver comprehensive solutions designed to elevate public safety and optimize traffic management.
-              </p>
-              
-              <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-up animation-delay-800">
-                <button className="px-8 py-4 bg-green-600 hover:bg-green-700 text-white rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-xl">
-                  Explore Solutions
-                </button>
-                <button className="px-8 py-4 border-2 border-white/30 text-white hover:bg-white/10 rounded-lg font-semibold transition-all duration-300 backdrop-blur-sm">
-                  Watch Demo
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20">
-          <div className="animate-bounce">
-            <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-            </svg>
-          </div>
-        </div>
-      </section>
-
-      {/* Industries We Serve */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Industries We Serve
-            </h2>
-            <div className="w-24 h-1 bg-green-600 mx-auto"></div>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {industries.map((industry, index) => (
-              <div 
-                key={index}
-                className="group bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100"
-              >
-                <div className="flex items-center space-x-3">
-                  <div className="w-3 h-3 bg-green-600 rounded-full group-hover:scale-125 transition-transform duration-300"></div>
-                  <h3 className="text-lg font-semibold text-gray-900 group-hover:text-green-600 transition-colors duration-300">
-                    {industry}
-                  </h3>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Key Offerings */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Key Offerings
-            </h2>
-            <div className="w-24 h-1 bg-green-600 mx-auto mb-6"></div>
-            <p className="text-xl text-gray-600 max-w-4xl mx-auto">
-              Comprehensive solutions designed to elevate public safety, optimize traffic management, and support smart urban development.
-            </p>
-          </div>
-
-          {/* Tab Navigation */}
-          <div className="flex flex-wrap justify-center mb-12 border-b border-gray-200">
-            {keyOfferings.map((offering) => (
-              <button
-                key={offering.id}
-                onClick={() => setActiveTab(offering.id)}
-                className={`px-6 py-3 mx-2 mb-4 font-semibold transition-all duration-300 border-b-2 ${
-                  activeTab === offering.id
-                    ? 'text-green-600 border-green-600'
-                    : 'text-gray-600 border-transparent hover:text-green-600'
-                }`}
-              >
-                <span className="mr-2">{offering.icon}</span>
-                {offering.title}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/60" />
+        
+        <div className="absolute inset-0 flex items-center justify-center z-20">
+          <div className="text-center">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-light text-white mb-8">
+              Smart Cities & Security AI Solutions
+            </h1>
+            <Link href="/video-page">
+              <button className="inline-flex items-center bg-white hover:bg-gray-100 text-gray-900 font-medium py-3 px-6 rounded transition-colors duration-200">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clipRule="evenodd" />
+                </svg>
+                Watch
               </button>
-            ))}
-          </div>
-
-          {/* Active Tab Content */}
-          <div className="max-w-4xl mx-auto">
-            {keyOfferings.map((offering) => (
-              <div
-                key={offering.id}
-                className={`transition-all duration-500 ${
-                  activeTab === offering.id ? 'opacity-100' : 'opacity-0 hidden'
-                }`}
-              >
-                <div className="bg-gradient-to-r from-green-50 to-green-100 rounded-2xl p-8">
-                  <div className="flex items-start space-x-6">
-                    <div className="text-6xl">{offering.icon}</div>
-                    <div>
-                      <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                        {offering.title}
-                      </h3>
-                      <p className="text-lg leading-relaxed text-gray-700">
-                        {offering.description}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
+            </Link>
           </div>
         </div>
       </section>
 
-      {/* Technologies Section */}
-      <section className="py-20 bg-gray-900">
+      {/* Navigation Section */}
+      <section className="bg-white border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Technologies We Use
+          <div className="flex items-center justify-between py-4">
+            <div className="flex space-x-8">
+              <a href="#services" className="text-gray-700 hover:text-gray-900 font-medium">Services</a>
+              <a href="#benefits" className="text-gray-700 hover:text-gray-900 font-medium">Key Benefits</a>
+            </div>
+            <button className="bg-emerald-700 hover:bg-emerald-800 text-white font-medium py-2 px-4 rounded transition-colors duration-200">
+              Get Started
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* Services Grid */}
+      <section id="services" className="py-20 bg-slate-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-left mb-16">
+            <h2 className="text-3xl font-normal text-slate-900 mb-4">
+              Choose Your Services
             </h2>
-            <div className="w-24 h-1 bg-green-500 mx-auto mb-6"></div>
-            <p className="text-xl text-gray-300 max-w-4xl mx-auto">
-              To deliver intelligent, scalable, and future-ready solutions, we leverage cutting-edge technologies
+            <p className="text-lg text-slate-600 leading-relaxed max-w-3xl">
+              Select from our comprehensive AI-driven smart city solutions designed to enhance public safety, optimize urban infrastructure, and create more efficient, secure urban environments.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {technologies.map((tech, index) => (
-              <div 
+            {services.map((service, index) => (
+              <div
                 key={index}
-                className="group relative bg-gray-800 p-8 rounded-2xl hover:transform hover:scale-105 transition-all duration-300 border border-gray-700 hover:border-green-500/50"
+                className="group bg-white rounded-lg shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1 border border-slate-200 hover:border-emerald-300"
               >
-                <div className={`absolute inset-0 bg-gradient-to-r ${tech.gradient} opacity-0 group-hover:opacity-10 rounded-2xl transition-opacity duration-300`}></div>
-                
-                <div className="relative z-10">
-                  <div className={`w-12 h-12 bg-gradient-to-r ${tech.gradient} rounded-lg mb-6 flex items-center justify-center`}>
-                    <div className="w-6 h-6 bg-white rounded-sm"></div>
+                <div className="p-6">
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="text-3xl">
+                      {service.icon}
+                    </div>
                   </div>
-                  
-                  <h3 className="text-xl font-bold text-white mb-4 group-hover:text-green-400 transition-colors duration-300">
-                    {tech.title}
+                  <h3 className="text-xl font-semibold text-slate-900 mb-3 group-hover:text-emerald-700 transition-colors duration-300">
+                    {service.name}
                   </h3>
-                  
-                  <p className="text-gray-300 leading-relaxed">
-                    {tech.description}
+                  <p className="text-slate-600 text-sm leading-relaxed mb-4">
+                    {service.description}
                   </p>
+                  <div className="space-y-2">
+                    {service.features.map((feature, idx) => (
+                      <div key={idx} className="flex items-center text-xs text-slate-500">
+                        <div className="w-1.5 h-1.5 bg-emerald-500 rounded-full mr-2"></div>
+                        {feature}
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
             ))}
@@ -298,58 +216,53 @@ export default function SmartCitySecurityPage() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-green-600 to-green-700">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            Ready to Transform Your City?
-          </h2>
-          <p className="text-xl text-green-100 mb-8 max-w-3xl mx-auto">
-            Discover how our intelligent surveillance and AI solutions can enhance public safety and optimize urban infrastructure management.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="px-8 py-4 bg-white text-green-600 hover:bg-gray-100 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
-              Schedule Consultation
-            </button>
-            <button className="px-8 py-4 border-2 border-white text-white hover:bg-white/10 rounded-lg font-semibold transition-all duration-300">
-              Download Brochure
-            </button>
+      {/* Key Benefits Section */}
+      <section id="benefits" className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-normal text-slate-900 mb-4">
+              Why Choose Smart City Solutions?
+            </h2>
+            <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+              Discover how AI transforms urban infrastructure and public safety management with cutting-edge technology solutions.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="text-center bg-emerald-50 rounded-lg p-8 shadow-sm border border-emerald-100">
+              <div className="bg-white rounded-full p-4 w-20 h-20 mx-auto mb-6 flex items-center justify-center shadow-sm">
+                <svg className="h-10 w-10 text-emerald-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-semibold text-slate-900 mb-3">Enhanced Public Safety</h3>
+              <p className="text-slate-600 leading-relaxed">AI-powered surveillance and monitoring systems protect citizens and prevent incidents before they occur.</p>
+            </div>
+            <div className="text-center bg-emerald-50 rounded-lg p-8 shadow-sm border border-emerald-100">
+              <div className="bg-white rounded-full p-4 w-20 h-20 mx-auto mb-6 flex items-center justify-center shadow-sm">
+                <svg className="h-10 w-10 text-emerald-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-semibold text-slate-900 mb-3">Optimized Traffic Flow</h3>
+              <p className="text-slate-600 leading-relaxed">Smart traffic management reduces congestion and improves urban mobility through intelligent routing.</p>
+            </div>
+            <div className="text-center bg-emerald-50 rounded-lg p-8 shadow-sm border border-emerald-100">
+              <div className="bg-white rounded-full p-4 w-20 h-20 mx-auto mb-6 flex items-center justify-center shadow-sm">
+                <svg className="h-10 w-10 text-emerald-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-semibold text-slate-900 mb-3">Integrated Operations</h3>
+              <p className="text-slate-600 leading-relaxed">Unified platforms connect all city systems for seamless data sharing and coordinated response.</p>
+            </div>
           </div>
         </div>
       </section>
 
-      <style jsx>{`
-        @keyframes fade-in-up {
-          from {
-            opacity: 0;
-            transform: translateY(30px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-        
-        .animate-fade-in-up {
-          animation: fade-in-up 0.8s ease-out forwards;
-        }
-        
-        .animation-delay-200 {
-          animation-delay: 0.2s;
-        }
-        
-        .animation-delay-400 {
-          animation-delay: 0.4s;
-        }
-        
-        .animation-delay-600 {
-          animation-delay: 0.6s;
-        }
-        
-        .animation-delay-800 {
-          animation-delay: 0.8s;
-        }
-      `}</style>
-    </>
+      {/* Call to Action Section */}
+      <section id="contact">
+        <CallToAction />
+      </section>
+    </Layout>
   );
 }

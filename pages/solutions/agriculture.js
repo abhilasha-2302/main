@@ -137,7 +137,7 @@ export default function AgricultureSolutionsPage() {
           preload="auto"
         />
         
-        <div className="absolute inset-0 bg-black/40" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/60" />
         
         <div className="absolute inset-0 flex items-center justify-center z-20">
           <div className="text-center">
@@ -164,7 +164,7 @@ export default function AgricultureSolutionsPage() {
               <a href="#services" className="text-gray-700 hover:text-gray-900 font-medium">Services</a>
               <a href="#benefits" className="text-gray-700 hover:text-gray-900 font-medium">Key Benefits</a>
             </div>
-            <button className="bg-gray-900 hover:bg-gray-800 text-white font-medium py-2 px-4 rounded transition-colors duration-200">
+            <button className="bg-green-700 hover:bg-green-800 text-white font-medium py-2 px-4 rounded transition-colors duration-200">
               Get Started
             </button>
           </div>
@@ -172,14 +172,14 @@ export default function AgricultureSolutionsPage() {
       </section>
 
       {/* Services Grid */}
-      <section id="services" className="py-20 bg-white">
+      <section id="services" className="py-20 bg-slate-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-left mb-16">
-            <h2 className="text-3xl text-black mb-4">
+            <h2 className="text-3xl font-normal text-slate-900 mb-4">
               Choose Your Services
             </h2>
-            <p className="text-lg text-black leading-relaxed">
-              Select from our comprehensive AI-driven agricultural services designed to optimize crop yields, enhance climate risk management, and streamline farming operations.
+            <p className="text-lg text-slate-600 leading-relaxed max-w-3xl">
+              Select from our comprehensive AI-driven agricultural services designed to optimize crop yields, enhance climate risk management, and streamline farming operations for sustainable agriculture.
             </p>
           </div>
 
@@ -187,7 +187,7 @@ export default function AgricultureSolutionsPage() {
             {services.map((service, index) => (
               <div
                 key={index}
-                className="group bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 hover:border-green-200"
+                className="group bg-white rounded-lg shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1 border border-slate-200 hover:border-green-300"
               >
                 <div className="p-6">
                   <div className="flex items-center justify-between mb-4">
@@ -195,16 +195,16 @@ export default function AgricultureSolutionsPage() {
                       {service.icon}
                     </div>
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-3 group-hover:text-green-600 transition-colors duration-300">
+                  <h3 className="text-xl font-semibold text-slate-900 mb-3 group-hover:text-green-700 transition-colors duration-300">
                     {service.name}
                   </h3>
-                  <p className="text-gray-600 text-sm leading-relaxed mb-4">
+                  <p className="text-slate-600 text-sm leading-relaxed mb-4">
                     {service.description}
                   </p>
                   <div className="space-y-2">
                     {service.features.map((feature, idx) => (
-                      <div key={idx} className="flex items-center text-xs text-gray-500">
-                        <div className="w-1.5 h-1.5 bg-green-400 rounded-full mr-2"></div>
+                      <div key={idx} className="flex items-center text-xs text-slate-500">
+                        <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-2"></div>
                         {feature}
                       </div>
                     ))}
@@ -217,43 +217,43 @@ export default function AgricultureSolutionsPage() {
       </section>
 
       {/* Key Benefits Section */}
-      <section id="benefits" className="py-16 bg-gradient-to-r from-green-600 to-emerald-600">
+      <section id="benefits" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-normal text-white mb-4">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-normal text-slate-900 mb-4">
               Why Choose Smart Agriculture?
             </h2>
-            <p className="text-lg text-white">
-              Discover how AI transforms modern farming and agribusiness operations
+            <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+              Discover how AI transforms modern farming and agribusiness operations with cutting-edge technology solutions.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="text-center bg-white rounded-lg p-6 shadow-md">
-              <div className="bg-green-100 rounded-full p-3 w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-                <svg className="h-8 w-8 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+            <div className="text-center bg-green-50 rounded-lg p-8 shadow-sm border border-green-100">
+              <div className="bg-white rounded-full p-4 w-20 h-20 mx-auto mb-6 flex items-center justify-center shadow-sm">
+                <svg className="h-10 w-10 text-green-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
                 </svg>
               </div>
-              <h3 className="text-xl font-normal text-gray-900 mb-2">Increased Crop Yields</h3>
-              <p className="text-gray-600">AI-driven insights optimize growing conditions for maximum productivity</p>
+              <h3 className="text-xl font-semibold text-slate-900 mb-3">Increased Crop Yields</h3>
+              <p className="text-slate-600 leading-relaxed">AI-driven insights optimize growing conditions and resource allocation for maximum productivity and sustainable farming.</p>
             </div>
-            <div className="text-center bg-white rounded-lg p-6 shadow-md">
-              <div className="bg-green-100 rounded-full p-3 w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-                <svg className="h-8 w-8 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+            <div className="text-center bg-green-50 rounded-lg p-8 shadow-sm border border-green-100">
+              <div className="bg-white rounded-full p-4 w-20 h-20 mx-auto mb-6 flex items-center justify-center shadow-sm">
+                <svg className="h-10 w-10 text-green-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                 </svg>
               </div>
-              <h3 className="text-xl font-normal text-gray-900 mb-2">Climate Risk Protection</h3>
-              <p className="text-gray-600">Advanced monitoring and prediction systems protect against weather risks</p>
+              <h3 className="text-xl font-semibold text-slate-900 mb-3">Climate Risk Protection</h3>
+              <p className="text-slate-600 leading-relaxed">Advanced monitoring and prediction systems protect against weather risks and enable proactive risk management.</p>
             </div>
-            <div className="text-center bg-white rounded-lg p-6 shadow-md">
-              <div className="bg-green-100 rounded-full p-3 w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-                <svg className="h-8 w-8 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+            <div className="text-center bg-green-50 rounded-lg p-8 shadow-sm border border-green-100">
+              <div className="bg-white rounded-full p-4 w-20 h-20 mx-auto mb-6 flex items-center justify-center shadow-sm">
+                <svg className="h-10 w-10 text-green-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9v-9m0-9v9" />
                 </svg>
               </div>
-              <h3 className="text-xl font-normal text-gray-900 mb-2">Sustainable Farming</h3>
-              <p className="text-gray-600">Resource optimization and environmental monitoring for eco-friendly agriculture</p>
+              <h3 className="text-xl font-semibold text-slate-900 mb-3">Sustainable Operations</h3>
+              <p className="text-slate-600 leading-relaxed">Resource optimization and environmental monitoring for eco-friendly agriculture and long-term sustainability.</p>
             </div>
           </div>
         </div>
