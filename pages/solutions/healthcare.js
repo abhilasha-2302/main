@@ -3,116 +3,116 @@ import Layout from '@/components/layout/Layout';
 import Head from 'next/head';
 import Link from 'next/link';
 
-export default function TelecommunicationsSolutionsPage() {
+export default function HealthcareSolutionsPage() {
   const services = [
     {
-      name: 'Mobile Network Operators',
-      slug: 'mobile-network-operators',
-      description: 'Self-healing network infrastructure with AI-driven fault detection. Intelligent traffic optimization for peak load management. Advanced customer analytics for personalized service delivery.',
+      name: 'Diagnostic Imaging AI',
+      slug: 'diagnostic-imaging-ai',
+      description: 'AI-assisted medical image analysis integrated with EMR and PACS systems. Advanced computer vision algorithms enhance diagnostic accuracy and speed for radiologists.',
+      icon: '🏥',
+      features: [
+        'Medical image analysis',
+        'EMR & PACS integration',
+        'Diagnostic accuracy enhancement'
+      ]
+    },
+    {
+      name: 'Personalized Treatment Recommenders',
+      slug: 'personalized-treatment-recommenders',
+      description: 'AI-powered treatment recommendation systems that tailor care plans using clinical data, patient history, and evidence-based medicine for optimal outcomes.',
+      icon: '💊',
+      features: [
+        'Personalized care plans',
+        'Clinical data analysis',
+        'Evidence-based recommendations'
+      ]
+    },
+    {
+      name: 'Risk Prediction Dashboards',
+      slug: 'risk-prediction-dashboards',
+      description: 'Advanced analytics platforms that identify high-risk patients for early intervention, preventing complications and improving care coordination.',
+      icon: '⚠️',
+      features: [
+        'Patient risk stratification',
+        'Early intervention alerts',
+        'Predictive health analytics'
+      ]
+    },
+    {
+      name: 'Virtual Health Assistants',
+      slug: 'virtual-health-assistants',
+      description: 'Conversational AI tools for appointment scheduling, patient queries, and remote care management, improving accessibility and patient engagement.',
+      icon: '🤖',
+      features: [
+        'Appointment scheduling',
+        'Patient query resolution',
+        'Remote care support'
+      ]
+    },
+    {
+      name: 'Clinical Decision Support',
+      slug: 'clinical-decision-support',
+      description: 'AI-powered clinical decision support systems that provide real-time guidance to healthcare providers based on patient data and medical best practices.',
+      icon: '🩺',
+      features: [
+        'Real-time clinical guidance',
+        'Medical best practices',
+        'Provider decision support'
+      ]
+    },
+    {
+      name: 'Drug Discovery Platform',
+      slug: 'drug-discovery-platform',
+      description: 'AI-accelerated drug discovery and development using machine learning to identify potential compounds and predict drug interactions.',
+      icon: '🧬',
+      features: [
+        'Compound identification',
+        'Drug interaction prediction',
+        'Research acceleration'
+      ]
+    },
+    {
+      name: 'Electronic Health Records Optimization',
+      slug: 'ehr-optimization',
+      description: 'Intelligent EHR systems with automated documentation, clinical coding assistance, and workflow optimization to reduce administrative burden.',
+      icon: '📋',
+      features: [
+        'Automated documentation',
+        'Clinical coding assistance',
+        'Workflow optimization'
+      ]
+    },
+    {
+      name: 'Remote Patient Monitoring',
+      slug: 'remote-patient-monitoring',
+      description: 'IoT-enabled remote monitoring systems with AI analysis for continuous patient health tracking and automated alert generation.',
       icon: '📱',
       features: [
-        'Autonomous fault detection',
-        'Dynamic traffic optimization',
-        'Personalized customer analytics'
+        'Continuous health monitoring',
+        'IoT device integration',
+        'Automated health alerts'
       ]
     },
     {
-      name: 'Internet Service Providers',
-      slug: 'internet-service-providers',
-      description: 'AI-powered bandwidth allocation and network optimization. Predictive maintenance for infrastructure reliability. Automated customer onboarding and support systems.',
-      icon: '🌐',
+      name: 'Medical Chatbots & Triage',
+      slug: 'medical-chatbots-triage',
+      description: 'AI-powered triage systems and medical chatbots that provide initial patient assessment and direct appropriate care pathways.',
+      icon: '💬',
       features: [
-        'Intelligent bandwidth allocation',
-        'Predictive infrastructure maintenance',
-        'Automated customer management'
+        'Automated patient triage',
+        'Symptom assessment',
+        'Care pathway direction'
       ]
     },
     {
-      name: 'Cable & Satellite TV',
-      slug: 'cable-satellite-tv',
-      description: 'Content delivery optimization with AI traffic engineering. Smart SLA management and performance monitoring. Automated billing and subscription management systems.',
-      icon: '📺',
+      name: 'Healthcare Analytics Platform',
+      slug: 'healthcare-analytics-platform',
+      description: 'Comprehensive healthcare data analytics for population health management, outcome tracking, and quality improvement initiatives.',
+      icon: '📊',
       features: [
-        'Content delivery optimization',
-        'Real-time SLA monitoring',
-        'Automated subscription management'
-      ]
-    },
-    {
-      name: 'Enterprise Communications',
-      slug: 'enterprise-communications',
-      description: 'AI-driven unified communications platforms. Intelligent call routing and quality optimization. Advanced security and compliance monitoring for business communications.',
-      icon: '🏢',
-      features: [
-        'Unified communications platforms',
-        'Intelligent call routing',
-        'Security and compliance monitoring'
-      ]
-    },
-    {
-      name: 'Cloud & Data Centers',
-      slug: 'cloud-data-centers',
-      description: 'Edge AI deployment for distributed infrastructure monitoring. Predictive cooling and power management systems. Automated resource allocation and scaling.',
-      icon: '☁️',
-      features: [
-        'Edge AI infrastructure monitoring',
-        'Predictive resource management',
-        'Automated scaling solutions'
-      ]
-    },
-    {
-      name: '5G & Next-Gen Networks',
-      slug: '5g-next-gen-networks',
-      description: 'AI-powered network slicing and resource allocation. Real-time latency optimization for critical applications. Intelligent edge computing deployment and management.',
-      icon: '🚀',
-      features: [
-        'AI-powered network slicing',
-        'Real-time latency optimization',
-        'Edge computing management'
-      ]
-    },
-    {
-      name: 'Telecom Equipment Vendors',
-      slug: 'telecom-equipment-vendors',
-      description: 'Predictive maintenance for network equipment. AI-enhanced quality assurance and testing. Supply chain optimization and inventory management.',
-      icon: '🔧',
-      features: [
-        'Predictive equipment maintenance',
-        'AI-enhanced quality assurance',
-        'Supply chain optimization'
-      ]
-    },
-    {
-      name: 'Customer Service & CRM',
-      slug: 'customer-service-crm',
-      description: 'AI-powered chatbots and virtual agents for tier-1 support. Intelligent ticket routing and escalation. Customer sentiment analysis and retention prediction.',
-      icon: '🎧',
-      features: [
-        'AI-powered customer support',
-        'Intelligent ticket management',
-        'Customer sentiment analysis'
-      ]
-    },
-    {
-      name: 'Network Security',
-      slug: 'network-security',
-      description: 'AI-driven threat detection and response systems. Real-time anomaly detection for network traffic. Automated security incident management and compliance reporting.',
-      icon: '🛡️',
-      features: [
-        'AI-driven threat detection',
-        'Real-time anomaly detection',
-        'Automated incident management'
-      ]
-    },
-    {
-      name: 'Billing & Revenue Management',
-      slug: 'billing-revenue-management',
-      description: 'RPA-enhanced automated billing systems. AI-powered fraud detection and prevention. Revenue optimization through intelligent pricing strategies.',
-      icon: '💰',
-      features: [
-        'Automated billing systems',
-        'AI-powered fraud detection',
-        'Intelligent pricing optimization'
+        'Population health insights',
+        'Outcome measurement',
+        'Quality improvement tracking'
       ]
     }
   ];
@@ -120,8 +120,8 @@ export default function TelecommunicationsSolutionsPage() {
   return (
     <Layout>
       <Head>
-        <title>Telecommunications Solutions | Veripoint Technologies</title>
-        <meta name="description" content="AI-powered telecommunications solutions for network optimization, customer service, and operational excellence" />
+        <title>Healthcare AI Solutions | Veripoint Technologies</title>
+        <meta name="description" content="AI-driven healthcare solutions for diagnostic imaging, personalized treatment, patient engagement, and clinical decision support" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
@@ -129,7 +129,7 @@ export default function TelecommunicationsSolutionsPage() {
       <section className="relative h-[calc(100vh-120px)] w-full overflow-hidden bg-black">
         <video
           className="h-full w-full object-cover"
-          src="/videos/telecommunications.mp4"
+          src="/videos/healthcare.mp4"
           autoPlay
           muted
           loop
@@ -142,7 +142,7 @@ export default function TelecommunicationsSolutionsPage() {
         <div className="absolute inset-0 flex items-center justify-center z-20">
           <div className="text-center">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-light text-white mb-8">
-              Telecommunications Solutions
+              Healthcare AI Solutions
             </h1>
             <Link href="/video-page">
               <button className="inline-flex items-center bg-white hover:bg-gray-100 text-gray-900 font-medium py-3 px-6 rounded transition-colors duration-200">
@@ -184,7 +184,7 @@ export default function TelecommunicationsSolutionsPage() {
               Choose Your Services
             </h2>
             <p className="text-lg text-slate-600 leading-relaxed max-w-3xl">
-              Select your telecommunications sector to explore AI-powered services designed to enhance network reliability, optimize operations, and elevate customer service experiences.
+              Select from our comprehensive AI-driven healthcare solutions that support early diagnosis, personalized treatment, patient engagement, and operational intelligence—improving care quality and outcomes.
             </p>
           </div>
 
@@ -226,21 +226,30 @@ export default function TelecommunicationsSolutionsPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-normal text-slate-900 mb-4">
-              Why Choose AI-Powered Telecommunications?
+              Why Choose AI-Powered Healthcare?
             </h2>
             <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-              Discover how AI transforms telecommunications operations and customer experience with cutting-edge technology solutions.
+              Discover how AI transforms healthcare delivery with cutting-edge technology solutions that enhance diagnosis, treatment, and patient care outcomes.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="text-center bg-green-50 rounded-lg p-8 shadow-sm border border-green-100">
               <div className="bg-white rounded-full p-4 w-20 h-20 mx-auto mb-6 flex items-center justify-center shadow-sm">
                 <svg className="h-10 w-10 text-green-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold text-slate-900 mb-3">Network Reliability</h3>
-              <p className="text-slate-600 leading-relaxed">Self-healing networks with predictive maintenance and autonomous fault resolution ensure maximum uptime and service quality.</p>
+              <h3 className="text-xl font-semibold text-slate-900 mb-3">Improved Diagnostic Accuracy</h3>
+              <p className="text-slate-600 leading-relaxed">AI-assisted medical imaging and diagnostic tools enhance accuracy and speed, enabling earlier detection and better patient outcomes.</p>
+            </div>
+            <div className="text-center bg-green-50 rounded-lg p-8 shadow-sm border border-green-100">
+              <div className="bg-white rounded-full p-4 w-20 h-20 mx-auto mb-6 flex items-center justify-center shadow-sm">
+                <svg className="h-10 w-10 text-green-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-semibold text-slate-900 mb-3">Personalized Patient Care</h3>
+              <p className="text-slate-600 leading-relaxed">AI-driven treatment recommendations and risk prediction enable personalized care plans tailored to individual patient needs and conditions.</p>
             </div>
             <div className="text-center bg-green-50 rounded-lg p-8 shadow-sm border border-green-100">
               <div className="bg-white rounded-full p-4 w-20 h-20 mx-auto mb-6 flex items-center justify-center shadow-sm">
@@ -248,17 +257,8 @@ export default function TelecommunicationsSolutionsPage() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold text-slate-900 mb-3">Intelligent Automation</h3>
-              <p className="text-slate-600 leading-relaxed">AI-driven traffic optimization and automated operations deliver peak performance and operational efficiency.</p>
-            </div>
-            <div className="text-center bg-green-50 rounded-lg p-8 shadow-sm border border-green-100">
-              <div className="bg-white rounded-full p-4 w-20 h-20 mx-auto mb-6 flex items-center justify-center shadow-sm">
-                <svg className="h-10 w-10 text-green-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-semibold text-slate-900 mb-3">Enhanced Customer Experience</h3>
-              <p className="text-slate-600 leading-relaxed">AI-powered support systems and personalized service delivery create superior customer satisfaction and loyalty.</p>
+              <h3 className="text-xl font-semibold text-slate-900 mb-3">Operational Efficiency</h3>
+              <p className="text-slate-600 leading-relaxed">Automated workflows, intelligent documentation, and predictive analytics reduce administrative burden and optimize healthcare operations.</p>
             </div>
           </div>
         </div>

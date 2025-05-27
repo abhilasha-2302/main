@@ -1,550 +1,270 @@
-import { useState, useEffect } from 'react';
+import CallToAction from '@/components/home/CallToAction';
+import Layout from '@/components/layout/Layout';
 import Head from 'next/head';
+import Link from 'next/link';
 
 export default function EnergyUtilitiesPage() {
-  const [isVideoLoaded, setIsVideoLoaded] = useState(false);
-  const [activeTab, setActiveTab] = useState('overview');
-
-  useEffect(() => {
-    // Simulate video loading
-    const timer = setTimeout(() => setIsVideoLoaded(true), 1000);
-    return () => clearTimeout(timer);
-  }, []);
-
-  const industries = [
-    'Energy & Utilities',
-    'Power Grids & Smart Grid Solutions',
-    'Oil & Gas',
-    'Renewable Energy (Solar, Wind, Hydro)',
-    'Infrastructure & Asset Management',
-    'Telecommunications & IoT',
-    'Smart Metering & Billing',
-    'Government & Public Sector (Energy Policy & Regulation)',
-    'Regulatory Compliance'
-  ];
-
-  const keyOfferings = [
+  const services = [
     {
-      title: 'Smart Grid Optimization Suite',
+      name: 'Smart Grid Optimization Suite',
+      slug: 'smart-grid-optimization',
       description: 'Harnessing AI and real-time data, our solution integrates seamlessly with SCADA/EMS systems to forecast demand-supply fluctuations and enable instant load balancing—enhancing grid reliability and operational responsiveness.',
-      icon: '⚡'
+      icon: '⚡',
+      features: [
+        'Real-time grid monitoring',
+        'Demand forecasting',
+        'Load balancing automation'
+      ]
     },
     {
-      title: 'Predictive Maintenance for Critical Assets',
+      name: 'Predictive Maintenance for Critical Assets',
+      slug: 'predictive-maintenance',
       description: 'Our IoT-powered monitoring tools analyze performance data to anticipate equipment failures before they occur. This ensures timely maintenance, minimizes costly downtime, and extends the life of valuable infrastructure.',
-      icon: '🔧'
+      icon: '🔧',
+      features: [
+        'Equipment health monitoring',
+        'Failure prediction',
+        'Maintenance scheduling'
+      ]
     },
     {
-      title: 'Smart Meter Data Analytics',
+      name: 'Smart Meter Data Analytics',
+      slug: 'smart-meter-analytics',
       description: 'Leveraging advanced analytics, our platform detects abnormal energy usage, identifies potential theft, and ensures billing accuracy—helping utilities increase revenue protection and operational efficiency.',
-      icon: '📊'
+      icon: '📊',
+      features: [
+        'Usage pattern analysis',
+        'Theft detection systems',
+        'Billing accuracy improvement'
+      ]
     },
     {
-      title: 'Dynamic Tariff Management Engine',
+      name: 'Dynamic Tariff Management Engine',
+      slug: 'tariff-management',
       description: 'Utilizing real-time consumption patterns, market dynamics, and regulatory inputs, our engine enables utilities to offer flexible, consumption-based pricing models—promoting fairness, transparency, and smarter energy use.',
-      icon: '💰'
-    }
-  ];
-
-  const technologies = [
-    {
-      name: 'Artificial Intelligence & Machine Learning',
-      description: 'for forecasting, anomaly detection, and optimization of grid operations.'
+      icon: '💰',
+      features: [
+        'Dynamic pricing models',
+        'Market analysis integration',
+        'Consumption-based billing'
+      ]
     },
     {
-      name: 'Internet of Things (IoT) & Edge Devices',
-      description: 'to monitor infrastructure in real time and enable responsive grid control.'
+      name: 'Renewable Energy Integration',
+      slug: 'renewable-integration',
+      description: 'Seamlessly integrate solar, wind, and hydro power sources into existing grid infrastructure. Our AI-driven systems optimize renewable energy distribution and storage for maximum efficiency.',
+      icon: '🌞',
+      features: [
+        'Solar integration systems',
+        'Wind power optimization',
+        'Energy storage management'
+      ]
     },
     {
-      name: 'SCADA & EMS Integration',
-      description: 'for seamless communication between digital intelligence layers and operational systems.'
+      name: 'Power Grid Cybersecurity',
+      slug: 'grid-cybersecurity',
+      description: 'Comprehensive cybersecurity solutions to protect critical energy infrastructure from threats. Real-time monitoring and threat detection ensure grid security and regulatory compliance.',
+      icon: '🔒',
+      features: [
+        'Threat detection systems',
+        'Security monitoring',
+        'Compliance management'
+      ]
     },
     {
-      name: 'Big Data Analytics',
-      description: 'for advanced meter data management, asset health analysis, and strategic decision-making.'
+      name: 'Energy Trading & Market Analytics',
+      slug: 'energy-trading',
+      description: 'Advanced analytics for energy trading decisions and market optimization. Real-time market data analysis helps utilities and traders make informed decisions in volatile energy markets.',
+      icon: '📈',
+      features: [
+        'Market trend analysis',
+        'Trading optimization',
+        'Price forecasting'
+      ]
     },
     {
-      name: 'Cloud-Based Platforms',
-      description: 'for scalable, centralized control, and cross-system visibility.'
+      name: 'Distribution Network Optimization',
+      slug: 'network-optimization',
+      description: 'Optimize power distribution networks for maximum efficiency and minimal losses. AI-driven routing and load management ensure optimal power delivery across the grid.',
+      icon: '🌐',
+      features: [
+        'Network efficiency analysis',
+        'Loss minimization',
+        'Route optimization'
+      ]
     },
     {
-      name: 'Cybersecurity & Compliance Modules',
-      description: 'to protect energy data and ensure adherence to evolving regulations.'
+      name: 'Energy Storage Management',
+      slug: 'storage-management',
+      description: 'Intelligent battery and energy storage systems management. Optimize charging cycles, predict storage needs, and manage grid-scale energy storage for peak efficiency.',
+      icon: '🔋',
+      features: [
+        'Battery optimization',
+        'Storage forecasting',
+        'Grid-scale management'
+      ]
+    },
+    {
+      name: 'Regulatory Compliance & Reporting',
+      slug: 'compliance-reporting',
+      description: 'Automated compliance monitoring and reporting systems for energy regulations. Ensure adherence to environmental standards and regulatory requirements with real-time tracking.',
+      icon: '📋',
+      features: [
+        'Automated compliance tracking',
+        'Regulatory reporting',
+        'Environmental monitoring'
+      ]
     }
   ];
 
   return (
-    <>
+    <Layout>
       <Head>
-        <title>Energy, Utilities & Power Grids - Veripoint Technologies</title>
-        <meta name="description" content="Empowering the Energy Sector with Intelligent Grid Technologies" />
+        <title>Energy & Utilities Solutions | Veripoint Technologies</title>
+        <meta name="description" content="AI-driven energy solutions for smart grid optimization, predictive maintenance, and sustainable power infrastructure" />
+        <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-green-50">
-        {/* Hero Video Section */}
-        <section className="relative h-screen flex items-center justify-center overflow-hidden">
-          {/* Video Background */}
-          <div className="absolute inset-0 z-0">
-            <div className="w-full h-full bg-gradient-to-r from-blue-900/90 via-green-800/80 to-teal-900/90 relative">
-              {/* Animated Background Pattern */}
-              <div className="absolute inset-0 opacity-20">
-                <div className="grid grid-cols-8 grid-rows-6 h-full w-full">
-                  {Array.from({ length: 48 }).map((_, i) => (
-                    <div
-                      key={i}
-                      className="border border-white/10 relative overflow-hidden"
-                      style={{
-                        animation: `pulse ${2 + (i % 3)}s ease-in-out infinite ${i * 0.1}s`
-                      }}
-                    >
-                      <div className="absolute inset-0 bg-gradient-to-br from-blue-400/20 to-green-400/20 transform rotate-45 scale-110"></div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-              
-              {/* Floating Energy Icons */}
-              <div className="absolute inset-0">
-                {['⚡', '🔋', '☀️', '💨', '🔌', '⚙️'].map((icon, index) => (
-                  <div
-                    key={index}
-                    className="absolute text-white/30 text-4xl animate-bounce"
-                    style={{
-                      left: `${20 + index * 15}%`,
-                      top: `${20 + (index % 3) * 20}%`,
-                      animationDelay: `${index * 0.5}s`,
-                      animationDuration: `${3 + index}s`
-                    }}
-                  >
-                    {icon}
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          {/* Hero Content */}
-          <div className="relative z-10 text-center text-white px-4 max-w-6xl mx-auto">
-            <div className="mb-8">
-              <span className="inline-block px-4 py-2 bg-green-600/20 backdrop-blur-sm border border-green-400/30 rounded-full text-green-200 text-sm font-medium mb-6">
-                Energy, Utilities & Power Grids
-              </span>
-            </div>
-            
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-white via-blue-100 to-green-200 bg-clip-text text-transparent leading-tight">
-              Empowering the Energy Sector
+      {/* Video Hero Section */}
+      <section className="relative h-[calc(100vh-120px)] w-full overflow-hidden bg-black">
+        <video
+          className="h-full w-full object-cover"
+          src="/videos/energy.mp4"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+        />
+        
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/60" />
+        
+        <div className="absolute inset-0 flex items-center justify-center z-20">
+          <div className="text-center">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-light text-white mb-8">
+              Energy & Utilities Solutions
             </h1>
-            
-            <h2 className="text-2xl md:text-3xl font-light mb-8 text-blue-100">
-              with Intelligent Grid Technologies
+            <Link href="/video-page">
+              <button className="inline-flex items-center bg-white hover:bg-gray-100 text-gray-900 font-medium py-3 px-6 rounded transition-colors duration-200">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clipRule="evenodd" />
+                </svg>
+                Watch
+              </button>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Navigation Section */}
+      <section className="bg-white border-b border-gray-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between py-4">
+            <div className="flex space-x-8">
+              <a href="#services" className="text-gray-700 hover:text-gray-900 font-medium">Services</a>
+              <a href="#benefits" className="text-gray-700 hover:text-gray-900 font-medium">Key Benefits</a>
+            </div>
+            <a href="https://forms.gle/kRqgCBJqn98PieQc6" target="_blank" rel="noopener noreferrer">
+              <button className="bg-black hover:bg-gray-800 text-white font-medium py-2 px-4 rounded transition-colors duration-200">
+                Get Started
+              </button>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Services Grid */}
+      <section id="services" className="py-20 bg-slate-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-left mb-16">
+            <h2 className="text-3xl font-normal text-slate-900 mb-4">
+              Choose Your Services
             </h2>
-            
-            <p className="text-xl md:text-2xl text-gray-200 mb-12 max-w-4xl mx-auto leading-relaxed">
-              The energy landscape is evolving rapidly, driven by the need for sustainability, efficiency, and resilience. 
-              We provide advanced solutions that help modernize power infrastructure, streamline operations, and ensure 
-              smarter energy management.
+            <p className="text-lg text-slate-600 leading-relaxed max-w-3xl">
+              Select from our comprehensive AI-driven energy solutions designed to optimize grid operations, enhance infrastructure reliability, and streamline utility management for sustainable energy systems.
             </p>
-            
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="px-8 py-4 bg-gradient-to-r from-green-600 to-blue-600 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
-                Explore Solutions
-              </button>
-              <button className="px-8 py-4 bg-white/10 backdrop-blur-sm border border-white/20 text-white font-semibold rounded-lg hover:bg-white/20 transition-all duration-300">
-                Watch Demo
-              </button>
-            </div>
           </div>
 
-          {/* Scroll Indicator */}
-          <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white/70 animate-bounce">
-            <div className="w-6 h-10 border-2 border-white/30 rounded-full relative">
-              <div className="w-1 h-3 bg-white/70 rounded-full absolute top-2 left-1/2 transform -translate-x-1/2 animate-pulse"></div>
-            </div>
-          </div>
-        </section>
-
-        {/* Industries We Serve */}
-        <section className="py-20 bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold text-gray-900 mb-4">Industries We Serve</h2>
-              <div className="w-24 h-1 bg-gradient-to-r from-green-600 to-blue-600 mx-auto"></div>
-            </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {industries.map((industry, index) => (
-                <div
-                  key={index}
-                  className="group p-6 bg-gradient-to-br from-blue-50 to-green-50 rounded-lg border border-gray-200 hover:border-green-300 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
-                >
-                  <div className="flex items-center space-x-3">
-                    <div className="w-3 h-3 bg-gradient-to-r from-green-600 to-blue-600 rounded-full group-hover:scale-125 transition-transform duration-300"></div>
-                    <span className="text-gray-800 font-medium group-hover:text-green-700 transition-colors duration-300">
-                      {industry}
-                    </span>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Main Content */}
-        <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold text-gray-900 mb-6">
-                Intelligent Energy Solutions for a Resilient, Data-Driven Future
-              </h2>
-              <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-                Modern energy systems face increasing pressure to deliver reliable service, reduce losses, and integrate 
-                clean energy sources. Our suite of AI- and IoT-driven technologies enables dynamic grid management, 
-                asset intelligence, and transparent energy usage across the entire energy value chain.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* Key Offerings */}
-        <section className="py-20 bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold text-gray-900 mb-4">Key Offerings</h2>
-              <div className="w-24 h-1 bg-gradient-to-r from-green-600 to-blue-600 mx-auto"></div>
-            </div>
-            
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-              {keyOfferings.map((offering, index) => (
-                <div
-                  key={index}
-                  className="group p-8 bg-gradient-to-br from-blue-50 via-white to-green-50 rounded-xl border border-gray-200 hover:border-green-300 hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2"
-                >
-                  <div className="flex items-start space-x-4">
-                    <div className="text-4xl group-hover:scale-110 transition-transform duration-300">
-                      {offering.icon}
-                    </div>
-                    <div className="flex-1">
-                      <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-green-700 transition-colors duration-300">
-                        {offering.title}
-                      </h3>
-                      <p className="text-gray-600 leading-relaxed">
-                        {offering.description}
-                      </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {services.map((service, index) => (
+              <div
+                key={index}
+                className="group bg-white rounded-lg shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1 border border-slate-200 hover:border-green-300"
+              >
+                <div className="p-6">
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="text-3xl">
+                      {service.icon}
                     </div>
                   </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Technologies */}
-        <section className="py-20 bg-gradient-to-br from-gray-900 via-blue-900 to-green-900 text-white relative overflow-hidden">
-          {/* Background Pattern */}
-          <div className="absolute inset-0 opacity-10">
-            <div className="grid grid-cols-6 grid-rows-4 h-full w-full">
-              {Array.from({ length: 24 }).map((_, i) => (
-                <div
-                  key={i}
-                  className="border border-white/20 relative"
-                  style={{
-                    animation: `pulse ${3 + (i % 4)}s ease-in-out infinite ${i * 0.2}s`
-                  }}
-                ></div>
-              ))}
-            </div>
-          </div>
-
-          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold mb-6">Technologies We Use</h2>
-              <p className="text-xl text-gray-300 max-w-4xl mx-auto">
-                To deliver cutting-edge energy solutions, we integrate a powerful mix of technologies across 
-                digital, operational, and environmental layers
-              </p>
-            </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {technologies.map((tech, index) => (
-                <div
-                  key={index}
-                  className="group p-6 bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg hover:bg-white/10 hover:border-green-400/50 transition-all duration-300 transform hover:-translate-y-1"
-                >
-                  <div className="mb-4">
-                    <div className="w-12 h-12 bg-gradient-to-r from-green-400 to-blue-400 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                      <div className="w-6 h-6 bg-white rounded opacity-80"></div>
-                    </div>
-                  </div>
-                  <h3 className="text-xl font-bold mb-3 group-hover:text-green-300 transition-colors duration-300">
-                    {tech.name}
+                  <h3 className="text-xl font-semibold text-slate-900 mb-3 group-hover:text-green-700 transition-colors duration-300">
+                    {service.name}
                   </h3>
-                  <p className="text-gray-300 leading-relaxed">
-                    {tech.description}
+                  <p className="text-slate-600 text-sm leading-relaxed mb-4">
+                    {service.description}
                   </p>
+                  <div className="space-y-2">
+                    {service.features.map((feature, idx) => (
+                      <div key={idx} className="flex items-center text-xs text-slate-500">
+                        <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-2"></div>
+                        {feature}
+                      </div>
+                    ))}
+                  </div>
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* CTA Section */}
-        <section className="py-20 bg-gradient-to-r from-green-600 via-blue-600 to-teal-600 text-white">
-          <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-            <h2 className="text-4xl font-bold mb-6">
-              Ready to Transform Your Energy Infrastructure?
+      {/* Key Benefits Section */}
+      <section id="benefits" className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-normal text-slate-900 mb-4">
+              Why Choose Smart Energy Solutions?
             </h2>
-            <p className="text-xl mb-8 text-green-100">
-              Discover how our intelligent solutions can optimize your grid operations, 
-              reduce costs, and enhance sustainability.
+            <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+              Discover how AI transforms modern energy infrastructure and utility operations with cutting-edge technology solutions.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="px-8 py-4 bg-white text-green-600 font-semibold rounded-lg hover:bg-gray-100 transform hover:scale-105 transition-all duration-300 shadow-lg">
-                Schedule Consultation
-              </button>
-              <button className="px-8 py-4 bg-transparent border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-green-600 transition-all duration-300">
-                Download Brochure
-              </button>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="text-center bg-green-50 rounded-lg p-8 shadow-sm border border-green-100">
+              <div className="bg-white rounded-full p-4 w-20 h-20 mx-auto mb-6 flex items-center justify-center shadow-sm">
+                <svg className="h-10 w-10 text-green-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-semibold text-slate-900 mb-3">Enhanced Grid Reliability</h3>
+              <p className="text-slate-600 leading-relaxed">AI-driven monitoring and predictive maintenance ensure consistent power delivery and minimize outages for reliable energy infrastructure.</p>
+            </div>
+            <div className="text-center bg-green-50 rounded-lg p-8 shadow-sm border border-green-100">
+              <div className="bg-white rounded-full p-4 w-20 h-20 mx-auto mb-6 flex items-center justify-center shadow-sm">
+                <svg className="h-10 w-10 text-green-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-semibold text-slate-900 mb-3">Operational Efficiency</h3>
+              <p className="text-slate-600 leading-relaxed">Smart analytics optimize energy distribution, reduce losses, and improve resource allocation for maximum operational efficiency.</p>
+            </div>
+            <div className="text-center bg-green-50 rounded-lg p-8 shadow-sm border border-green-100">
+              <div className="bg-white rounded-full p-4 w-20 h-20 mx-auto mb-6 flex items-center justify-center shadow-sm">
+                <svg className="h-10 w-10 text-green-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9v-9m0-9v9" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-semibold text-slate-900 mb-3">Sustainable Energy Future</h3>
+              <p className="text-slate-600 leading-relaxed">Seamless renewable energy integration and environmental monitoring for eco-friendly power systems and carbon footprint reduction.</p>
             </div>
           </div>
-        </section>
-      </div>
+        </div>
+      </section>
 
-      <style jsx>{`
-        @keyframes pulse {
-          0%, 100% {
-            opacity: 0.5;
-            transform: scale(1);
-          }
-          50% {
-            opacity: 1;
-            transform: scale(1.05);
-          }
-        }
-      `}</style>
-    </>
+      {/* Call to Action Section */}
+      <section id="contact">
+        <CallToAction />
+      </section>
+    </Layout>
   );
 }
-
-// import { useState, useEffect } from 'react';
-// import Head from 'next/head';
-
-// export default function EnergyUtilitiesPage() {
-//   const [scrollY, setScrollY] = useState(0);
-
-//   useEffect(() => {
-//     const handleScroll = () => setScrollY(window.scrollY);
-//     window.addEventListener('scroll', handleScroll);
-//     return () => window.removeEventListener('scroll', handleScroll);
-//   }, []);
-
-//   const industries = [
-//     'Energy & Utilities',
-//     'Power Grids & Smart Grid Solutions',
-//     'Oil & Gas',
-//     'Renewable Energy (Solar, Wind, Hydro)',
-//     'Infrastructure & Asset Management',
-//     'Telecommunications & IoT',
-//     'Smart Metering & Billing',
-//     'Government & Public Sector (Energy Policy & Regulation)',
-//     'Regulatory Compliance'
-//   ];
-
-//   const keyOfferings = [
-//     {
-//       title: 'Smart Grid Optimization Suite',
-//       description: 'Harnessing AI and real-time data, our solution integrates seamlessly with SCADA/EMS systems to forecast demand-supply fluctuations and enable instant load balancing—enhancing grid reliability and operational responsiveness.'
-//     },
-//     {
-//       title: 'Predictive Maintenance for Critical Assets',
-//       description: 'Our IoT-powered monitoring tools analyze performance data to anticipate equipment failures before they occur. This ensures timely maintenance, minimizes costly downtime, and extends the life of valuable infrastructure.'
-//     },
-//     {
-//       title: 'Smart Meter Data Analytics',
-//       description: 'Leveraging advanced analytics, our platform detects abnormal energy usage, identifies potential theft, and ensures billing accuracy—helping utilities increase revenue protection and operational efficiency.'
-//     },
-//     {
-//       title: 'Dynamic Tariff Management Engine',
-//       description: 'Utilizing real-time consumption patterns, market dynamics, and regulatory inputs, our engine enables utilities to offer flexible, consumption-based pricing models—promoting fairness, transparency, and smarter energy use.'
-//     }
-//   ];
-
-//   const technologies = [
-//     {
-//       name: 'Artificial Intelligence & Machine Learning',
-//       description: 'for forecasting, anomaly detection, and optimization of grid operations.'
-//     },
-//     {
-//       name: 'Internet of Things (IoT) & Edge Devices',
-//       description: 'to monitor infrastructure in real time and enable responsive grid control.'
-//     },
-//     {
-//       name: 'SCADA & EMS Integration',
-//       description: 'for seamless communication between digital intelligence layers and operational systems.'
-//     },
-//     {
-//       name: 'Big Data Analytics',
-//       description: 'for advanced meter data management, asset health analysis, and strategic decision-making.'
-//     },
-//     {
-//       name: 'Cloud-Based Platforms',
-//       description: 'for scalable, centralized control, and cross-system visibility.'
-//     },
-//     {
-//       name: 'Cybersecurity & Compliance Modules',
-//       description: 'to protect energy data and ensure adherence to evolving regulations.'
-//     }
-//   ];
-
-//   return (
-//     <>
-//       <Head>
-//         <title>Energy, Utilities & Power Grids - Veripoint Technologies</title>
-//         <meta name="description" content="Empowering the Energy Sector with Intelligent Grid Technologies" />
-//       </Head>
-
-//       {/* Hero Video Section */}
-//       <section className="relative h-screen bg-gray-900 flex items-center">
-//         {/* Simple video placeholder with subtle overlay */}
-//         <div className="absolute inset-0 bg-gradient-to-r from-gray-900/80 to-gray-800/60">
-//           <div className="w-full h-full bg-gray-800 opacity-40"></div>
-//         </div>
-        
-//         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-//           <div className="max-w-4xl">
-//             <p className="text-green-400 text-sm font-medium tracking-wide uppercase mb-4">
-//               Energy, Utilities & Power Grids
-//             </p>
-//             <h1 className="text-5xl md:text-6xl font-light text-white mb-6 leading-tight">
-//               Empowering the Energy Sector with{' '}
-//               <span className="font-normal text-green-400">Intelligent Grid Technologies</span>
-//             </h1>
-//             <p className="text-xl text-gray-300 mb-8 leading-relaxed max-w-3xl">
-//               The energy landscape is evolving rapidly, driven by the need for sustainability, efficiency, and resilience. 
-//               We provide advanced solutions that help modernize power infrastructure, streamline operations, and ensure 
-//               smarter energy management.
-//             </p>
-//             <div className="flex space-x-4">
-//               <button className="px-8 py-3 bg-green-600 text-white font-medium rounded hover:bg-green-700 transition-colors duration-200">
-//                 Learn More
-//               </button>
-//               <button className="px-8 py-3 border border-gray-400 text-gray-300 font-medium rounded hover:border-green-400 hover:text-green-400 transition-colors duration-200">
-//                 Contact Us
-//               </button>
-//             </div>
-//           </div>
-//         </div>
-//       </section>
-
-//       {/* Industries Section */}
-//       <section className="py-20 bg-white">
-//         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-//           <div className="mb-16">
-//             <h2 className="text-3xl font-light text-gray-900 mb-4">Industries We Serve</h2>
-//             <div className="w-16 h-px bg-green-600 mb-8"></div>
-//           </div>
-          
-//           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-//             {industries.map((industry, index) => (
-//               <div
-//                 key={index}
-//                 className="p-6 border border-gray-200 hover:border-green-300 transition-colors duration-200"
-//               >
-//                 <span className="text-gray-800 font-medium">{industry}</span>
-//               </div>
-//             ))}
-//           </div>
-//         </div>
-//       </section>
-
-//       {/* Overview Section */}
-//       <section className="py-20 bg-gray-50">
-//         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-//           <div className="max-w-4xl">
-//             <h2 className="text-3xl font-light text-gray-900 mb-6">
-//               Intelligent Energy Solutions for a Resilient, Data-Driven Future
-//             </h2>
-//             <p className="text-lg text-gray-600 leading-relaxed">
-//               Modern energy systems face increasing pressure to deliver reliable service, reduce losses, and integrate 
-//               clean energy sources. Our suite of AI- and IoT-driven technologies enables dynamic grid management, 
-//               asset intelligence, and transparent energy usage across the entire energy value chain.
-//             </p>
-//           </div>
-//         </div>
-//       </section>
-
-//       {/* Key Offerings */}
-//       <section className="py-20 bg-white">
-//         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-//           <div className="mb-16">
-//             <h2 className="text-3xl font-light text-gray-900 mb-4">Key Offerings</h2>
-//             <div className="w-16 h-px bg-green-600"></div>
-//           </div>
-          
-//           <div className="space-y-16">
-//             {keyOfferings.map((offering, index) => (
-//               <div key={index} className="max-w-4xl">
-//                 <h3 className="text-xl font-semibold text-gray-900 mb-4">
-//                   {offering.title}
-//                 </h3>
-//                 <p className="text-gray-600 leading-relaxed text-lg">
-//                   {offering.description}
-//                 </p>
-//               </div>
-//             ))}
-//           </div>
-//         </div>
-//       </section>
-
-//       {/* Technologies */}
-//       <section className="py-20 bg-gray-50">
-//         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-//           <div className="mb-16">
-//             <h2 className="text-3xl font-light text-gray-900 mb-4">Technologies We Use</h2>
-//             <div className="w-16 h-px bg-green-600 mb-8"></div>
-//             <p className="text-lg text-gray-600 max-w-4xl">
-//               To deliver cutting-edge energy solutions, we integrate a powerful mix of technologies across 
-//               digital, operational, and environmental layers:
-//             </p>
-//           </div>
-          
-//           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-//             {technologies.map((tech, index) => (
-//               <div key={index} className="flex space-x-4">
-//                 <div className="w-2 h-2 bg-green-600 rounded-full mt-2 flex-shrink-0"></div>
-//                 <div>
-//                   <h3 className="font-semibold text-gray-900 mb-2">
-//                     {tech.name}
-//                   </h3>
-//                   <p className="text-gray-600">
-//                     {tech.description}
-//                   </p>
-//                 </div>
-//               </div>
-//             ))}
-//           </div>
-//         </div>
-//       </section>
-
-//       {/* CTA Section */}
-//       <section className="py-20 bg-gray-900">
-//         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-//           <h2 className="text-3xl font-light text-white mb-6">
-//             Ready to Transform Your Energy Infrastructure?
-//           </h2>
-//           <p className="text-lg text-gray-300 mb-8">
-//             Discover how our intelligent solutions can optimize your grid operations, 
-//             reduce costs, and enhance sustainability.
-//           </p>
-//           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-//             <button className="px-8 py-3 bg-green-600 text-white font-medium rounded hover:bg-green-700 transition-colors duration-200">
-//               Schedule Consultation
-//             </button>
-//             <button className="px-8 py-3 border border-gray-400 text-gray-300 font-medium rounded hover:border-green-400 hover:text-green-400 transition-colors duration-200">
-//               Download Brochure
-//             </button>
-//           </div>
-//         </div>
-//       </section>
-//     </>
-//   );
-// }
