@@ -1,182 +1,176 @@
+// pages/contact.js
 import { useState } from 'react';
-import { MapPin, Phone, Mail, Clock, Send, CheckCircle } from 'lucide-react';
+import Navbar from '../components/layout/Navbar';
+import Footer from '../components/layout/Footer';
 
-export default function ContactUs() {
+export default function ContactSales() {
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
     email: '',
     company: '',
+    jobTitle: '',
     phone: '',
-    subject: '',
+    country: '',
     message: '',
-    inquiryType: 'general'
+    interestedProducts: [],
+    howDidYouHear: ''
   });
-  const [isSubmitted, setIsSubmitted] = useState(false);
+  
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState(null);
 
   const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
+    const { name, value, type, checked } = e.target;
+    
+    if (type === 'checkbox') {
+      setFormData(prev => ({
+        ...prev,
+        interestedProducts: checked 
+          ? [...prev.interestedProducts, value]
+          : prev.interestedProducts.filter(item => item !== value)
+      }));
+    } else {
+      setFormData(prev => ({
+        ...prev,
+        [name]: value
+      }));
+    }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log('Form submitted:', formData);
-    setIsSubmitted(true);
-    setTimeout(() => setIsSubmitted(false), 3000);
+    setIsSubmitting(true);
+    
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          ...formData,
+          submittedAt: new Date().toISOString(),
+          interestedProducts: formData.interestedProducts.join(', ')
+        }),
+      });
+
+      if (response.ok) {
+        setSubmitStatus('success');
+        setFormData({
+          firstName: '',
+          lastName: '',
+          email: '',
+          company: '',
+          jobTitle: '',
+          phone: '',
+          country: '',
+          message: '',
+          interestedProducts: [],
+          howDidYouHear: ''
+        });
+      } else {
+        setSubmitStatus('error');
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
-
-  const contactInfo = [
-    {
-      icon: <MapPin className="w-6 h-6" />,
-      title: "Headquarters",
-      details: [
-        "Veripoint Technologies",
-        "Unit no. IS-800, Ground Floor, Tower-C",
-        "Urbtech Trade Center, Plot No. B-35",
-        "Sector-132, Noida 201304, Uttar Pradesh, India"
-      ]
-    },
-    {
-      icon: <Phone className="w-6 h-6" />,
-      title: "Phone",
-      details: [
-        "+91 120 555-0123",
-        "Toll Free: +91 1800 555-VERI"
-      ]
-    },
-    {
-      icon: <Mail className="w-6 h-6" />,
-      title: "Email",
-      details: [
-        "sales@veripoint.com",
-        "support@veripoint.com",
-        "careers@veripoint.com"
-      ]
-    },
-    {
-      icon: <Clock className="w-6 h-6" />,
-      title: "Business Hours",
-      details: [
-        "Monday - Friday: 9:00 AM - 6:00 PM IST",
-        "Saturday: 10:00 AM - 2:00 PM IST",
-        "Sunday: Closed"
-      ]
-    }
-  ];
-
-  const offices = [
-    {
-      city: "Noida",
-      region: "Uttar Pradesh, India",
-      address: "Unit no. IS-800, Ground Floor, Tower-C, Urbtech Trade Center, Plot No. B-35, Sector-132, Noida 201304",
-      phone: "+91 120 555-0123",
-      type: "Headquarters"
-    },
-    {
-      city: "Noida",
-      region: "Uttar Pradesh, India", 
-      address: "Tower B, Unit 304, M Floor, World Trade Tower, Plot no. C-1, Sector-16, Noida 201301",
-      phone: "+91 120 555-0456",
-      type: "Development Center"
-    }
-  ];
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      {/* Hero Section */}
-      <div className="bg-gradient-to-br from-green-600 to-green-800 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-          <div className="text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Get in Touch
-            </h1>
-            <p className="text-xl md:text-2xl text-green-100 max-w-3xl mx-auto">
-              Ready to transform your semiconductor solutions? Our team of experts is here to help you achieve your technology goals.
-            </p>
+    <div className="min-h-screen flex flex-col">
+      <Navbar />
+      
+      <main className="flex-grow pt-16">
+        {/* Hero Section */}
+        <div className="bg-gradient-to-r from-green-600 to-green-700 text-white py-16">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center">
+              <h1 className="text-4xl md:text-5xl font-bold mb-4">
+                Let's Discuss Your Project
+              </h1>
+              <p className="text-xl md:text-2xl text-green-100 max-w-3xl mx-auto">
+                Get in touch with our experts to learn how Veripoint Technologies 
+                can accelerate your semiconductor development.
+              </p>
+            </div>
           </div>
         </div>
-      </div>
 
-      {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-          
-          {/* Contact Form */}
-          <div className="lg:col-span-2">
-            <div className="bg-white rounded-2xl shadow-xl p-8">
-              <div className="mb-8">
-                <h2 className="text-3xl font-bold text-gray-900 mb-4">
-                  Send us a Message
-                </h2>
-                <p className="text-gray-600">
-                  Fill out the form below and we'll get back to you within 24 hours.
-                </p>
-              </div>
-
-              {isSubmitted && (
-                <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg flex items-center">
-                  <CheckCircle className="w-5 h-5 text-green-600 mr-2" />
-                  <span className="text-green-800">Thank you! Your message has been sent successfully.</span>
+        {/* Contact Form Section */}
+        <div className="py-16 bg-gray-50">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="bg-white rounded-lg shadow-lg p-8">
+              {submitStatus === 'success' && (
+                <div className="mb-6 p-4 bg-green-100 border border-green-400 text-green-700 rounded-md">
+                  <h3 className="font-semibold">Thank you for your interest!</h3>
+                  <p>We've received your message and will get back to you within 24 hours.</p>
+                </div>
+              )}
+              
+              {submitStatus === 'error' && (
+                <div className="mb-6 p-4 bg-red-100 border border-red-400 text-red-700 rounded-md">
+                  <h3 className="font-semibold">Oops! Something went wrong.</h3>
+                  <p>Please try again or contact us directly at sales@veripoint.com</p>
                 </div>
               )}
 
-              <div className="space-y-6">
+              <form onSubmit={handleSubmit} className="space-y-6">
+                {/* Personal Information */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label htmlFor="firstName" className="block text-sm font-semibold text-gray-700 mb-2">
+                    <label htmlFor="firstName" className="block text-sm font-medium text-gray-700 mb-2">
                       First Name *
                     </label>
                     <input
                       type="text"
                       id="firstName"
                       name="firstName"
-                      required
                       value={formData.firstName}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent transition duration-200"
-                      placeholder="John"
+                      required
+                      className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
                     />
                   </div>
+                  
                   <div>
-                    <label htmlFor="lastName" className="block text-sm font-semibold text-gray-700 mb-2">
+                    <label htmlFor="lastName" className="block text-sm font-medium text-gray-700 mb-2">
                       Last Name *
                     </label>
                     <input
                       type="text"
                       id="lastName"
                       name="lastName"
-                      required
                       value={formData.lastName}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent transition duration-200"
-                      placeholder="Doe"
+                      required
+                      className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
                     />
                   </div>
                 </div>
 
+                {/* Contact Information */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-2">
-                      Email Address *
+                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                      Business Email *
                     </label>
                     <input
                       type="email"
                       id="email"
                       name="email"
-                      required
                       value={formData.email}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent transition duration-200"
-                      placeholder="john.doe@company.com"
+                      required
+                      className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
                     />
                   </div>
+                  
                   <div>
-                    <label htmlFor="phone" className="block text-sm font-semibold text-gray-700 mb-2">
+                    <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
                       Phone Number
                     </label>
                     <input
@@ -185,206 +179,207 @@ export default function ContactUs() {
                       name="phone"
                       value={formData.phone}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent transition duration-200"
-                      placeholder="+1 (555) 123-4567"
+                      className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
                     />
                   </div>
                 </div>
 
-                <div>
-                  <label htmlFor="company" className="block text-sm font-semibold text-gray-700 mb-2">
-                    Company
-                  </label>
-                  <input
-                    type="text"
-                    id="company"
-                    name="company"
-                    value={formData.company}
-                    onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent transition duration-200"
-                    placeholder="Your Company Name"
-                  />
+                {/* Company Information */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-2">
+                      Company Name *
+                    </label>
+                    <input
+                      type="text"
+                      id="company"
+                      name="company"
+                      value={formData.company}
+                      onChange={handleInputChange}
+                      required
+                      className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                    />
+                  </div>
+                  
+                  <div>
+                    <label htmlFor="jobTitle" className="block text-sm font-medium text-gray-700 mb-2">
+                      Job Title
+                    </label>
+                    <input
+                      type="text"
+                      id="jobTitle"
+                      name="jobTitle"
+                      value={formData.jobTitle}
+                      onChange={handleInputChange}
+                      className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                    />
+                  </div>
                 </div>
 
+                {/* Country */}
                 <div>
-                  <label htmlFor="inquiryType" className="block text-sm font-semibold text-gray-700 mb-2">
-                    Inquiry Type
+                  <label htmlFor="country" className="block text-sm font-medium text-gray-700 mb-2">
+                    Country *
                   </label>
                   <select
-                    id="inquiryType"
-                    name="inquiryType"
-                    value={formData.inquiryType}
+                    id="country"
+                    name="country"
+                    value={formData.country}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent transition duration-200"
+                    required
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
                   >
-                    <option value="general">General Inquiry</option>
-                    <option value="sales">Sales & Partnerships</option>
-                    <option value="support">Technical Support</option>
-                    <option value="careers">Careers</option>
-                    <option value="media">Media & Press</option>
+                    <option value="">Select your country</option>
+                    <option value="United States">United States</option>
+                    <option value="Canada">Canada</option>
+                    <option value="United Kingdom">United Kingdom</option>
+                    <option value="Germany">Germany</option>
+                    <option value="France">France</option>
+                    <option value="Japan">Japan</option>
+                    <option value="South Korea">South Korea</option>
+                    <option value="China">China</option>
+                    <option value="India">India</option>
+                    <option value="Singapore">Singapore</option>
+                    <option value="Taiwan">Taiwan</option>
+                    <option value="Other">Other</option>
                   </select>
                 </div>
 
+                {/* Interested Products */}
                 <div>
-                  <label htmlFor="subject" className="block text-sm font-semibold text-gray-700 mb-2">
-                    Subject *
+                  <label className="block text-sm font-medium text-gray-700 mb-3">
+                    Products/Services of Interest
                   </label>
-                  <input
-                    type="text"
-                    id="subject"
-                    name="subject"
-                    required
-                    value={formData.subject}
-                    onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent transition duration-200"
-                    placeholder="Brief description of your inquiry"
-                  />
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                    {[
+                      'SDCVP-X Platform',
+                      'AI-ML Solutions', 
+                      'Blockchain Solutions',
+                      'Design Verification Services',
+                      'Custom Development',
+                      'Technical Support'
+                    ].map((product) => (
+                      <label key={product} className="flex items-center">
+                        <input
+                          type="checkbox"
+                          value={product}
+                          checked={formData.interestedProducts.includes(product)}
+                          onChange={handleInputChange}
+                          className="h-4 w-4 text-green-600 focus:ring-green-500 border-gray-300 rounded"
+                        />
+                        <span className="ml-2 text-sm text-gray-700">{product}</span>
+                      </label>
+                    ))}
+                  </div>
                 </div>
 
+                {/* How did you hear about us */}
                 <div>
-                  <label htmlFor="message" className="block text-sm font-semibold text-gray-700 mb-2">
-                    Message *
+                  <label htmlFor="howDidYouHear" className="block text-sm font-medium text-gray-700 mb-2">
+                    How did you hear about us?
+                  </label>
+                  <select
+                    id="howDidYouHear"
+                    name="howDidYouHear"
+                    value={formData.howDidYouHear}
+                    onChange={handleInputChange}
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                  >
+                    <option value="">Please select</option>
+                    <option value="Search Engine">Search Engine</option>
+                    <option value="Social Media">Social Media</option>
+                    <option value="Industry Publication">Industry Publication</option>
+                    <option value="Conference/Event">Conference/Event</option>
+                    <option value="Referral">Referral</option>
+                    <option value="Partner">Partner</option>
+                    <option value="Other">Other</option>
+                  </select>
+                </div>
+
+                {/* Message */}
+                <div>
+                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+                    Tell us about your project or requirements
                   </label>
                   <textarea
                     id="message"
                     name="message"
-                    rows={6}
-                    required
                     value={formData.message}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent transition duration-200 resize-none"
-                    placeholder="Please provide details about your inquiry..."
+                    rows={5}
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                    placeholder="Please describe your project, timeline, and any specific requirements..."
                   />
                 </div>
 
-                <button
-                  type="submit"
-                  className="w-full bg-green-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-green-700 transition duration-200 flex items-center justify-center space-x-2"
-                >
-                  <Send className="w-5 h-5" />
-                  <span>Send Message</span>
-                </button>
-              </div>
-            </div>
-          </div>
-
-          {/* Contact Information */}
-          <div className="space-y-8">
-            <div className="bg-white rounded-2xl shadow-xl p-8">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">
-                Contact Information
-              </h3>
-              <div className="space-y-6">
-                {contactInfo.map((info, index) => (
-                  <div key={index} className="flex items-start space-x-4">
-                    <div className="flex-shrink-0 p-2 bg-green-100 rounded-lg text-green-600">
-                      {info.icon}
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-gray-900 mb-1">
-                        {info.title}
-                      </h4>
-                      {info.details.map((detail, idx) => (
-                        <p key={idx} className="text-gray-600 text-sm">
-                          {detail}
-                        </p>
-                      ))}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Quick Actions */}
-            <div className="bg-gradient-to-br from-green-50 to-green-100 rounded-2xl p-6">
-              <h4 className="font-semibold text-gray-900 mb-4">
-                Quick Actions
-              </h4>
-              <div className="space-y-3">
-                <a
-                  href="/support"
-                  className="block w-full text-left px-4 py-3 bg-white rounded-lg shadow-sm hover:shadow-md transition duration-200 text-gray-700 hover:text-green-600"
-                >
-                  <div className="font-medium">Technical Support</div>
-                  <div className="text-sm text-gray-500">Get help with our products</div>
-                </a>
-                <a
-                  href="/careers"
-                  className="block w-full text-left px-4 py-3 bg-white rounded-lg shadow-sm hover:shadow-md transition duration-200 text-gray-700 hover:text-green-600"
-                >
-                  <div className="font-medium">Join Our Team</div>
-                  <div className="text-sm text-gray-500">Explore career opportunities</div>
-                </a>
-                <a
-                  href="/products/sdcvp-x"
-                  className="block w-full text-left px-4 py-3 bg-white rounded-lg shadow-sm hover:shadow-md transition duration-200 text-gray-700 hover:text-green-600"
-                >
-                  <div className="font-medium">Product Demo</div>
-                  <div className="text-sm text-gray-500">Request a demonstration</div>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Office Locations */}
-      <div className="bg-white py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              Our Locations
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Visit us at any of our offices around the country or connect with us virtually.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {offices.map((office, index) => (
-              <div key={index} className="bg-gray-50 rounded-xl p-6 hover:shadow-lg transition duration-200">
-                <div className="flex items-center justify-between mb-4">
-                  <h3 className="text-xl font-bold text-gray-900">
-                    {office.city}
-                  </h3>
-                  <span className="px-3 py-1 bg-green-100 text-green-800 text-xs font-medium rounded-full">
-                    {office.type}
-                  </span>
+                {/* Submit Button */}
+                <div className="flex justify-center">
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className={`px-8 py-3 rounded-md text-white font-medium transition-colors ${
+                      isSubmitting 
+                        ? 'bg-gray-400 cursor-not-allowed' 
+                        : 'bg-green-600 hover:bg-green-700'
+                    }`}
+                  >
+                    {isSubmitting ? 'Submitting...' : 'Submit Request'}
+                  </button>
                 </div>
-                <p className="text-gray-600 mb-2">{office.region}</p>
-                <p className="text-gray-600 text-sm mb-3">{office.address}</p>
-                <p className="text-green-600 font-medium">{office.phone}</p>
-              </div>
-            ))}
+              </form>
+            </div>
           </div>
         </div>
-      </div>
 
-      {/* CTA Section */}
-      <div className="bg-gray-900 text-white py-16">
-        <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold mb-4">
-            Ready to Get Started?
-          </h2>
-          <p className="text-xl text-gray-300 mb-8">
-            Let's discuss how Veripoint Technologies can accelerate your semiconductor innovation.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="tel:+911205550123"
-              className="px-8 py-3 bg-green-600 text-white rounded-lg font-semibold hover:bg-green-700 transition duration-200"
-            >
-              Call Now
-            </a>
-            <a
-              href="mailto:sales@veripoint.com"
-              className="px-8 py-3 border-2 border-white text-white rounded-lg font-semibold hover:bg-white hover:text-gray-900 transition duration-200"
-            >
-              Email Sales
-            </a>
+        {/* Contact Information */}
+        <div className="py-16 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">
+                Other Ways to Reach Us
+              </h2>
+              <p className="text-lg text-gray-600">
+                Prefer to contact us directly? We're here to help.
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="text-center">
+                <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+                  <svg className="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                </div>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">Email</h3>
+                <p className="text-gray-600">sales@veripoint.com</p>
+              </div>
+              
+              <div className="text-center">
+                <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+                  <svg className="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                  </svg>
+                </div>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">Phone</h3>
+                <p className="text-gray-600">+1 (555) 123-4567</p>
+              </div>
+              
+              <div className="text-center">
+                <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+                  <svg className="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                  </svg>
+                </div>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">Office</h3>
+                <p className="text-gray-600">San Francisco, CA</p>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
+      </main>
+      
+      <Footer />
     </div>
   );
 }
