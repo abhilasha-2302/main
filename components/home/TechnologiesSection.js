@@ -19,7 +19,7 @@ export default function TechnologiesSection() {
                   AI
                 </h3>
                 <p className="text-sm text-gray-600 leading-relaxed">
-                  Harnessing AI to drive intelligent solutions for tomorrow's challenges
+                  Harnessing AI to drive intelligent solutions for tomorrow challenges
                 </p>
               </div>
             </div>

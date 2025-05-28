@@ -45,7 +45,7 @@ export default function ServicesSection() {
           Solutions and Services for Semiconductor and Beyond
         </h2>
         <p className="text-lg text-black mb-12 leading-relaxed">
-          Veripoint is a valued partner for global silicon to systems design across a wide range of vertical markets, empowering technology innovators everywhere with the industry's most comprehensive and trusted solutions.
+          Veripoint Technologies is a valued partner for global silicon to systems design across a wide range of vertical markets, empowering technology innovators everywhere with the industry most comprehensive and trusted solutions.
         </p>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

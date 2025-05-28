@@ -259,7 +259,7 @@ export default function IndustryPage() {
             Ready to Transform Your {industry.name} Operations?
           </h2>
           <p className="text-xl text-green-100 mb-8 max-w-2xl mx-auto">
-            Let's discuss how our AI/ML solutions can drive innovation and growth in your organization.
+            Let us discuss how our AI/ML solutions can drive innovation and growth in your organization.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/contact" className="bg-white text-green-600 hover:bg-gray-100 px-8 py-3 rounded-lg font-semibold transition-colors duration-300">

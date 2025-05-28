@@ -11,8 +11,8 @@ export default function Careers() {
               Join Our Team
             </h1>
             <p className="text-lg text-green-100 max-w-2xl mx-auto">
-              Be part of Veripoint Technologies' mission to deliver forward-looking semiconductor solutions. 
-              We're looking for passionate individuals to help shape the future of technology.
+              Be part of Veripoint Technologies mission to deliver forward-looking semiconductor solutions. 
+              We are looking for passionate individuals to help shape the future of technology.
             </p>
           </div>
         </div>
@@ -66,8 +66,8 @@ export default function Careers() {
               <div>
                 <h4 className="text-lg font-semibold text-gray-900 mb-3">About the Role</h4>
                 <p className="text-gray-700 leading-relaxed">
-                  We're seeking a talented AI Engineer to join our innovative team at Veripoint Technologies. 
-                  You'll be working on cutting-edge AI/ML solutions integrated with our semiconductor technologies, 
+                  We are seeking a talented AI Engineer to join our innovative team at Veripoint Technologies. 
+                  You will be working on cutting-edge AI/ML solutions integrated with our semiconductor technologies, 
                   contributing to the development of next-generation intelligent systems.
                 </p>
               </div>
@@ -87,7 +87,7 @@ export default function Careers() {
               <div>
                 <h4 className="text-lg font-semibold text-gray-900 mb-3">Required Qualifications</h4>
                 <ul className="list-disc list-inside text-gray-700 space-y-2">
-                  <li>Bachelor's or Master's degree in Computer Science, AI/ML, or related field</li>
+                  <li>Bachelors or Masters degree in Computer Science, AI/ML, or related field</li>
                   <li>Minimum 2 years of hands-on experience in AI/ML development</li>
                   <li>Strong proficiency in Python, TensorFlow, PyTorch, or similar frameworks</li>
                   <li>Experience with deep learning, neural networks, and model optimization</li>
@@ -126,8 +126,8 @@ export default function Careers() {
             <div className="mt-8 p-6 bg-gray-50 rounded-lg">
               <h4 className="text-lg font-semibold text-gray-900 mb-4">Ready to Apply?</h4>
               <p className="text-gray-700 mb-4">
-                If you're passionate about AI and want to be part of the future of semiconductor technology, 
-                we'd love to hear from you!
+                If you are passionate about AI and want to be part of the future of semiconductor technology, 
+                we would love to hear from you!
               </p>
               <div className="flex flex-col sm:flex-row sm:items-center gap-4">
                 <div className="flex-1">
@@ -146,7 +146,7 @@ export default function Careers() {
                   </a>
                 </div>
                 <div className="text-sm text-gray-500">
-                  <p>Please include "AI Engineer Application" in the subject line</p>
+                  <p>Please include AI Engineer Application in the subject line</p>
                 </div>
               </div>
             </div>

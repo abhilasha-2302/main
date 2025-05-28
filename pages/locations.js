@@ -1,4 +1,5 @@
 import Layout from "@/components/layout/Layout";
+import Link from 'next/link';
 import { MapPin, ExternalLink, Phone, Mail } from "lucide-react";
 
 export default function OfficeLocations() {
@@ -151,13 +152,13 @@ export default function OfficeLocations() {
             </div>
 
             <div className="mt-8 text-center">
-              <a
+              <Link
                 href="/contact"
                 className="inline-flex items-center px-6 py-3 bg-green-600 text-white font-medium rounded-md hover:bg-green-700 transition-colors duration-200"
               >
                 Contact Us Today
                 <ExternalLink size={16} className="ml-2" />
-              </a>
+              </Link>
             </div>
           </div>
         </div>

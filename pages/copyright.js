@@ -14,18 +14,18 @@ export default function CopyrightPage() {
             <h2 className="text-2xl font-bold text-gray-900 mb-6">COPYRIGHT POLICY</h2>
 
             <p className="text-gray-700 mb-6 leading-relaxed">
-              Veripoint Technologies, Inc. ("<strong>Veripoint</strong>") respects the intellectual property rights of others and expects its users to do the same.
+              Veripoint Technologies Pvt Ltd respects the intellectual property rights of others and expects its users to do the same.
             </p>
 
             <p className="text-gray-700 mb-6 leading-relaxed">
-              It is Veripoint's policy, in appropriate circumstances and at its discretion, to disable and/or terminate the accounts of users who repeatedly infringe or are repeatedly charged with infringing the copyrights or other intellectual property rights of others.
+              It is Veripoint Technologies policy, in appropriate circumstances and at its discretion, to disable and/or terminate the accounts of users who repeatedly infringe or are repeatedly charged with infringing the copyrights or other intellectual property rights of others.
             </p>
 
             <p className="text-gray-700 mb-8 leading-relaxed">
-              In accordance with the Digital Millennium Copyright Act of 1998, Veripoint will
+              In accordance with the Digital Millennium Copyright Act of 1998, Veripoint Technologies will
               respond expeditiously to claims of copyright infringement committed using the
               Veripoint website or other online network accessible through a mobile device or
-              other type of device (the "Sites") that are reported to Veripoint's Designated
+              other type of device (the Sites) that are reported to Veripoint Technologies Designated
               Copyright Agent, identified in the sample notice below.
             </p>
 
@@ -33,7 +33,7 @@ export default function CopyrightPage() {
               If you are a copyright owner, or are authorized to act on behalf of
               one, and believe your work has been posted on the Sites in a manner
               that constitutes copyright infringement, please submit a DMCA
-              Notice of Alleged Infringement and deliver it to Veripoint's
+              Notice of Alleged Infringement and deliver it to Veripoint Technologies
               Designated Copyright Agent.
             </p>
 
@@ -41,7 +41,7 @@ export default function CopyrightPage() {
               Your notice should include the following:
             </p>
 
-            <h3 className="text-xl font-bold text-gray-900 mb-6">DMCA Notice of Alleged Infringement ("Notice")</h3>
+            <h3 className="text-xl font-bold text-gray-900 mb-6">DMCA Notice of Alleged Infringement</h3>
 
             <div className="space-y-6">
               <div>
@@ -77,15 +77,15 @@ export default function CopyrightPage() {
                 </p>
                 <ul className="list-disc pl-8 space-y-2">
                   <li className="text-gray-700 leading-relaxed">
-                    "I hereby state that I have a good faith belief that the disputed use of
+                    I hereby state that I have a good faith belief that the disputed use of
                     the copyrighted material is not authorized by the copyright
-                    owner, its agent, or the law (e.g., as a fair use)."
+                    owner, its agent, or the law (e.g., as a fair use).
                   </li>
                   <li className="text-gray-700 leading-relaxed">
-                    "I hereby state that the information in this Notice is accurate and, under
+                    I hereby state that the information in this Notice is accurate and, under
                     penalty of perjury, that I am the owner, or authorized to act on behalf of
                     the owner, of the copyright or of an exclusive right under the
-                    copyright that is allegedly infringed."
+                    copyright that is allegedly infringed.
                   </li>
                 </ul>
               </div>
@@ -99,7 +99,7 @@ export default function CopyrightPage() {
 
             <div className="mt-12 p-6 bg-gray-50 rounded-lg border border-gray-200">
               <h3 className="text-xl font-bold text-gray-900 mb-4">
-                Deliver this Notice, with all items completed, to Veripoint's Designated Copyright Agent:
+                Deliver this Notice, with all items completed, to Veripoint Technologies Designated Copyright Agent:
               </h3>
 
               <div className="space-y-2 text-gray-700">

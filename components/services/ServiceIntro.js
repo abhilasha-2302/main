@@ -528,7 +528,7 @@ export default function VerificationServicesPage() {
             </p>
             <p className="text-lg text-gray-700 mb-12 max-w-4xl mx-auto">
               At Veripoint Technologies, we redefine hardware verification with AI and deep domain verification expertise. 
-              Whether it's IP, SoC, ASIC, or FPGA — we help you tape-out faster, with confidence.
+              Whether it is IP, SoC, ASIC, or FPGA — we help you tape-out faster, with confidence.
             </p>
             <div className="flex flex-wrap justify-center gap-4 mb-12">
               <div className="flex items-center bg-white px-4 py-2 rounded-full shadow-md">
@@ -644,7 +644,7 @@ export default function VerificationServicesPage() {
               Key Expertise
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              We've verified hundreds of complex silicon designs across domains, integrating the latest standards, protocols, and power-efficient architectures.
+              We have verified hundreds of complex silicon designs across domains, integrating the latest standards, protocols, and power-efficient architectures.
             </p>
           </div>
           
@@ -719,8 +719,8 @@ export default function VerificationServicesPage() {
             Ready to Accelerate Your Verification Journey?
           </h2>
           <p className="text-xl text-green-100 mb-8 max-w-3xl mx-auto">
-            Whether you're building a new SoC, qualifying a safety-critical FPGA, or closing coverage on an IP/ASIC/SOC — 
-            we're here to ensure your silicon works flawlessly.
+            Whether you are building a new SoC, qualifying a safety-critical FPGA, or closing coverage on an IP/ASIC/SOC — 
+            we are here to ensure your silicon works flawlessly.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button className="bg-white text-green-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors inline-flex items-center">

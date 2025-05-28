@@ -22,7 +22,7 @@ export default function Privacy() {
             <section className="mb-12">
               <h2 className="text-3xl font-bold text-gray-900 mb-6">Privacy at Veripoint</h2>
               <p className="text-gray-700 mb-4">
-                Veripoint Technologies is committed to complying with data privacy laws in the countries where it does business and to maintaining the integrity of the personal information in the company's possession. On this page we provide access to our Data Privacy and Protection Statement and other important privacy notices and policies.
+                Veripoint Technologies is committed to complying with data privacy laws in the countries where it does business and to maintaining the integrity of the personal information in the company possession. On this page we provide access to our Data Privacy and Protection Statement and other important privacy notices and policies.
               </p>
             </section>
 
@@ -30,7 +30,7 @@ export default function Privacy() {
             <section className="mb-12">
               <h2 className="text-3xl font-bold text-gray-900 mb-6">Veripoint Website Privacy Policy</h2>
               <p className="text-gray-700 mb-4">
-                Veripoint takes your online privacy on our website seriously. The privacy practices described in this privacy policy apply to veripoint.com and to all of our websites and wholly owned subsidiary websites (collectively, the "Site"). This privacy policy does not cover any other data collection or processing, including, without limitation, data collection practices of other websites to which we link or data that we or our affiliates collect offline or through web pages that do not display a direct link to this privacy policy.
+                Veripoint Technologies takes your online privacy on our website seriously. The privacy practices described in this privacy policy apply to veripoint.com and to all of our websites and wholly owned subsidiary websites (collectively, the Site). This privacy policy does not cover any other data collection or processing, including, without limitation, data collection practices of other websites to which we link or data that we or our affiliates collect offline or through web pages that do not display a direct link to this privacy policy.
               </p>
               <p className="text-gray-700 mb-6">
                 We strive to treat your personal information as safely and securely as reasonably possible. Please read the following privacy policy to better understand how your personal information may be collected and used as you access various areas of our Site. As described below, your information may be collected by Veripoint Technologies, disclosed to third parties, and used by third parties and Veripoint.
@@ -89,17 +89,17 @@ export default function Privacy() {
               <div className="mb-8">
                 <h3 className="text-2xl font-semibold text-gray-900 mb-4">Log Files</h3>
                 <p className="text-gray-700">
-                  As is true of most websites, we gather certain information automatically and store it in log files. This information includes internet protocol (IP) addresses, browser type, internet service provider (ISP), referring/exit pages, operating system, and date/time stamp. We use this information to analyze trends, to administer the Site, to track users' movements around the Site, to enhance your experience in using our Site, and to gather demographic information about our user base as a whole.
+                  As is true of most websites, we gather certain information automatically and store it in log files. This information includes internet protocol (IP) addresses, browser type, internet service provider (ISP), referring/exit pages, operating system, and date/time stamp. We use this information to analyze trends, to administer the Site, to track users movements around the Site, to enhance your experience in using our Site, and to gather demographic information about our user base as a whole.
                 </p>
               </div>
 
               <div className="mb-8">
                 <h3 className="text-2xl font-semibold text-gray-900 mb-4">Cookies</h3>
                 <p className="text-gray-700 mb-4">
-                  Some Veripoint web pages use "cookies," which are small files saved on your computer. Cookies help us recognize your user preferences and can improve your future web visits. You can set your web browser to notify you when you are receiving a cookie and choose to reject it. However, rejecting cookies may affect the performance of the Veripoint Site and prevent you from accessing certain Veripoint information.
+                  Some Veripoint web pages use cookies, which are small files saved on your computer. Cookies help us recognize your user preferences and can improve your future web visits. You can set your web browser to notify you when you are receiving a cookie and choose to reject it. However, rejecting cookies may affect the performance of the Veripoint Site and prevent you from accessing certain Veripoint information.
                 </p>
                 <p className="text-gray-700">
-                  Additionally, we may also permit third-party vendors, such as Google, to place cookies in your browser so that we may advertise our products to you on other websites that you may visit. You can opt out of Google's use of cookies by visiting Google's Ads Settings page, and you can also opt-out from many other third-party vendors' use of cookies by visiting the Network Advertising Initiative's Consumer Opt-Out page.
+                  Additionally, we may also permit third-party vendors, such as Google, to place cookies in your browser so that we may advertise our products to you on other websites that you may visit. You can opt out of Google use of cookies by visiting Google Ads Settings page, and you can also opt-out from many other third-party vendors use of cookies by visiting the Network Advertising Initiative's Consumer Opt-Out page.
                 </p>
               </div>
             </section>
@@ -159,7 +159,7 @@ export default function Privacy() {
             <section className="mb-12">
               <h2 className="text-3xl font-bold text-gray-900 mb-6">Choice and Opt-out</h2>
               <p className="text-gray-700">
-                If you no longer wish to receive a particular newsletter and promotional communication, you may opt out of receiving it by following the instructions included in each respective newsletter or communication, or by accessing Veripoint's Subscriptions Center. Please note that other data recipients have their own data privacy policies, which may differ from ours, and you would have to contact them separately with respect to opt-out requests.
+                If you no longer wish to receive a particular newsletter and promotional communication, you may opt out of receiving it by following the instructions included in each respective newsletter or communication, or by accessing Veripoint Technologies Subscriptions Center. Please note that other data recipients have their own data privacy policies, which may differ from ours, and you would have to contact them separately with respect to opt-out requests.
               </p>
             </section>
 

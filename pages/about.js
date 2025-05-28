@@ -1,4 +1,5 @@
 import Layout from '../components/layout/Layout';
+import Link from 'next/link';
 
 export default function About() {
   return (
@@ -172,18 +173,18 @@ export default function About() {
             semiconductor expertise for your next innovation.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a 
+            <Link
               href="/contact" 
               className="bg-green-600 text-white px-8 py-3 rounded-md font-medium hover:bg-green-700 transition-colors"
             >
               Contact Sales
-            </a>
-            <a 
+            </Link>
+            <Link 
               href="/solutions/ai-ml" 
               className="border border-green-600 text-green-600 px-8 py-3 rounded-md font-medium hover:bg-green-50 transition-colors"
             >
               Explore Solutions
-            </a>
+            </Link>
           </div>
         </div>
       </section>

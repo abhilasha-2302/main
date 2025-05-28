@@ -90,7 +90,7 @@ export default function ContactSales() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center">
               <h1 className="text-4xl md:text-5xl font-bold mb-4">
-                Let's Discuss Your Project
+                Let us Discuss Your Project
               </h1>
               <p className="text-xl md:text-2xl text-green-100 max-w-3xl mx-auto">
                 Get in touch with our experts to learn how Veripoint Technologies 
@@ -107,7 +107,7 @@ export default function ContactSales() {
               {submitStatus === 'success' && (
                 <div className="mb-6 p-4 bg-green-100 border border-green-400 text-green-700 rounded-md">
                   <h3 className="font-semibold">Thank you for your interest!</h3>
-                  <p>We've received your message and will get back to you within 24 hours.</p>
+                  <p>We have received your message and will get back to you within 24 hours.</p>
                 </div>
               )}
               
@@ -339,7 +339,7 @@ export default function ContactSales() {
                 Other Ways to Reach Us
               </h2>
               <p className="text-lg text-gray-600">
-                Prefer to contact us directly? We're here to help.
+                Prefer to contact us directly? We are here to help.
               </p>
             </div>
             

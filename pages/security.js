@@ -1,4 +1,5 @@
 import Layout from "@/components/layout/Layout";
+import Link from 'next/link';
 import {
   Shield,
   Mail,
@@ -48,7 +49,7 @@ export default function SecurityPage() {
                     Veripoint products.
                   </p>
                   <p className="mb-6">
-                    Veripoint PSIRT's primary objective is to minimize the
+                    Veripoint PSIRTs primary objective is to minimize the
                     risks associated with security incidents in a timely,
                     secure, and responsible way. Veripoint PSIRT coordinates
                     the response and disclosure of security issues related to
@@ -218,25 +219,25 @@ export default function SecurityPage() {
                   Additional Resources
                 </h3>
                 <div className="space-y-3">
-                  <a
+                  <Link
                     href="/security"
                     className="block text-green-600 hover:text-green-700 text-sm font-medium"
                   >
                     Security Overview
-                  </a>
+                  </Link>
             
-                  <a
+                  <Link
                     href="/contact"
                     className="block text-green-600 hover:text-green-700 text-sm font-medium"
                   >
                     Contact Us
-                  </a>
-                  <a
+                  </Link>
+                  <Link
                     href="/privacy"
                     className="block text-green-600 hover:text-green-700 text-sm font-medium"
                   >
                     Privacy Policy
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -257,18 +258,18 @@ export default function SecurityPage() {
                 semiconductor solutions.
               </p>
               <div className="flex flex-col sm:flex-row justify-center space-y-3 sm:space-y-0 sm:space-x-4">
-                <a
+                <Link
                   href="mailto:abc@security.in"
                   className="bg-green-600 text-white px-6 py-3 rounded-md hover:bg-green-700 transition duration-150 font-medium"
                 >
                   Report Security Issue
-                </a>
-                <a
+                </Link>
+                <Link
                   href="/contact"
                   className="bg-white text-green-600 border border-green-600 px-6 py-3 rounded-md hover:bg-green-50 transition duration-150 font-medium"
                 >
                   General Contact
-                </a>
+                </Link>
               </div>
             </div>
           </div>
