@@ -14,7 +14,7 @@ export default function ServicesSection() {
       id: 'silicon',
       title: 'Silicon Design Verification Solution',
       image: '/images/sisdcvp.svg',
-      link: '/services',
+      link: '/products/sdcvp-x',
     },
     {
       id: 'aiml',

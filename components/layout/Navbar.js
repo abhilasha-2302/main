@@ -7,6 +7,9 @@ export default function Navbar() {
   const [activeDropdown, setActiveDropdown] = useState(null);
   const navRef = useRef(null);
 
+  // Google Form URL for Contact Sales
+  const contactFormUrl = 'https://forms.gle/nxKwiYWCoU3Wasn56';
+
   useEffect(() => {
     const handleScroll = () => {
       // Fixed: Always keep navbar visible with solid background
@@ -51,6 +54,12 @@ export default function Navbar() {
     setIsOpen(false);
   };
 
+  // Handle Contact Sales click
+  const handleContactSalesClick = () => {
+    window.open(contactFormUrl, '_blank', 'noopener,noreferrer');
+    handleLinkClick(); // Close mobile menu if open
+  };
+
   const dropdowns = {
     solutions: {
       technology: [
@@ -59,7 +68,7 @@ export default function Navbar() {
       ]
     },
     products: [
-      { name: 'SDCVP-X', href: '/products/sdcvp-x' }
+      { name: 'SDCVP-X™', href: '/products/sdcvp-x' }
     ],
     services: [
       { name: 'Design Verification', href: '/services' },
@@ -261,16 +270,13 @@ export default function Navbar() {
             </div>
           </div>
 
-          <div className="hidden md:flex items-center space-x-4">
-            <button className="p-1 text-gray-700 hover:text-green-600 focus:outline-none transition-colors">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-              </svg>
-            </button>
-            
-            <Link href="/contact" className="px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700 transition duration-150">
+          <div className="hidden md:flex items-center">
+            <button 
+              onClick={handleContactSalesClick}
+              className="px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700 transition duration-150"
+            >
               Contact Sales
-            </Link>
+            </button>
           </div>
           
           <div className="md:hidden flex items-center">
@@ -414,20 +420,13 @@ export default function Navbar() {
             </div>
           )}
           
-          <div className="pt-4 flex flex-col space-y-4">
-            <div className="flex items-center px-3">
-              <svg className="w-5 h-5 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-              </svg>
-              <span className="ml-2 text-gray-700">Search</span>
-            </div>
-            <Link 
-              href="/contact" 
-              className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-md text-sm font-medium mx-3"
-              onClick={handleLinkClick}
+          <div className="pt-4">
+            <button 
+              onClick={handleContactSalesClick}
+              className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-md text-sm font-medium mx-3 block text-center w-[calc(100%-1.5rem)]"
             >
               Contact Sales
-            </Link>
+            </button>
           </div>
         </div>
       </div>

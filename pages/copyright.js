@@ -104,10 +104,10 @@ export default function CopyrightPage() {
 
               <div className="space-y-2 text-gray-700">
                 <p><strong>Copyright Agent c/o Veripoint Technologies, Inc.</strong></p>
-                <p>675 Almanor Avenue</p>
-                <p>Sunnyvale, CA 94085</p>
-                <p><strong>Email Address:</strong> veripointcopyrightnoticeagent@veripoint.com</p>
-                <p><strong>Telephone Number:</strong> (650) 584-5000</p>
+                <p>Unit no. IS-800, Ground Floor, Tower-C, Urbtech Trade Center, Plot No. B-35, Sector-132</p>
+                <p>Noida 201304, Uttar Pradesh, India</p>
+                <p><strong>Email Address:</strong> rajat@veripointtech.com</p>
+                <p><strong>Telephone Number:</strong> +91 9717580855</p>
               </div>
             </div>
           </div>

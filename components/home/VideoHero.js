@@ -8,9 +8,10 @@ const stories = [
     id: 'story-1',
     src: '/videos/sdcvp-x.mp4',
     title: 'AI Chip Development',
-    heading: 'Introducing SDCVP-X',
-    subheading: 'AI-based verification',
-    description: 'Hardware-Assisted Verification is Critical to Silicon Success',
+    heading: 'Introducing SdCvP-X',
+    headingTrademark: '™',
+    subheading: 'Verification Acceleration AI Tool',
+    description: 'Boost Verification and Productivity - First-Time Silicon Succes',
     link: '/products/sdcvp-x',
     discoverText: 'Discover Advanced Verification',
     discoverLink: '/products/sdcvp-x',
@@ -20,9 +21,9 @@ const stories = [
     id: 'story-2',
     src: '/videos/ai.mp4',
     title: 'AI based Engineering',
-    heading: 'Unleashing the world of AI',
-    subheading: 'Accelerate to Smart Engineering',
-    description: 'Because Innovation Cant Wait',
+    heading: 'Discover AI',
+    subheading: 'Driving Intelligent Transformation',
+    description: 'Rapid, Secure, Adaptive Innovation',
     link: '/solutions/multi-die',
     discoverText: 'Discover Smart Engineering',
     discoverLink: '/solutions/ai-ml',
@@ -32,12 +33,12 @@ const stories = [
     id: 'story-3',
     src: '/videos/blockchain.mp4',
     title: 'Blockchain',
-    heading: 'Unleashing the world of Blockchain',
-    subheading: 'Accelerate to Smart Engineering',
-    description: 'Because Innovation Cant Wait',
+    heading: 'Explore Blockchain',
+    subheading: 'Accelerating Blockchain Transformation',
+    description: 'Fast, Secure, Scalable Innovation',
     link: '/solutions/multi-die',
     discoverText: 'Discover Advanced Solutions',
-    discoverLink: '/solutions/blockchain-solutions',
+    discoverLink: '/solutions/blockchain',
     watchLink: '/videos/blockchain'
   }
 ];
@@ -298,7 +299,11 @@ export default function VideoHero() {
               <div className="container mx-auto px-4 md:px-8 lg:px-16">
                 <div className="max-w-2xl">
                   <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
-                    {story.heading} <br />
+                    {story.heading}
+                    {story.headingTrademark && (
+                      <sup className="text-2xl md:text-3xl lg:text-4xl font-normal">{story.headingTrademark}</sup>
+                    )}
+                    <br />
                     <span className="text-3xl md:text-4xl lg:text-5xl font-normal">{story.subheading}</span>
                   </h1>
                   <p className="text-lg md:text-xl text-white/90 mb-8">

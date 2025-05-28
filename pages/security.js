@@ -193,10 +193,10 @@ export default function SecurityPage() {
                       Email Address:
                     </div>
                     <a
-                      href="mailto:abc@security.in"
+                      href="mailto:hr@veripointtech.com"
                       className="text-green-600 hover:text-green-700 font-mono text-sm break-all"
                     >
-                      abc@security.in
+                      hr@veripointtech.com
                     </a>
                   </div>
                   <div className="text-xs text-gray-600 text-left bg-gray-50 rounded-lg p-3">
@@ -224,12 +224,7 @@ export default function SecurityPage() {
                   >
                     Security Overview
                   </a>
-                  <a
-                    href="/support"
-                    className="block text-green-600 hover:text-green-700 text-sm font-medium"
-                  >
-                    Technical Support
-                  </a>
+            
                   <a
                     href="/contact"
                     className="block text-green-600 hover:text-green-700 text-sm font-medium"

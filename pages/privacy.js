@@ -150,7 +150,7 @@ export default function Privacy() {
               </p>
               <div className="bg-red-50 border-l-4 border-red-400 p-4">
                 <p className="text-red-800">
-                  <strong>Important:</strong> It is your responsibility to safeguard any password and user ID you use to access the Site and to notify us at privacy@veripoint.com if you ever suspect that this password or user ID has been compromised.
+                  <strong>Important:</strong> It is your responsibility to safeguard any password and user ID you use to access the Site and to notify us at hr@veripointtech.com if you ever suspect that this password or user ID has been compromised.
                 </p>
               </div>
             </section>
@@ -170,9 +170,11 @@ export default function Privacy() {
                 If you have any questions or suggestions regarding our privacy policy, please contact us at:
               </p>
               <div className="bg-gray-50 p-6 rounded-lg">
-                <p className="text-gray-700 font-semibold">Email: privacy@veripoint.com</p>
+                <p className="text-gray-700 font-semibold">Email: hr@veripointtech.com</p>
                 <p className="text-gray-700">Veripoint Technologies</p>
-                <p className="text-gray-700">Privacy Office</p>
+                <p className="text-gray-700">Unit no. IS-800, Ground Floor, Tower-C, Urbtech Trade Center, Plot No. B-35, Sector-132
+
+Noida</p>
               </div>
             </section>
 
