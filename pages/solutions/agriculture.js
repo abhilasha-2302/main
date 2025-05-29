@@ -129,7 +129,7 @@ export default function AgricultureSolutionsPage() {
       <section className="relative h-[calc(100vh-120px)] w-full overflow-hidden bg-black">
         <video
           className="h-full w-full object-cover"
-          src="/videos/agriculture.mp4"
+          src="/videos/agriculture.webm"
           autoPlay
           muted
           loop
@@ -164,7 +164,7 @@ export default function AgricultureSolutionsPage() {
               <a href="#services" className="text-gray-700 hover:text-gray-900 font-medium">Services</a>
               <a href="#benefits" className="text-gray-700 hover:text-gray-900 font-medium">Key Benefits</a>
             </div>
-            <button className="bg-green-700 hover:bg-green-800 text-white font-medium py-2 px-4 rounded transition-colors duration-200">
+           <button className="bg-gray-900 hover:bg-gray-800 text-white font-medium py-2 px-4 rounded transition-colors duration-200">
               Get Started
             </button>
           </div>

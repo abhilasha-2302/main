@@ -164,7 +164,7 @@ export default function RetailSolutionsPage() {
               <a href="#services" className="text-gray-700 hover:text-gray-900 font-medium">Services</a>
               <a href="#benefits" className="text-gray-700 hover:text-gray-900 font-medium">Key Benefits</a>
             </div>
-            <button className="bg-blue-700 hover:bg-blue-800 text-white font-medium py-2 px-4 rounded transition-colors duration-200">
+           <button className="bg-gray-900 hover:bg-gray-800 text-white font-medium py-2 px-4 rounded transition-colors duration-200">
               Get Started
             </button>
           </div>
@@ -187,7 +187,7 @@ export default function RetailSolutionsPage() {
             {services.map((service, index) => (
               <div
                 key={index}
-                className="group bg-white rounded-lg shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1 border border-slate-200 hover:border-blue-300"
+                className="group bg-white rounded-lg shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1 border border-slate-200 hover:border-green-300"
               >
                 <div className="p-6">
                   <div className="flex items-center justify-between mb-4">
@@ -195,7 +195,7 @@ export default function RetailSolutionsPage() {
                       {service.icon}
                     </div>
                   </div>
-                  <h3 className="text-xl font-semibold text-slate-900 mb-3 group-hover:text-blue-700 transition-colors duration-300">
+                  <h3 className="text-xl font-semibold text-slate-900 mb-3 group-hover:text-green-700 transition-colors duration-300">
                     {service.name}
                   </h3>
                   <p className="text-slate-600 text-sm leading-relaxed mb-4">
@@ -204,7 +204,7 @@ export default function RetailSolutionsPage() {
                   <div className="space-y-2">
                     {service.features.map((feature, idx) => (
                       <div key={idx} className="flex items-center text-xs text-slate-500">
-                        <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-2"></div>
+                        <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-2"></div>
                         {feature}
                       </div>
                     ))}
@@ -228,27 +228,27 @@ export default function RetailSolutionsPage() {
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="text-center bg-blue-50 rounded-lg p-8 shadow-sm border border-blue-100">
+            <div className="text-center bg-green-50 rounded-lg p-8 shadow-sm border border-green-100">
               <div className="bg-white rounded-full p-4 w-20 h-20 mx-auto mb-6 flex items-center justify-center shadow-sm">
-                <svg className="h-10 w-10 text-blue-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg className="h-10 w-10 text-green-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
                 </svg>
               </div>
               <h3 className="text-xl font-semibold text-slate-900 mb-3">Increased Conversions</h3>
               <p className="text-slate-600 leading-relaxed">AI-driven personalization and recommendations boost sales by delivering the right products to the right customers at the right time.</p>
             </div>
-            <div className="text-center bg-blue-50 rounded-lg p-8 shadow-sm border border-blue-100">
+            <div className="text-center bg-green-50 rounded-lg p-8 shadow-sm border border-green-100">
               <div className="bg-white rounded-full p-4 w-20 h-20 mx-auto mb-6 flex items-center justify-center shadow-sm">
-                <svg className="h-10 w-10 text-blue-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg className="h-10 w-10 text-green-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
                 </svg>
               </div>
               <h3 className="text-xl font-semibold text-slate-900 mb-3">Optimized Pricing</h3>
               <p className="text-slate-600 leading-relaxed">Dynamic pricing engines maximize profitability by automatically adjusting prices based on market conditions and demand patterns.</p>
             </div>
-            <div className="text-center bg-blue-50 rounded-lg p-8 shadow-sm border border-blue-100">
+            <div className="text-center bg-green-50 rounded-lg p-8 shadow-sm border border-green-100">
               <div className="bg-white rounded-full p-4 w-20 h-20 mx-auto mb-6 flex items-center justify-center shadow-sm">
-                <svg className="h-10 w-10 text-blue-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg className="h-10 w-10 text-green-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                 </svg>
               </div>

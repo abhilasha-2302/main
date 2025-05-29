@@ -129,7 +129,7 @@ export default function EducationSolutionsPage() {
       <section className="relative h-[calc(100vh-120px)] w-full overflow-hidden bg-black">
         <video
           className="h-full w-full object-cover"
-          src="/videos/education.mp4"
+          src="/videos/education.webm"
           autoPlay
           muted
           loop

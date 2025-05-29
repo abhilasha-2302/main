@@ -19,7 +19,7 @@ export default function ServicesSection() {
     {
       id: 'aiml',
       title: 'AI Enterprise Solutions',
-      image: '/images/ai.svg',
+      image: '/images/ai.png',
       link: '/solutions/ai-ml',
     },
     {

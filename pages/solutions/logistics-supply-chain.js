@@ -164,7 +164,7 @@ export default function LogisticsSolutionsPage() {
               <a href="#services" className="text-gray-700 hover:text-gray-900 font-medium">Services</a>
               <a href="#benefits" className="text-gray-700 hover:text-gray-900 font-medium">Key Benefits</a>
             </div>
-            <button className="bg-orange-600 hover:bg-orange-700 text-white font-medium py-2 px-4 rounded transition-colors duration-200">
+            <button className="bg-gray-900 hover:bg-gray-800 text-white font-medium py-2 px-4 rounded transition-colors duration-200">
               Get Started
             </button>
           </div>
@@ -187,7 +187,7 @@ export default function LogisticsSolutionsPage() {
             {services.map((service, index) => (
               <div
                 key={index}
-                className="group bg-white rounded-lg shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1 border border-slate-200 hover:border-orange-300"
+                className="group bg-white rounded-lg shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1 border border-slate-200 hover:border-green-300"
               >
                 <div className="p-6">
                   <div className="flex items-center justify-between mb-4">
@@ -195,7 +195,7 @@ export default function LogisticsSolutionsPage() {
                       {service.icon}
                     </div>
                   </div>
-                  <h3 className="text-xl font-semibold text-slate-900 mb-3 group-hover:text-orange-600 transition-colors duration-300">
+                  <h3 className="text-xl font-semibold text-slate-900 mb-3 group-hover:text-green-600 transition-colors duration-300">
                     {service.name}
                   </h3>
                   <p className="text-slate-600 text-sm leading-relaxed mb-4">
@@ -204,7 +204,7 @@ export default function LogisticsSolutionsPage() {
                   <div className="space-y-2">
                     {service.features.map((feature, idx) => (
                       <div key={idx} className="flex items-center text-xs text-slate-500">
-                        <div className="w-1.5 h-1.5 bg-orange-500 rounded-full mr-2"></div>
+                        <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-2"></div>
                         {feature}
                       </div>
                     ))}
@@ -228,27 +228,27 @@ export default function LogisticsSolutionsPage() {
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="text-center bg-orange-50 rounded-lg p-8 shadow-sm border border-orange-100">
+            <div className="text-center bg-green-50 rounded-lg p-8 shadow-sm border border-green-100">
               <div className="bg-white rounded-full p-4 w-20 h-20 mx-auto mb-6 flex items-center justify-center shadow-sm">
-                <svg className="h-10 w-10 text-orange-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg className="h-10 w-10 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
                 </svg>
               </div>
               <h3 className="text-xl font-semibold text-slate-900 mb-3">Operational Efficiency</h3>
               <p className="text-slate-600 leading-relaxed">AI-driven route optimization and predictive maintenance reduce costs, minimize downtime, and improve overall operational performance.</p>
             </div>
-            <div className="text-center bg-orange-50 rounded-lg p-8 shadow-sm border border-orange-100">
+            <div className="text-center bg-green-50 rounded-lg p-8 shadow-sm border border-green-100">
               <div className="bg-white rounded-full p-4 w-20 h-20 mx-auto mb-6 flex items-center justify-center shadow-sm">
-                <svg className="h-10 w-10 text-orange-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg className="h-10 w-10 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                 </svg>
               </div>
               <h3 className="text-xl font-semibold text-slate-900 mb-3">Enhanced Security & Transparency</h3>
               <p className="text-slate-600 leading-relaxed">Blockchain-powered tracking and decentralized verification ensure secure, transparent, and tamper-proof supply chain operations.</p>
             </div>
-            <div className="text-center bg-orange-50 rounded-lg p-8 shadow-sm border border-orange-100">
+            <div className="text-center bg-green-50 rounded-lg p-8 shadow-sm border border-green-100">
               <div className="bg-white rounded-full p-4 w-20 h-20 mx-auto mb-6 flex items-center justify-center shadow-sm">
-                <svg className="h-10 w-10 text-orange-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg className="h-10 w-10 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               </div>

@@ -164,7 +164,7 @@ export default function ManufacturingSolutionsPage() {
               <a href="#services" className="text-gray-700 hover:text-gray-900 font-medium">Services</a>
               <a href="#benefits" className="text-gray-700 hover:text-gray-900 font-medium">Key Benefits</a>
             </div>
-            <button className="bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-2 px-4 rounded transition-colors duration-200">
+            <button className="bg-gray-900 hover:bg-gray-800 text-white font-medium py-2 px-4 rounded transition-colors duration-200">
               Get Started
             </button>
           </div>
@@ -187,7 +187,7 @@ export default function ManufacturingSolutionsPage() {
             {services.map((service, index) => (
               <div
                 key={index}
-                className="group bg-white rounded-lg shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1 border border-slate-200 hover:border-indigo-300"
+                className="group bg-white rounded-lg shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1 border border-slate-200 hover:border-green-300"
               >
                 <div className="p-6">
                   <div className="flex items-center justify-between mb-4">
@@ -195,7 +195,7 @@ export default function ManufacturingSolutionsPage() {
                       {service.icon}
                     </div>
                   </div>
-                  <h3 className="text-xl font-semibold text-slate-900 mb-3 group-hover:text-indigo-600 transition-colors duration-300">
+                  <h3 className="text-xl font-semibold text-slate-900 mb-3 group-hover:text-green-600 transition-colors duration-300">
                     {service.name}
                   </h3>
                   <p className="text-slate-600 text-sm leading-relaxed mb-4">
@@ -204,7 +204,7 @@ export default function ManufacturingSolutionsPage() {
                   <div className="space-y-2">
                     {service.features.map((feature, idx) => (
                       <div key={idx} className="flex items-center text-xs text-slate-500">
-                        <div className="w-1.5 h-1.5 bg-indigo-500 rounded-full mr-2"></div>
+                        <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-2"></div>
                         {feature}
                       </div>
                     ))}
@@ -228,27 +228,27 @@ export default function ManufacturingSolutionsPage() {
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="text-center bg-indigo-50 rounded-lg p-8 shadow-sm border border-indigo-100">
+            <div className="text-center bg-green-50 rounded-lg p-8 shadow-sm border border-green-100">
               <div className="bg-white rounded-full p-4 w-20 h-20 mx-auto mb-6 flex items-center justify-center shadow-sm">
-                <svg className="h-10 w-10 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg className="h-10 w-10 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               </div>
               <h3 className="text-xl font-semibold text-slate-900 mb-3">Enhanced Quality Control</h3>
               <p className="text-slate-600 leading-relaxed">AI-powered visual inspection and automated quality control systems ensure consistent product quality and reduce defect rates significantly.</p>
             </div>
-            <div className="text-center bg-indigo-50 rounded-lg p-8 shadow-sm border border-indigo-100">
+            <div className="text-center bg-green-50 rounded-lg p-8 shadow-sm border border-green-100">
               <div className="bg-white rounded-full p-4 w-20 h-20 mx-auto mb-6 flex items-center justify-center shadow-sm">
-                <svg className="h-10 w-10 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg className="h-10 w-10 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
               </div>
               <h3 className="text-xl font-semibold text-slate-900 mb-3">Reduced Downtime</h3>
               <p className="text-slate-600 leading-relaxed">Predictive maintenance and digital twin technology prevent equipment failures and optimize maintenance schedules for maximum uptime.</p>
             </div>
-            <div className="text-center bg-indigo-50 rounded-lg p-8 shadow-sm border border-indigo-100">
+            <div className="text-center bg-green-50 rounded-lg p-8 shadow-sm border border-green-100">
               <div className="bg-white rounded-full p-4 w-20 h-20 mx-auto mb-6 flex items-center justify-center shadow-sm">
-                <svg className="h-10 w-10 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg className="h-10 w-10 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
                 </svg>
               </div>

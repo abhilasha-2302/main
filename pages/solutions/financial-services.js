@@ -120,7 +120,7 @@ export default function FinancialServicesSolutionsPage() {
   return (
     <Layout>
       <Head>
-        <title>Financial Services AI Solutions | Veripoint Technologies</title>
+        <title>Financial Services| Veripoint Technologies</title>
         <meta name="description" content="AI-driven financial solutions for algorithmic trading, fraud detection, risk analytics, and regulatory compliance across banking and fintech" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -129,7 +129,7 @@ export default function FinancialServicesSolutionsPage() {
       <section className="relative h-[calc(100vh-120px)] w-full overflow-hidden bg-black">
         <video
           className="h-full w-full object-cover"
-          src="/videos/financial-services.mp4"
+          src="/videos/financial.webm"
           autoPlay
           muted
           loop
@@ -164,9 +164,9 @@ export default function FinancialServicesSolutionsPage() {
               <a href="#services" className="text-gray-700 hover:text-gray-900 font-medium">Services</a>
               <a href="#benefits" className="text-gray-700 hover:text-gray-900 font-medium">Key Benefits</a>
             </div>
-            <button className="bg-green-700 hover:bg-green-800 text-white font-medium py-2 px-4 rounded transition-colors duration-200">
-              Get Started
-            </button>
+            <button className="bg-black hover:bg-gray-800 text-white font-medium py-2 px-4 rounded transition-colors duration-200">
+                Get Started
+              </button>
           </div>
         </div>
       </section>

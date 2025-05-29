@@ -63,7 +63,7 @@ export default function Navbar() {
   const dropdowns = {
     solutions: {
       technology: [
-        { name: 'AI-ML Solutions', href: '/solutions/ai-ml' },
+        { name: 'AI/ML Solutions', href: '/solutions/ai-ml' },
         { name: 'Blockchain', href: '/solutions/blockchain' }
       ]
     },

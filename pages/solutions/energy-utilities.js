@@ -129,7 +129,7 @@ export default function EnergyUtilitiesPage() {
       <section className="relative h-[calc(100vh-120px)] w-full overflow-hidden bg-black">
         <video
           className="h-full w-full object-cover"
-          src="/videos/energy.mp4"
+          src="/videos/energy.webm"
           autoPlay
           muted
           loop
