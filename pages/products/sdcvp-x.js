@@ -311,7 +311,7 @@ export default function SDCVPXPage() {
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-6 text-gray-900">Verification is #1 Bottleneck</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Behind every chip shortage headline is a verification failure. Here's the reality:
+              Behind every chip shortage headline is a verification failure. Here is the reality:
             </p>
           </div>
 
