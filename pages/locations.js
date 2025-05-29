@@ -38,7 +38,7 @@ export default function OfficeLocations() {
               </h1>
               <p className="text-xl text-green-100 max-w-3xl mx-auto">
                 Visit us at our state-of-the-art facilities in Noida, where
-                innovation meets excellence in semiconductor solutions.
+                innovation meets excellence in semiconductor and engineering solutions.
               </p>
             </div>
           </div>

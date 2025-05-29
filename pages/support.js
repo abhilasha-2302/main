@@ -176,7 +176,7 @@ export default function Support() {
             Experience the VeriPoint Difference
           </h3>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            Join leading organizations who trust VeriPoint Technologies for their innovative solutions. 
+            Join leading organizations who trust Veripoint Technologies for their innovative solutions. 
             Our dedicated support team ensures your success every step of the way.
           </p>
         </div>
