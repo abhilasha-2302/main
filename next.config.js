@@ -10,10 +10,11 @@ const nextConfig = {
       },
     ],
   },
-  i18n: {
-    locales: ['en'],
-    defaultLocale: 'en',
-  },
+  // i18n: {
+  //   locales: ['en'],
+  //   defaultLocale: 'en',
+  // },
+   output: 'export', // enables static export mode
 }
 
-module.exports = nextConfig
+module.exports = nextConfig;

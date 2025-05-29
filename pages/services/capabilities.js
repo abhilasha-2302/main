@@ -1,6 +1,5 @@
 import Head from 'next/head';
 import Layout from '../../components/layout/Layout';
-import CapabilitiesList from '../../components/capabilities/CapabilitiesList';
 import CallToAction from '../../components/home/CallToAction';
 
 export default function CapabilitiesPage() {
@@ -12,7 +11,7 @@ export default function CapabilitiesPage() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <CapabilitiesList />
+      
       <CallToAction />
     </Layout>
   );

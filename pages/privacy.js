@@ -99,7 +99,7 @@ export default function Privacy() {
                   Some Veripoint web pages use cookies, which are small files saved on your computer. Cookies help us recognize your user preferences and can improve your future web visits. You can set your web browser to notify you when you are receiving a cookie and choose to reject it. However, rejecting cookies may affect the performance of the Veripoint Site and prevent you from accessing certain Veripoint information.
                 </p>
                 <p className="text-gray-700">
-                  Additionally, we may also permit third-party vendors, such as Google, to place cookies in your browser so that we may advertise our products to you on other websites that you may visit. You can opt out of Google use of cookies by visiting Google Ads Settings page, and you can also opt-out from many other third-party vendors use of cookies by visiting the Network Advertising Initiative's Consumer Opt-Out page.
+                  Additionally, we may also permit third-party vendors, such as Google, to place cookies in your browser so that we may advertise our products to you on other websites that you may visit. You can opt out of Google use of cookies by visiting Google Ads Settings page, and you can also opt-out from many other third-party vendors use of cookies by visiting the Network Advertising Initiatives Consumer Opt-Out page.
                 </p>
               </div>
             </section>
