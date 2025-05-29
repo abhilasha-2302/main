@@ -14,7 +14,7 @@ const nextConfig = {
   //   locales: ['en'],
   //   defaultLocale: 'en',
   // },
-   output: 'export', // enables static export mode
+  //  output: 'export', // enables static export mode
 }
 
 module.exports = nextConfig;
