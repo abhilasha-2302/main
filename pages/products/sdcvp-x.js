@@ -251,7 +251,7 @@ export default function SDCVPXPage() {
         {/* Video Background */}
         <video
           className="h-full w-full object-cover"
-          src="/sdcvp.mp4"
+          src="/sdcvpx.webm"
           autoPlay
           muted
           loop

@@ -129,7 +129,7 @@ export default function ManufacturingSolutionsPage() {
       <section className="relative h-[calc(100vh-120px)] w-full overflow-hidden bg-black">
         <video
           className="h-full w-full object-cover"
-          src="/videos/manufacturing.mp4"
+          src="/videos/manufacturing.webm"
           autoPlay
           muted
           loop
@@ -178,7 +178,7 @@ export default function ManufacturingSolutionsPage() {
             <h2 className="text-3xl font-normal text-slate-900 mb-4">
               Choose Your Services
             </h2>
-            <p className="text-lg text-slate-600 leading-relaxed max-w-3xl">
+            <p className="text-lg text-black leading-relaxed">
               Select from our comprehensive AI-powered manufacturing solutions designed for quality control, predictive maintenance, and digital simulation, reducing downtime and increasing throughput.
             </p>
           </div>

@@ -142,7 +142,7 @@ export default function FinancialServicesSolutionsPage() {
         <div className="absolute inset-0 flex items-center justify-center z-20">
           <div className="text-center">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-light text-white mb-8">
-              Financial Services AI Solutions
+              Financial Services Solutions
             </h1>
             <Link href="/video-page">
               <button className="inline-flex items-center bg-white hover:bg-gray-100 text-gray-900 font-medium py-3 px-6 rounded transition-colors duration-200">
@@ -178,7 +178,7 @@ export default function FinancialServicesSolutionsPage() {
             <h2 className="text-3xl font-normal text-slate-900 mb-4">
               Choose Your Services
             </h2>
-            <p className="text-lg text-slate-600 leading-relaxed max-w-3xl">
+            <p className="text-lg text-black leading-relaxed">
               Select from our comprehensive AI-driven financial services designed to enhance trading performance, strengthen security, optimize risk management, and ensure regulatory compliance across banking, insurance, and fintech operations.
             </p>
           </div>

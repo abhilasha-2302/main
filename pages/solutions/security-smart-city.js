@@ -120,7 +120,7 @@ export default function SmartCitiesSolutionsPage() {
   return (
     <Layout>
       <Head>
-        <title>Smart Cities & Security AI Solutions | Veripoint Technologies</title>
+        <title>Smart Cities & Security Solutions | Veripoint Technologies</title>
         <meta name="description" content="Intelligent urban infrastructure solutions that enhance public safety, optimize traffic management, and enable seamless security integration for smart cities" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -129,7 +129,7 @@ export default function SmartCitiesSolutionsPage() {
       <section className="relative h-[calc(100vh-120px)] w-full overflow-hidden bg-black">
         <video
           className="h-full w-full object-cover"
-          src="/videos/smart-cities.mp4"
+          src="/videos/smart.webm"
           autoPlay
           muted
           loop
@@ -142,7 +142,7 @@ export default function SmartCitiesSolutionsPage() {
         <div className="absolute inset-0 flex items-center justify-center z-20">
           <div className="text-center">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-light text-white mb-8">
-              Smart Cities & Security AI Solutions
+              Smart Cities & Security Solutions
             </h1>
             <Link href="/video-page">
               <button className="inline-flex items-center bg-white hover:bg-gray-100 text-gray-900 font-medium py-3 px-6 rounded transition-colors duration-200">
@@ -178,7 +178,7 @@ export default function SmartCitiesSolutionsPage() {
             <h2 className="text-3xl font-normal text-slate-900 mb-4">
               Choose Your Services
             </h2>
-            <p className="text-lg text-slate-600 leading-relaxed max-w-3xl">
+            <p className="text-lg text-black leading-relaxed">
               Select from our comprehensive AI-driven smart city solutions designed to enhance public safety, optimize urban infrastructure, and create more efficient, secure urban environments.
             </p>
           </div>

@@ -180,7 +180,7 @@ export default function EnergyUtilitiesPage() {
             <h2 className="text-3xl font-normal text-slate-900 mb-4">
               Choose Your Services
             </h2>
-            <p className="text-lg text-slate-600 leading-relaxed max-w-3xl">
+            <p className="text-lg text-black leading-relaxed">
               Select from our comprehensive AI-driven energy solutions designed to optimize grid operations, enhance infrastructure reliability, and streamline utility management for sustainable energy systems.
             </p>
           </div>

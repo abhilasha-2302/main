@@ -120,7 +120,7 @@ export default function RetailSolutionsPage() {
   return (
     <Layout>
       <Head>
-        <title>Retail & E-Commerce AI Solutions | Veripoint Technologies</title>
+        <title>Retail & E-Commerce Solutions| Veripoint Technologies</title>
         <meta name="description" content="AI-driven retail solutions for personalized shopping experiences, dynamic pricing, and automated customer service" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -129,7 +129,7 @@ export default function RetailSolutionsPage() {
       <section className="relative h-[calc(100vh-120px)] w-full overflow-hidden bg-black">
         <video
           className="h-full w-full object-cover"
-          src="/videos/retail.mp4"
+          src="/videos/retail.webm"
           autoPlay
           muted
           loop
@@ -142,7 +142,7 @@ export default function RetailSolutionsPage() {
         <div className="absolute inset-0 flex items-center justify-center z-20">
           <div className="text-center">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-light text-white mb-8">
-              Retail & E-Commerce AI Solutions
+              Retail & E-Commerce Solutions
             </h1>
             <Link href="/video-page">
               <button className="inline-flex items-center bg-white hover:bg-gray-100 text-gray-900 font-medium py-3 px-6 rounded transition-colors duration-200">
@@ -178,7 +178,7 @@ export default function RetailSolutionsPage() {
             <h2 className="text-3xl font-normal text-slate-900 mb-4">
               Choose Your Services
             </h2>
-            <p className="text-lg text-slate-600 leading-relaxed max-w-3xl">
+            <p className="text-lg text-black leading-relaxed">
               Select from our comprehensive AI-driven retail solutions designed to enhance personalization, automate pricing strategies, and improve customer interactions—driving conversions and loyalty.
             </p>
           </div>

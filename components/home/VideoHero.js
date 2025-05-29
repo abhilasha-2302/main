@@ -6,7 +6,7 @@ import Link from 'next/link';
 const stories = [
   {
     id: 'story-1',
-    src: '/videos/sdcvp-x.mp4',
+    src: '/videos/sdcvp.webm',
     title: 'AI Chip Verification',
     heading: 'Introducing SdCvP-X',
     headingTrademark: '™',
@@ -19,7 +19,7 @@ const stories = [
   },
   {
     id: 'story-2',
-    src: '/videos/ai.mp4',
+    src: '/videos/aiml.webm',
     title: 'AI Smart Solutions',
     heading: 'Discover AI',
     subheading: 'Driving Intelligent Transformation',

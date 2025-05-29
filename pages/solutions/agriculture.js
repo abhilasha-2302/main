@@ -178,7 +178,7 @@ export default function AgricultureSolutionsPage() {
             <h2 className="text-3xl font-normal text-slate-900 mb-4">
               Choose Your Services
             </h2>
-            <p className="text-lg text-slate-600 leading-relaxed max-w-3xl">
+            <p className="text-lg text-black leading-relaxed">
               Select from our comprehensive AI-driven agricultural services designed to optimize crop yields, enhance climate risk management, and streamline farming operations for sustainable agriculture.
             </p>
           </div>

@@ -183,7 +183,7 @@ export default function TelecommunicationsSolutionsPage() {
             <h2 className="text-3xl font-normal text-slate-900 mb-4">
               Choose Your Services
             </h2>
-            <p className="text-lg text-slate-600 leading-relaxed max-w-3xl">
+           <p className="text-lg text-black leading-relaxed">
               Select your telecommunications sector to explore AI-powered services designed to enhance network reliability, optimize operations, and elevate customer service experiences.
             </p>
           </div>

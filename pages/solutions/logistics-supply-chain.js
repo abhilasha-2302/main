@@ -120,7 +120,7 @@ export default function LogisticsSolutionsPage() {
   return (
     <Layout>
       <Head>
-        <title>Logistics & Supply Chain Solutions | Veripoint Technologies</title>
+        <title>Logistics & Supply Chain Solutions| Veripoint Technologies</title>
         <meta name="description" content="AI-driven logistics solutions for route optimization, blockchain tracking, and supply chain transparency" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -129,7 +129,7 @@ export default function LogisticsSolutionsPage() {
       <section className="relative h-[calc(100vh-120px)] w-full overflow-hidden bg-black">
         <video
           className="h-full w-full object-cover"
-          src="/videos/logistics.mp4"
+          src="/videos/logistics.webm"
           autoPlay
           muted
           loop
@@ -178,7 +178,7 @@ export default function LogisticsSolutionsPage() {
             <h2 className="text-3xl font-normal text-slate-900 mb-4">
               Choose Your Services
             </h2>
-            <p className="text-lg text-slate-600 leading-relaxed max-w-3xl">
+            <p className="text-lg text-black leading-relaxed">
               Select from our comprehensive AI-driven logistics solutions designed for optimization, real-time tracking, and vendor authentication, improving operational transparency, delivery efficiency, and risk management.
             </p>
           </div>
