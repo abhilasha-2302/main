@@ -227,27 +227,15 @@ export default function SDCVPXPage() {
     }
   ];
 
-
-const downloadBrochure = () => {
-  const link = document.createElement("a");
-  link.href = "/Brochure_VeripointTechnologies.pdf"; // Path to the file in the public folder
-  link.download = "brochure_vt.pdf"; // Optional: set the downloaded file name
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
-};
-
-const BrochureDownloadButton = () => (
-  <button
-    onClick={downloadBrochure}
-    className="border-2 border-green-400 text-green-400 px-8 py-4 rounded-lg font-semibold hover:bg-green-400 hover:text-green-900 transition-colors flex items-center justify-center backdrop-blur-sm"
-  >
-    <Download className="h-5 w-5 mr-3" />
-    Download Brochure
-  </button>
-);
-
-
+   // ✅ Define the brochure download function
+  const downloadBrochure = () => {
+    const link = document.createElement("a");
+    link.href = "/Brochure_VeripointTechnologies.pdf"; // Ensure this file is in your public folder
+    link.download = "Brochure_VeripointTechnologies.pdf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
 
   return (
     <Layout>
