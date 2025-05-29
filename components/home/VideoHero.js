@@ -7,7 +7,7 @@ const stories = [
   {
     id: 'story-1',
     src: '/videos/sdcvp-x.mp4',
-    title: 'AI Chip Development',
+    title: 'AI Chip Verification',
     heading: 'Introducing SdCvP-X',
     headingTrademark: '™',
     subheading: 'Verification Acceleration AI Tool',
@@ -20,7 +20,7 @@ const stories = [
   {
     id: 'story-2',
     src: '/videos/ai.mp4',
-    title: 'AI based Engineering',
+    title: 'AI Smart Solutions',
     heading: 'Discover AI',
     subheading: 'Driving Intelligent Transformation',
     description: 'Rapid, Secure, Adaptive Innovation',
@@ -31,7 +31,7 @@ const stories = [
   },
   {
     id: 'story-3',
-    src: '/videos/blockchain.mp4',
+    src: '/videos/blockchain.webm',
     title: 'Blockchain',
     heading: 'Explore Blockchain',
     subheading: 'Accelerating Blockchain Transformation',

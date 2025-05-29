@@ -1,7 +1,9 @@
+import Layout from '@/components/layout/Layout';
 import Link from 'next/link';
 
 export default function Careers() {
   return (
+    <Layout>
     <div className="min-h-screen bg-white">
       {/* Header Section */}
       <div className="bg-gradient-to-r from-green-600 to-green-700">
@@ -92,7 +94,7 @@ export default function Careers() {
                   <li>Strong proficiency in Python, TensorFlow, PyTorch, or similar frameworks</li>
                   <li>Experience with deep learning, neural networks, and model optimization</li>
                   <li>Knowledge of computer vision, NLP, or signal processing</li>
-                  <li>Understanding of hardware-software integration principles</li>
+                  
                   <li>Strong problem-solving skills and analytical thinking</li>
                   <li>Excellent communication and teamwork abilities</li>
                 </ul>
@@ -102,10 +104,9 @@ export default function Careers() {
                 <h4 className="text-lg font-semibold text-gray-900 mb-3">Preferred Qualifications</h4>
                 <ul className="list-disc list-inside text-gray-700 space-y-2">
                   <li>Experience with semiconductor design or embedded systems</li>
-                  <li>Knowledge of CUDA, OpenCL, or other parallel computing frameworks</li>
-                  <li>Familiarity with edge AI and IoT applications</li>
+              
                   <li>Experience with cloud platforms (AWS, GCP, Azure)</li>
-                  <li>Publications or contributions to AI/ML research</li>
+                  
                 </ul>
               </div>
 
@@ -215,5 +216,5 @@ export default function Careers() {
         </div>
       </div>
     </div>
-  );
+  </Layout>);
 }

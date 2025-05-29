@@ -120,7 +120,7 @@ export default function LegalTechSolutionsPage() {
   return (
     <Layout>
       <Head>
-        <title>Legal Tech AI Solutions | Veripoint Technologies</title>
+        <title>Legal Tech Solutions | Veripoint Technologies</title>
         <meta name="description" content="AI-powered legal technology solutions for contract analysis, compliance monitoring, document automation, and legal research" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -129,7 +129,7 @@ export default function LegalTechSolutionsPage() {
       <section className="relative h-[calc(100vh-120px)] w-full overflow-hidden bg-black">
         <video
           className="h-full w-full object-cover"
-          src="/videos/legal-tech.mp4"
+          src="/videos/legal.webm"
           autoPlay
           muted
           loop

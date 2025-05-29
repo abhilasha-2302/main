@@ -23,7 +23,7 @@ export default function Footer() {
               </span>
             </Link>
             <p className="mt-2 text-sm text-gray-600">
-              Forward-looking semiconductor solutions company
+              Smart Engineering and Silicon Solutions
             </p>
           </div>
 
@@ -86,7 +86,7 @@ export default function Footer() {
               <ul className="space-y-2">
                 <li>
                   <Link href="/solutions/ai-ml" className="text-gray-600 hover:text-green-600 text-sm">
-                    AI-ML Solutions
+                    AI/ML Solutions
                   </Link>
                 </li>
                 <li>

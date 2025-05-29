@@ -64,14 +64,14 @@ export default function SDCVPXPage() {
   const keyFeatures = [
     {
       icon: <FileText className="h-8 w-8" />,
-      title: "Auto Verification Plan Generator",
-      description: "Automatically generates features, test points, test scenarios by configuration from design specifications",
+      title: "Specification Driven V&V Plan Generator",
+      description: "Automatically generates features, test points, and test scenarios by configuration from design specification.",
       color: "bg-blue-50 text-blue-600"
     },
     {
       icon: <Target className="h-8 w-8" />,
-      title: "Constraints & Assertions",
-      description: "Auto-generates constraints, coverage metrics, and assertions aligned with specification requirements",
+      title: "Constraints, Coverage & Assertions",
+      description: "Auto-generates constraints, coverage metrics, and assertions aligned with design specification requirements",
       color: "bg-green-50 text-green-600"
     },
     {
@@ -82,7 +82,7 @@ export default function SDCVPXPage() {
     },
     {
       icon: <Activity className="h-8 w-8" />,
-      title: "Specification Evolver",
+      title: "Specification Evolution",
       description: "Automatically adapts verification plans as specifications evolve, maintaining version traceability",
       color: "bg-purple-50 text-purple-600"
     },
@@ -614,11 +614,10 @@ export default function SDCVPXPage() {
       <section className="py-20 bg-green-600 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl font-bold mb-6">
-            Ready to Transform Your Verification Process?
+            Enhance your Verification Efforts with SdCvP-X™ today.
           </h2>
           <p className="text-xl text-green-100 mb-12 max-w-3xl mx-auto">
-            Join the companies achieving first silicon success with secure, AI-powered verification automation 
-            that integrates seamlessly with your existing workflows.
+            Achieve First-time Silicon Success and faster TTM with secure and automated intelligent Verification tool that integrates seamlessly with your existing workflows.
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <a
