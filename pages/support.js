@@ -13,7 +13,7 @@ export default function Support() {
               Support Center
             </h1>
             <p className="text-xl text-green-100 max-w-3xl mx-auto">
-              We're here to help you succeed with our innovative solutions. Reach out to our expert team for dedicated support.
+              We are here to help you succeed with our innovative solutions. Reach out to our expert team for dedicated support.
             </p>
           </div>
         </div>

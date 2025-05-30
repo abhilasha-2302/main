@@ -12,7 +12,8 @@ export default function About() {
               About Veripoint Technologies
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Your trusted partner in AI solutions, engineering services, and semiconductor product development
+              Your trusted partner for advanced Al solutions, engineering services, and semiconductor product innovation - delivering scalable, future-ready technologies
+from silicon to complex systems across diverse industries.
             </p>
           </div>
         </div>
@@ -38,15 +39,15 @@ export default function About() {
             <div className="bg-gray-100 rounded-lg p-8">
               <div className="grid grid-cols-2 gap-6 text-center">
                 <div>
-                  <div className="text-3xl font-bold text-green-600 mb-2">10+</div>
+                  <div className="text-3xl font-bold text-green-600 mb-2">3+</div>
                   <div className="text-sm text-gray-600">Years of Experience</div>
                 </div>
                 <div>
-                  <div className="text-3xl font-bold text-green-600 mb-2">100+</div>
+                  <div className="text-3xl font-bold text-green-600 mb-2">20+</div>
                   <div className="text-sm text-gray-600">Projects Delivered</div>
                 </div>
                 <div>
-                  <div className="text-3xl font-bold text-green-600 mb-2">50+</div>
+                  <div className="text-3xl font-bold text-green-600 mb-2">5+</div>
                   <div className="text-sm text-gray-600">Global Clients</div>
                 </div>
                 <div>

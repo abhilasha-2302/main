@@ -524,11 +524,11 @@ export default function VerificationServicesPage() {
               Silicon Verification Services
             </h1>
             <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-              Accelerate First-Time Silicon Success with AI-Driven Solutions and Expert Verification Services
+              Achieve First-Time Silicon Success with Al-Driven Verification Solution and Expert Services 
             </p>
             <p className="text-lg text-gray-700 mb-12 max-w-4xl mx-auto">
-              At Veripoint Technologies, we redefine hardware verification with AI and deep domain verification expertise. 
-              Whether it is IP, SoC, ASIC, or FPGA — we help you tape-out faster, with confidence.
+              At Veripoint Technologies, we redefine hardware verification to accelerate silicon success with AI- driven solutions and deep domain knowledge. From IP and SoC to ASIC and FPGA, we enable you
+to tape out confidently - accelerating your path to market.
             </p>
             <div className="flex flex-wrap justify-center gap-4 mb-12">
               <div className="flex items-center bg-white px-4 py-2 rounded-full shadow-md">
