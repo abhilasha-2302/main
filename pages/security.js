@@ -18,9 +18,9 @@ export default function SecurityPage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
             <div className="text-center">
               <Shield className="h-16 w-16 mx-auto mb-6 text-green-200" />
-              <h1 className="text-4xl md:text-5xl font-bold mb-4">
+              <h2 className="text-4xl md:text-5xl font-bold mb-4">
                 Veripoint Technologies PSIRT & Vulnerability Disclosure
-              </h1>
+              </h2>
               <p className="text-xl text-green-100 max-w-3xl mx-auto">
                 Our Product Security Incident Response Team is committed to
                 maintaining the highest standards of security across all
