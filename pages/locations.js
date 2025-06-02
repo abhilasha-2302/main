@@ -97,16 +97,13 @@ export default function OfficeLocations() {
                     <div className="flex items-center space-x-4 text-sm text-gray-600">
                       <div className="flex items-center space-x-1">
                         <Phone size={16} />
-                        <span>+91 9717580855</span>
+                        <span>Contact for directions</span>
                       </div>
                     </div>
-                    <a
-                      href="mailto:hr@veripointtech.com"
-                      className="inline-flex items-center px-4 py-2 bg-green-600 text-white text-sm font-medium rounded-md hover:bg-green-700 transition-colors duration-200"
-                    >
+                    <button className="inline-flex items-center px-4 py-2 bg-green-600 text-white text-sm font-medium rounded-md hover:bg-green-700 transition-colors duration-200">
                       <Mail size={16} className="mr-2" />
                       Get Directions
-                    </a>
+                    </button>
                   </div>
                 </div>
               </div>
@@ -126,14 +123,13 @@ export default function OfficeLocations() {
               </p>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-8 text-center">
+            <div className="grid md:grid-cols-3 gap-8 text-center">
               <div className="space-y-2">
                 <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto">
                   <Phone className="text-green-600" size={24} />
                 </div>
                 <h3 className="font-semibold text-gray-900">Call Us</h3>
-                <p className="text-gray-600">+91 9717580855</p>
-                <p className="text-gray-600 text-sm">
+                <p className="text-gray-600">
                   Contact our reception for assistance
                 </p>
               </div>
@@ -143,21 +139,26 @@ export default function OfficeLocations() {
                   <Mail className="text-green-600" size={24} />
                 </div>
                 <h3 className="font-semibold text-gray-900">Email Us</h3>
-                <p className="text-gray-600">hr@veripointtech.com</p>
-                <p className="text-gray-600 text-sm">Send us your visit requirements</p>
+                <p className="text-gray-600">Send us your visit requirements</p>
+              </div>
+
+              <div className="space-y-2">
+                <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto">
+                  <MapPin className="text-green-600" size={24} />
+                </div>
+                <h3 className="font-semibold text-gray-900">Visit Us</h3>
+                <p className="text-gray-600">Schedule a tour of our facilities</p>
               </div>
             </div>
 
             <div className="mt-8 text-center">
-              <a
-                href="https://docs.google.com/forms/d/e/1FAIpQLSeIjsCGC0qq6CaVuqlUU4JN_Z9zAa3voQTd1Cdqlx_9JcB6Gw/viewform"
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                href="/contact"
                 className="inline-flex items-center px-6 py-3 bg-green-600 text-white font-medium rounded-md hover:bg-green-700 transition-colors duration-200"
               >
                 Contact Us Today
                 <ExternalLink size={16} className="ml-2" />
-              </a>
+              </Link>
             </div>
           </div>
         </div>
