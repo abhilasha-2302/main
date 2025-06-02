@@ -22,9 +22,7 @@ export default function Footer() {
                 VERIPOINT
               </span>
             </Link>
-            <p className="mt-2 text-sm text-gray-600">
-              Smart Engineering and Silicon Solutions
-            </p>
+      
           </div>
 
           <div className="w-full md:w-4/5 grid grid-cols-2 md:grid-cols-5 gap-8">

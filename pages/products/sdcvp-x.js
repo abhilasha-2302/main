@@ -293,13 +293,13 @@ export default function SDCVPXPage() {
                     <PlayCircle className="h-5 w-5 mr-3" />
                     Request Demo
                   </a>
-                  <button
+                  {/* <button
                     onClick={downloadBrochure}
                     className="border-2 border-green-400 text-green-400 px-8 py-4 rounded-lg font-semibold hover:bg-green-400 hover:text-green-900 transition-colors flex items-center justify-center backdrop-blur-sm"
                   >
                     <Download className="h-5 w-5 mr-3" />
                     Download Brochure
-                  </button>
+                  </button> */}
                 </div>
               </div>
             </div>
@@ -530,7 +530,7 @@ export default function SDCVPXPage() {
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-6">Impact Across Teams</h2>
             <p className="text-xl text-gray-600">
-              SdCvP-X delivers value to every role in your organization, from individual contributors to business leaders.
+              SDCVP-X™ delivers value to every role in your organization, from individual contributors to business leaders.
             </p>
           </div>
 

@@ -1,8 +1,8 @@
 import Head from 'next/head';
 import Layout from '../../components/layout/Layout';
 import ServiceIntro from '../../components/services/ServiceIntro';
-import ServicesList from '../../components/services/ServicesList';
-import CallToAction from '../../components/home/CallToAction';
+
+
 
 export default function ServicesPage() {
   return (
@@ -14,8 +14,8 @@ export default function ServicesPage() {
       </Head>
 
       <ServiceIntro />
-      <ServicesList />
-      <CallToAction />
+
+     
     </Layout>
   );
 }
