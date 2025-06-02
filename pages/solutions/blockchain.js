@@ -129,7 +129,7 @@ export default function BlockchainSolutionsPage() {
       <section className="relative h-[calc(100vh-120px)] w-full overflow-hidden bg-black">
         <video
           className="h-full w-full object-cover"
-          src="/videos/blockchain.mp4"
+          src="/videos/block.webm"
           autoPlay
           muted
           loop

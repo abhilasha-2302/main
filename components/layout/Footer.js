@@ -73,11 +73,7 @@ export default function Footer() {
                     Blogs
                   </Link>
                 </li>
-                <li>
-                  <Link href="/articles" className="text-gray-600 hover:text-green-600 text-sm">
-                    Technical Articles
-                  </Link>
-                </li>
+                
               </ul>
             </div>
 

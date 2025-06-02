@@ -80,7 +80,7 @@ export default function Navbar() {
       ],
       resources: [
         { name: 'Blogs', href: '/blog' },
-        { name: 'Technical Articles', href: '/articles' }
+        
       ]
     }
   };
