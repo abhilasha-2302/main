@@ -98,10 +98,13 @@ export default function OfficeLocations() {
 
                 <div className="bg-gray-50 px-8 py-4">
                   <div className="flex justify-end">
-                    <button className="inline-flex items-center px-4 py-2 bg-green-600 text-white text-sm font-medium rounded-md hover:bg-green-700 transition-colors duration-200">
+                    <a
+                      href="mailto:info@veripointtech.com"
+                      className="inline-flex items-center px-4 py-2 bg-green-600 text-white text-sm font-medium rounded-md hover:bg-green-700 transition-colors duration-200"
+                    >
                       <Mail size={16} className="mr-2" />
                       Get Directions
-                    </button>
+                    </a>
                   </div>
                 </div>
               </div>
