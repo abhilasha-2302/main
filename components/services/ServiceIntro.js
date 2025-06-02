@@ -495,7 +495,7 @@ export default function VerificationServicesPage() {
   const whyChooseUs = [
     {
       icon: <Award className="w-6 h-6 text-green-600" />,
-      title: 'SdCvP-X AI Accelerator',
+      title: 'SdCvP-X Verification Accelerator',
       description: 'Reliable and accurate automated verification with efficient and quick debugging'
     },
     {

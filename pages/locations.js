@@ -6,23 +6,23 @@ export default function OfficeLocations() {
   const locations = [
     {
       id: 1,
-      name: "Urbtech Trade Center Office",
-      address:
-        "Unit no. IS-800, Ground Floor, Tower-C, Urbtech Trade Center, Plot No. B-35, Sector-132, Noida 201304, Uttar Pradesh, India",
-      mapUrl: "https://g.co/kgs/HWqEdXs",
-      type: "Primary Office",
-      description:
-        "Our main office and operational headquarters providing comprehensive semiconductor solutions.",
-    },
-    {
-      id: 2,
-      name: "World Trade Tower Office",
+      name: "World Trade Tower, Noida",
       address:
         "Tower B, Unit 304, M Floor, World Trade Tower, Plot no. C-1, Sector-16, Noida 201301, Uttar Pradesh, India",
       mapUrl: "https://g.co/kgs/Zi7LsxD",
-      type: "Secondary Office",
+      type: "Branch Office",
       description:
-        "Our secondary facility located in the prestigious World Trade Tower complex.",
+        "Our flagship R&D and legal facility is located in the prestigious World Trade Tower, Noida.",
+    },
+    {
+      id: 2,
+      name: "Urbtech Trade Center, Noida",
+      address:
+        "Unit no. IS-800, Ground Floor, Tower-C, Urbtech Trade Center, Plot No. B-35, Sector-132, Noida 201304, Uttar Pradesh, India",
+      mapUrl: "https://g.co/kgs/HWqEdXs",
+      type: "Opening Soon",
+      description:
+        "Our upcoming R&D and operational headquarters that will further strengthen our capabilities in cutting-edge semiconductor and AI solutions.",
     },
   ];
 
@@ -55,7 +55,11 @@ export default function OfficeLocations() {
                 <div className="p-8">
                   <div className="flex items-start justify-between mb-4">
                     <div>
-                      <span className="inline-block px-3 py-1 text-xs font-semibold text-green-700 bg-green-100 rounded-full mb-2">
+                      <span className={`inline-block px-3 py-1 text-xs font-semibold rounded-full mb-2 ${
+                        location.type === "Opening Soon" 
+                          ? "text-orange-700 bg-orange-100" 
+                          : "text-green-700 bg-green-100"
+                      }`}>
                         {location.type}
                       </span>
                       <h3 className="text-2xl font-bold text-gray-900 mb-2">
@@ -93,13 +97,7 @@ export default function OfficeLocations() {
                 </div>
 
                 <div className="bg-gray-50 px-8 py-4">
-                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between space-y-2 sm:space-y-0">
-                    <div className="flex items-center space-x-4 text-sm text-gray-600">
-                      <div className="flex items-center space-x-1">
-                        <Phone size={16} />
-                        <span>Contact for directions</span>
-                      </div>
-                    </div>
+                  <div className="flex justify-end">
                     <button className="inline-flex items-center px-4 py-2 bg-green-600 text-white text-sm font-medium rounded-md hover:bg-green-700 transition-colors duration-200">
                       <Mail size={16} className="mr-2" />
                       Get Directions
@@ -123,42 +121,32 @@ export default function OfficeLocations() {
               </p>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-8 text-center">
-              <div className="space-y-2">
-                <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto">
-                  <Phone className="text-green-600" size={24} />
-                </div>
-                <h3 className="font-semibold text-gray-900">Call Us</h3>
-                <p className="text-gray-600">
-                  Contact our reception for assistance
-                </p>
-              </div>
-
-              <div className="space-y-2">
+            <div className="flex justify-center">
+              <div className="space-y-2 text-center">
                 <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto">
                   <Mail className="text-green-600" size={24} />
                 </div>
                 <h3 className="font-semibold text-gray-900">Email Us</h3>
                 <p className="text-gray-600">Send us your visit requirements</p>
-              </div>
-
-              <div className="space-y-2">
-                <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto">
-                  <MapPin className="text-green-600" size={24} />
-                </div>
-                <h3 className="font-semibold text-gray-900">Visit Us</h3>
-                <p className="text-gray-600">Schedule a tour of our facilities</p>
+                <a 
+                  href="mailto:info@veripointtech.com"
+                  className="text-green-600 hover:text-green-700 font-medium transition-colors duration-200"
+                >
+                  info@veripointtech.com
+                </a>
               </div>
             </div>
 
             <div className="mt-8 text-center">
-              <Link
-                href="/contact"
+              <a
+                href="https://forms.gle/FgfXGEamse6BUG5CA"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center px-6 py-3 bg-green-600 text-white font-medium rounded-md hover:bg-green-700 transition-colors duration-200"
               >
                 Contact Us Today
                 <ExternalLink size={16} className="ml-2" />
-              </Link>
+              </a>
             </div>
           </div>
         </div>
