@@ -10,7 +10,7 @@ export default function SupportCareers() {
               Support & Services
             </h2>
             <p className="text-gray-600 mb-6">
-              Explore the Veripoint Technologies Support Community! Login is required. 
+              Explore the Veripoint Technologies Support Community! 
               View our service offerings as well.
             </p>
             <Link 
