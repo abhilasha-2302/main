@@ -124,7 +124,7 @@ to tape out confidently - accelerating your path to market.
               </div>
               <div className="flex items-center bg-white px-4 py-2 rounded-full shadow-md">
                 <CheckCircle className="w-5 h-5 text-green-600 mr-2" />
-                <span className="text-sm font-medium">Protocol fluency across 10+ standards</span>
+                <span className="text-sm font-medium">Protocol fluency across 20+ standards</span>
               </div>
               <div className="flex items-center bg-white px-4 py-2 rounded-full shadow-md">
                 <CheckCircle className="w-5 h-5 text-green-600 mr-2" />
