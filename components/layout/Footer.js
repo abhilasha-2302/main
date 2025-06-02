@@ -47,9 +47,9 @@ export default function Footer() {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/contact" className="text-gray-600 hover:text-green-600 text-sm">
+                  <a href="https://forms.gle/nA8YkAY7RoeEHZnB7" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-green-600 text-sm">
                     Contact Us
-                  </Link>
+                  </a>
                 </li>
               </ul>
             </div>
