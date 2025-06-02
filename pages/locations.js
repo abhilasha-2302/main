@@ -22,7 +22,7 @@ export default function OfficeLocations() {
       mapUrl: "https://g.co/kgs/HWqEdXs",
       type: "Opening Soon",
       description:
-        "Our upcoming R&D and operational headquarters that will further strengthen our capabilities in cutting-edge semiconductor and AI solutions.",
+        "Our upcoming R&D and operational headquarters that will further strengthen our capabilities in semiconductor and AI solutions.",
     },
   ];
 
