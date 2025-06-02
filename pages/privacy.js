@@ -30,7 +30,7 @@ export default function Privacy() {
             <section className="mb-12">
               <h2 className="text-3xl font-bold text-gray-900 mb-6">Veripoint Website Privacy Policy</h2>
               <p className="text-gray-700 mb-4">
-                Veripoint Technologies takes your online privacy on our website seriously. The privacy practices described in this privacy policy apply to veripoint.com and to all of our websites and wholly owned subsidiary websites (collectively, the Site). This privacy policy does not cover any other data collection or processing, including, without limitation, data collection practices of other websites to which we link or data that we or our affiliates collect offline or through web pages that do not display a direct link to this privacy policy.
+                Veripoint Technologies takes your online privacy on our website seriously. The privacy practices described in this privacy policy apply to veripointtech.com and to all of our websites and wholly owned subsidiary websites (collectively, the Site). This privacy policy does not cover any other data collection or processing, including, without limitation, data collection practices of other websites to which we link or data that we or our affiliates collect offline or through web pages that do not display a direct link to this privacy policy.
               </p>
               <p className="text-gray-700 mb-6">
                 We strive to treat your personal information as safely and securely as reasonably possible. Please read the following privacy policy to better understand how your personal information may be collected and used as you access various areas of our Site. As described below, your information may be collected by Veripoint Technologies, disclosed to third parties, and used by third parties and Veripoint.
@@ -96,7 +96,7 @@ export default function Privacy() {
               <div className="mb-8">
                 <h3 className="text-2xl font-semibold text-gray-900 mb-4">Cookies</h3>
                 <p className="text-gray-700 mb-4">
-                  Some Veripoint web pages use cookies, which are small files saved on your computer. Cookies help us recognize your user preferences and can improve your future web visits. You can set your web browser to notify you when you are receiving a cookie and choose to reject it. However, rejecting cookies may affect the performance of the Veripoint Site and prevent you from accessing certain Veripoint information.
+                  Some Veripoint Technologies web pages use cookies, which are small files saved on your computer. Cookies help us recognize your user preferences and can improve your future web visits. You can set your web browser to notify you when you are receiving a cookie and choose to reject it. However, rejecting cookies may affect the performance of the Veripoint Site and prevent you from accessing certain Veripoint information.
                 </p>
                 <p className="text-gray-700">
                   Additionally, we may also permit third-party vendors, such as Google, to place cookies in your browser so that we may advertise our products to you on other websites that you may visit. You can opt out of Google use of cookies by visiting Google Ads Settings page, and you can also opt-out from many other third-party vendors use of cookies by visiting the Network Advertising Initiatives Consumer Opt-Out page.
@@ -150,7 +150,7 @@ export default function Privacy() {
               </p>
               <div className="bg-red-50 border-l-4 border-red-400 p-4">
                 <p className="text-red-800">
-                  <strong>Important:</strong> It is your responsibility to safeguard any password and user ID you use to access the Site and to notify us at hr@veripointtech.com if you ever suspect that this password or user ID has been compromised.
+                  <strong>Important:</strong> It is your responsibility to safeguard any password and user ID you use to access the Site and to notify us at legal@veripointtech.com if you ever suspect that this password or user ID has been compromised.
                 </p>
               </div>
             </section>
@@ -170,11 +170,9 @@ export default function Privacy() {
                 If you have any questions or suggestions regarding our privacy policy, please contact us at:
               </p>
               <div className="bg-gray-50 p-6 rounded-lg">
-                <p className="text-gray-700 font-semibold">Email: hr@veripointtech.com</p>
+                <p className="text-gray-700 font-semibold">Email: legal@veripointtech.com</p>
                 <p className="text-gray-700">Veripoint Technologies</p>
-                <p className="text-gray-700">Unit no. IS-800, Ground Floor, Tower-C, Urbtech Trade Center, Plot No. B-35, Sector-132
-
-Noida</p>
+                <p className="text-gray-700">Tower B, Unit 304, M Floor, World Trade Tower, Plot no. C-1, Sector-16, Noida 201301, Uttar Pradesh, India</p>
               </div>
             </section>
 
