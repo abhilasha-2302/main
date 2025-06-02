@@ -20,7 +20,7 @@ export default function Privacy() {
             
             {/* Introduction */}
             <section className="mb-12">
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">Privacy at Veripoint</h2>
+              <h2 className="text-3xl font-bold text-gray-900 mb-6">Privacy at Veripoint Technologies</h2>
               <p className="text-gray-700 mb-4">
                 Veripoint Technologies is committed to complying with data privacy laws in the countries where it does business and to maintaining the integrity of the personal information in the company possession. On this page we provide access to our Data Privacy and Protection Statement and other important privacy notices and policies.
               </p>
@@ -28,7 +28,7 @@ export default function Privacy() {
 
             {/* Website Privacy Policy */}
             <section className="mb-12">
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">Veripoint Website Privacy Policy</h2>
+              <h2 className="text-3xl font-bold text-gray-900 mb-6">Veripoint Technologies Website Privacy Policy</h2>
               <p className="text-gray-700 mb-4">
                 Veripoint Technologies takes your online privacy on our website seriously. The privacy practices described in this privacy policy apply to veripointtech.com and to all of our websites and wholly owned subsidiary websites (collectively, the Site). This privacy policy does not cover any other data collection or processing, including, without limitation, data collection practices of other websites to which we link or data that we or our affiliates collect offline or through web pages that do not display a direct link to this privacy policy.
               </p>
