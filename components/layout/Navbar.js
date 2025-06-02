@@ -98,7 +98,7 @@ export default function Navbar() {
             <Link href="/" className="flex items-center">
               {/* Replace with your actual logo */}
               <img 
-                src="/logo.jpeg" 
+                src="/logo_foot.png" 
                 alt="Veripoint Technologies" 
                 className="h-8 w-auto"
                 onError={(e) => {

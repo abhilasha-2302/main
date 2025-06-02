@@ -9,7 +9,7 @@ export default function Footer() {
             <Link href="/" className="flex items-center mb-2">
               {/* Replace with your actual logo */}
               <img 
-                src="/log.jpeg" 
+                src="/logo_foot.png" 
                 alt="Veripoint Technologies" 
                 className="h-8 w-auto"
                 onError={(e) => {
