@@ -155,7 +155,52 @@ export default function InsuranceSolutionsPage() {
           </div>
         </div>
       </section>
-
+{/* Breadcrumb Navigation */}
+      <section className="bg-gray-50 border-b border-gray-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+          <nav className="flex" aria-label="Breadcrumb">
+            <ol className="flex items-center space-x-2 text-sm">
+              <li>
+                <Link 
+                  href="/" 
+                  className="text-gray-500 hover:text-gray-700 transition-colors duration-200"
+                >
+                  Home
+                </Link>
+              </li>
+              <li className="flex items-center">
+                <svg 
+                  className="flex-shrink-0 h-4 w-4 text-gray-400 mx-2" 
+                  xmlns="http://www.w3.org/2000/svg" 
+                  fill="none" 
+                  viewBox="0 0 24 24" 
+                  stroke="currentColor"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+                <Link 
+                  href="/solutions/ai-ml" 
+                  className="text-gray-500 hover:text-gray-700 transition-colors duration-200"
+                >
+                  AI/ML Solutions
+                </Link>
+              </li>
+              <li className="flex items-center">
+                <svg 
+                  className="flex-shrink-0 h-4 w-4 text-gray-400 mx-2" 
+                  xmlns="http://www.w3.org/2000/svg" 
+                  fill="none" 
+                  viewBox="0 0 24 24" 
+                  stroke="currentColor"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+                <span className="text-gray-700 font-medium">Insurance Solutions</span>
+              </li>
+            </ol>
+          </nav>
+        </div>
+      </section>
       {/* Navigation Section */}
       <section className="bg-white border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -164,9 +209,14 @@ export default function InsuranceSolutionsPage() {
               <a href="#services" className="text-gray-700 hover:text-gray-900 font-medium">Services</a>
               <a href="#benefits" className="text-gray-700 hover:text-gray-900 font-medium">Key Benefits</a>
             </div>
-            <button className="bg-gray-900 hover:bg-gray-800 text-white font-medium py-2 px-4 rounded transition-colors duration-200">
+            <a
+              href="https://forms.gle/kRqgCBJqn98PieQc6"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-gray-900 hover:bg-gray-800 text-white font-medium py-2 px-4 rounded transition-colors duration-200"
+            >
               Get Started
-            </button>
+            </a>
           </div>
         </div>
       </section>

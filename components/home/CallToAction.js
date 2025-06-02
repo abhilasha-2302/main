@@ -5,7 +5,7 @@ export default function CallToAction() {
     <section className="py-16 bg-green-600">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h2 className="text-3xl font-normal text-white mb-8">
-          Connect with us
+          Connect with Us
         </h2>
         <Link 
           href="https://forms.gle/nxKwiYWCoU3Wasn56" 
