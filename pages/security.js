@@ -19,7 +19,7 @@ export default function SecurityPage() {
             <div className="text-center">
               <Shield className="h-16 w-16 mx-auto mb-6 text-green-200" />
               <h1 className="text-4xl md:text-5xl font-bold mb-4">
-                Veripoint PSIRT & Vulnerability Disclosure
+                Veripoint Technologies PSIRT & Vulnerability Disclosure
               </h1>
               <p className="text-xl text-green-100 max-w-3xl mx-auto">
                 Our Product Security Incident Response Team is committed to
@@ -42,21 +42,21 @@ export default function SecurityPage() {
                 </h2>
                 <div className="prose prose-lg text-gray-700 leading-relaxed">
                   <p className="mb-6">
-                    Veripoint is continuously improving processes and activities
+                    Veripoint Technologies is continuously improving processes and activities
                     for developing and implementing secure software and
                     hardware. The Veripoint Product Security Incident Response
                     Team (PSIRT) is focused on handling security incidents for
-                    Veripoint products.
+                    Veripoint Technologies products.
                   </p>
                   <p className="mb-6">
-                    Veripoint PSIRTs primary objective is to minimize the
+                    Veripoint Technologies PSIRTs primary objective is to minimize the
                     risks associated with security incidents in a timely,
                     secure, and responsible way. Veripoint PSIRT coordinates
                     the response and disclosure of security issues related to
-                    Veripoint products.
+                    Veripoint Technologies products.
                   </p>
                   <p className="mb-6">
-                    Veripoint regularly shares product updates with its
+                    Veripoint Technologies regularly shares product updates with its
                     customers through our secure customer portal. In the event
                     of any confirmed security issues, these are disclosed to
                     affected customers using the same platform.
@@ -71,10 +71,10 @@ export default function SecurityPage() {
                 </h2>
                 <div className="bg-gray-50 rounded-lg p-6 mb-6">
                   <p className="text-gray-700 leading-relaxed mb-4">
-                    Veripoint is committed to collaborating with external
+                    Veripoint Technologies is committed to collaborating with external
                     parties in the event of security incidents and following
                     industry best practices in handling security incidents. The
-                    Veripoint process to handle security incidents is based on
+                    Veripoint Technologies process to handle security incidents is based on
                     well-known industry standards, including:
                   </p>
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -112,7 +112,7 @@ export default function SecurityPage() {
                   Our Response Process
                 </h2>
                 <p className="text-gray-700 leading-relaxed mb-6">
-                  Veripoint PSIRT coordinates with the necessary internal teams
+                  Veripoint Technologies PSIRT coordinates with the necessary internal teams
                   to investigate the reports, verify the findings and devise
                   possible mitigation or remediation strategies. Throughout the
                   life cycle of a security incident, the PSIRT keeps close
@@ -187,17 +187,17 @@ export default function SecurityPage() {
                   </h3>
                   <p className="text-gray-700 mb-6 text-sm">
                     To report security incidents or potential vulnerabilities in
-                    Veripoint products, please contact our PSIRT team.
+                    Veripoint Technologies products, please contact our PSIRT team.
                   </p>
                   <div className="bg-white rounded-lg p-4 mb-6 border border-green-200">
                     <div className="font-semibold text-gray-900 mb-2">
                       Email Address:
                     </div>
                     <a
-                      href="mailto:hr@veripointtech.com"
+                      href="mailto:security@veripointtech.com"
                       className="text-green-600 hover:text-green-700 font-mono text-sm break-all"
                     >
-                      hr@veripointtech.com
+                      security@veripointtech.com
                     </a>
                   </div>
                   <div className="text-xs text-gray-600 text-left bg-gray-50 rounded-lg p-3">
@@ -259,13 +259,13 @@ export default function SecurityPage() {
               </p>
               <div className="flex flex-col sm:flex-row justify-center space-y-3 sm:space-y-0 sm:space-x-4">
                 <Link
-                  href="mailto:abc@security.in"
+                  href="mailto:security@security.in"
                   className="bg-green-600 text-white px-6 py-3 rounded-md hover:bg-green-700 transition duration-150 font-medium"
                 >
                   Report Security Issue
                 </Link>
                 <Link
-                  href="/contact"
+                  href="/https://forms.gle/nA8YkAY7RoeEHZnB7"
                   className="bg-white text-green-600 border border-green-600 px-6 py-3 rounded-md hover:bg-green-50 transition duration-150 font-medium"
                 >
                   General Contact
