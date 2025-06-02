@@ -103,11 +103,11 @@ export default function CopyrightPage() {
               </h3>
 
               <div className="space-y-2 text-gray-700">
-                <p><strong>Copyright Agent c/o Veripoint Technologies, Inc.</strong></p>
-                <p>Unit no. IS-800, Ground Floor, Tower-C, Urbtech Trade Center, Plot No. B-35, Sector-132</p>
-                <p>Noida 201304, Uttar Pradesh, India</p>
-                <p><strong>Email Address:</strong> rajat@veripointtech.com</p>
-                <p><strong>Telephone Number:</strong> +91 9717580855</p>
+                <p><strong>Copyright Agent c/o Veripoint Technologies Pvt Ltd</strong></p>
+                <p>Tower B, Unit 304, M Floor, World Trade Tower, Plot no. C-1, Sector-16</p>
+                <p>Noida 201301, Uttar Pradesh, India</p>
+                <p><strong>Email Address:</strong> legal@veripointtech.com</p>
+                
               </div>
             </div>
           </div>
