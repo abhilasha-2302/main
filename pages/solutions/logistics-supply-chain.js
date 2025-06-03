@@ -144,7 +144,7 @@ export default function LogisticsSolutionsPage() {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-light text-white mb-8">
               Logistics & Supply Chain Solutions
             </h1>
-            <Link href="/video-page">
+            <Link href="/video-pagelog">
               <button className="inline-flex items-center bg-white hover:bg-gray-100 text-gray-900 font-medium py-3 px-6 rounded transition-colors duration-200">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
                   <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clipRule="evenodd" />

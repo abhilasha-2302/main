@@ -228,7 +228,7 @@ export default function AiMlSolutionsPage() {
       <section className="relative h-[calc(100vh-120px)] w-full overflow-hidden bg-black">
         <video
           className="h-full w-full object-cover"
-          src="/videos/ai-ml.mp4"
+          src="/videos/aiml.webm"
           autoPlay
           muted
           loop
