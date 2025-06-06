@@ -94,8 +94,8 @@ export default function SDCVPXPage() {
     },
     {
       icon: <Workflow className="h-8 w-8" />,
-      title: "Universal Integration",
-      description: "Seamlessly integrates with existing verification workflows across IPs, ASICs, SoCs, and custom interfaces",
+      title: "Workflow-Ready Test Automation",
+      description: "Automatically generate test sequences and integrate seamlessly with existing IP, ASIC, SoC, and custom interface workflows.",
       color: "bg-indigo-50 text-indigo-600"
     }
   ];

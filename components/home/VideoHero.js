@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/router'; // Add this import
 
 const stories = [
   {
@@ -11,7 +12,7 @@ const stories = [
     heading: 'Introducing SdCvP-X',
     headingTrademark: '™',
     subheading: 'Verification Acceleration AI Tool',
-    description: 'Boost Verification and Productivity - First-Time Silicon Succes',
+    description: 'Boost Verification and Productivity - First-Time Silicon Success',
     link: '/products/sdcvp-x',
     discoverText: 'Discover Advanced Verification',
     discoverLink: '/products/sdcvp-x',
@@ -46,6 +47,7 @@ const stories = [
 export default function VideoHero() {
   const [activeStory, setActiveStory] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
+  const router = useRouter(); // Add router hook
   
   const videoRefs = useRef([]);
   const progressBarRefs = useRef([]);
@@ -141,10 +143,15 @@ export default function VideoHero() {
     }
   };
 
-  // Handle watch button click
-  const handleWatchClick = (watchLink) => {
-    // Open full video page
-    window.open(watchLink, '_blank');
+  // Handle watch button click - FIXED VERSION
+  const handleWatchClick = (watchLink, e) => {
+    e.stopPropagation();
+    
+    // Option 1: Navigate in same tab (recommended for Next.js)
+    router.push(watchLink);
+    
+    // Option 2: Open in new tab (uncomment if you prefer this)
+    // window.open(watchLink, '_blank', 'noopener,noreferrer');
   };
 
   // Set up animation and video playback when active story changes
@@ -289,6 +296,10 @@ export default function VideoHero() {
               playsInline
               loop
               preload="auto"
+              onError={(e) => {
+                console.error(`Error loading video ${story.src}:`, e);
+                // You can add fallback behavior here
+              }}
             />
             
             {/* Dark gradient overlay for better text readability */}
@@ -310,12 +321,10 @@ export default function VideoHero() {
                     {story.description}
                   </p>
                   <div className="flex flex-wrap gap-4">
+                    {/* FIXED Watch button */}
                     <button 
                       className="flex items-center bg-white hover:bg-gray-100 text-gray-900 font-medium py-2 px-4 md:py-3 md:px-6 rounded transition-colors duration-200"
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        handleWatchClick(story.watchLink);
-                      }}
+                      onClick={(e) => handleWatchClick(story.watchLink, e)}
                     >
                       <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
                         <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clipRule="evenodd" />
